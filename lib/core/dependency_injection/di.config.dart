@@ -14,6 +14,9 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:hive_flutter/hive_flutter.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 
+import '../../clean_architectures/data/model/chat/chat_model.dart' as _i11;
+import '../../clean_architectures/data/model/conversation/conversation_model.dart'
+    as _i10;
 import '../../clean_architectures/domain/usecase/setting/setting_usecase.dart'
     as _i9;
 import '../../clean_architectures/presentation/conversation/bloc/conversation_bloc.dart'
@@ -21,11 +24,11 @@ import '../../clean_architectures/presentation/conversation/bloc/conversation_bl
 import '../../clean_architectures/presentation/dashboard/view_model/dashboard_view_model.dart'
     as _i5;
 import '../components/layout/setting_layout/controller/setting_bloc.dart'
-    as _i10;
+    as _i12;
 import '../services/cloundinary_service.dart' as _i3;
 import '../services/image_pic_service.dart' as _i8;
-import 'modules/data_source_module.dart' as _i11;
-import 'modules/storage_moduale.dart' as _i12;
+import 'modules/data_source_module.dart' as _i13;
+import 'modules/storage_moduale.dart' as _i14;
 
 const String _prod = 'prod';
 
@@ -55,11 +58,15 @@ Future<_i1.GetIt> init(
   );
   gh.factory<_i8.ImagePicService>(() => _i8.ImagePicService());
   gh.factory<_i9.SettingUseCase>(() => _i9.SettingUseCase());
-  gh.factory<_i10.SettingBloc>(
-      () => _i10.SettingBloc(gh<_i9.SettingUseCase>()));
+  gh.singleton<_i7.Box<_i10.ConversationModel>>(
+      hiveModule.conversationBox(gh<_i7.HiveInterface>()));
+  gh.singleton<_i7.Box<_i11.ChatModel>>(
+      hiveModule.chatBox(gh<_i7.HiveInterface>()));
+  gh.factory<_i12.SettingBloc>(
+      () => _i12.SettingBloc(gh<_i9.SettingUseCase>()));
   return getIt;
 }
 
-class _$DataSourceModule extends _i11.DataSourceModule {}
+class _$DataSourceModule extends _i13.DataSourceModule {}
 
-class _$HiveModule extends _i12.HiveModule {}
+class _$HiveModule extends _i14.HiveModule {}

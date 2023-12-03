@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:advanced_mobile_gpt/mvvm/data/local/preferences.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/local/preferences.dart';
 import 'package:advanced_mobile_gpt/routes/routes.dart';
 import 'package:injectable/injectable.dart';
 

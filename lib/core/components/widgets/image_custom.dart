@@ -40,6 +40,7 @@ class ImageCustom extends StatelessWidget {
                 ),
               );
         },
+        errorBuilder: (_, __, ___) => const SizedBox(),
       );
     }
     return Image.asset(

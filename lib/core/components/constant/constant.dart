@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/string_extensions.dart';
-import 'package:advanced_mobile_gpt/mvvm/me/entities/feature_category.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/feature_category.dart';
 
 class Constant {
   static DateTime timeNow = DateTime.now();
@@ -30,8 +29,6 @@ class Constant {
         image: ImageConst.board,
         color: '#07AEAF'.toColor()),
     FeatureCategory(
-        content: 'Writer',
-        image: ImageConst.write,
-        color: '#FF5757'.toColor()),
+        content: 'Writer', image: ImageConst.write, color: '#FF5757'.toColor()),
   ];
 }

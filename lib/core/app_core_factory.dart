@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
-import 'package:advanced_mobile_gpt/mvvm/data/local/preferences.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/local/preferences.dart';
 
 class AppCoreFactory {
   static Dio createDio(String baseUrl) {

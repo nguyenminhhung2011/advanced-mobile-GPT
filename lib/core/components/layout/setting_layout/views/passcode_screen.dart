@@ -3,7 +3,7 @@ import 'package:advanced_mobile_gpt/app_coordinator.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/constant.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
 import 'package:advanced_mobile_gpt/generated/l10n.dart';
-import 'package:advanced_mobile_gpt/mvvm/data/local/preferences.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/local/preferences.dart';
 
 class PassCodeScreen extends StatefulWidget {
   final String? routes;

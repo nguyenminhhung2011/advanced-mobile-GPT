@@ -135,6 +135,7 @@ dependencies:
   riverpod: ^2.4.4
   flutter_riverpod: ^2.4.4
   drag_ball: ^1.0.0
+  isar: ^3.1.0+1
   # table_calendar: ^3.0.8
   # readmore: ^2.2.0
 

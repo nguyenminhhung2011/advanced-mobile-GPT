@@ -1,4 +1,4 @@
-import 'package:advanced_mobile_gpt/mvvm/data/local/preferences.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/local/preferences.dart';
 
 import '../../entities/user/user.dart';
 

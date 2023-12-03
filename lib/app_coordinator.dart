@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/constant.dart';
-import 'package:advanced_mobile_gpt/mvvm/features/chat_bot/views/widgets/bottom_selected_prompt.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/bottom_selected_prompt.dart';
 
 import 'core/components/layout/setting_layout/views/language_choose.dart';
 import 'core/components/widgets/range_date_picker_custom.dart';
-import 'core/components/layout/search_layout/header_search/model_bottom_sheet.dart';
-import 'core/components/layout/search_layout/model/filter_model.dart';
-import 'core/components/layout/search_layout/model/filter_response.dart';
 
 extension AppCoordinator<T> on BuildContext {
   void pop() => Navigator.of(this).pop();
@@ -77,30 +74,6 @@ extension AppCoordinator<T> on BuildContext {
       return dates;
     }
     return null;
-  }
-
-  Future<List<FilterResponse>> bottomFilter({
-    required List<FilterModel> body,
-    List<FilterResponse>? initData,
-  }) async {
-    final data = await showModalBottomSheet(
-      context: this,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(14)),
-      ),
-      backgroundColor: Theme.of(this).scaffoldBackgroundColor,
-      builder: (context) {
-        return ModelBottomSheet(
-          listFilter: [...body],
-          initResponse: initData ?? List<FilterResponse>.empty(),
-        );
-      },
-    );
-    if (data is List<FilterResponse>) {
-      return data;
-    }
-    return List<FilterResponse>.empty();
   }
 
   Future<String> langBottom() async {

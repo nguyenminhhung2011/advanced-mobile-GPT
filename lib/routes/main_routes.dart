@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:advanced_mobile_gpt/mvvm/features/chat_bot/views/chat_bot_view.dart';
-import 'package:advanced_mobile_gpt/mvvm/features/dashboard/views/dashboard_view.dart';
-import 'package:advanced_mobile_gpt/mvvm/features/splash/views/splash_view.dart';
-import 'package:advanced_mobile_gpt/mvvm/features/writer/views/writer_view.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/chat_bot_view.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/dashboard/views/dashboard_view.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/splash/views/splash_view.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/writer/views/writer_view.dart';
 import 'package:advanced_mobile_gpt/routes/routes.dart';
 
 import '../core/components/layout/setting_layout/views/passcode_screen.dart';

@@ -1,4 +1,5 @@
 import 'package:advanced_mobile_gpt/app_coordinator.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/widgets/conversation_item_widget.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class _ConversationViewState extends State<ConversationView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       backgroundColor: _backgroundColor,
       bottomNavigationBar: _bottomNavigationField(context),
       appBar: AppBar(
@@ -32,6 +34,13 @@ class _ConversationViewState extends State<ConversationView> {
           style: context.titleMedium
               .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+      ),
+      body: ListView.separated(
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.only(top: 15.0, bottom: 80.0),
+        itemCount: 10,
+        separatorBuilder: (_, __) => const SizedBox(height: 10.0),
+        itemBuilder: (_, index) => const ConversationItemWidget(),
       ),
     );
   }

@@ -1,3 +1,5 @@
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/conversation_view.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/image_generate/views/image_generate_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/chat_bot_view.dart';
@@ -13,6 +15,7 @@ class MainRoutes {
     final routes = {Routes.auth: (context) => const SizedBox()};
     return routes;
   }
+
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.auth:
@@ -55,6 +58,20 @@ class MainRoutes {
           settings: settings,
           builder: (_) {
             return const WriterView();
+          },
+        );
+      case Routes.imageGenerate:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const ImageGenerateView();
+          },
+        );
+      case Routes.conservation:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const ConversationView();
           },
         );
 

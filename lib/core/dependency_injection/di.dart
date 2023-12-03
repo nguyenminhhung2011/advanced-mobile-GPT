@@ -12,10 +12,10 @@ GetIt injector = GetIt.instance;
   asExtension: false, // default
   externalPackageModulesBefore: [],
 )
-GetIt configureDependencies({
+Future<GetIt> configureDependencies({
   String? environment,
   EnvironmentFilter? environmentFilter,
-}) {
+}) async {
   return init(
     injector,
     environment: environment,

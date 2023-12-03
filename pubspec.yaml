@@ -136,6 +136,8 @@ dependencies:
   flutter_riverpod: ^2.4.4
   drag_ball: ^1.0.0
   isar: ^3.1.0+1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
   # table_calendar: ^3.0.8
   # readmore: ^2.2.0
 

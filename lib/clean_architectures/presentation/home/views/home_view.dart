@@ -4,7 +4,6 @@ import 'package:advanced_mobile_gpt/core/components/extensions/context_extension
 import 'package:advanced_mobile_gpt/core/components/widgets/appbar.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/advanced_mobile_gpt/recent_document.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/header_custom.dart';
-import 'package:advanced_mobile_gpt/clean_architectures/presentation/home/views/widgets/board_status.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/home/views/widgets/category_field.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/home/views/widgets/premium_view.dart';
 
@@ -39,12 +38,13 @@ class _HomeViewState extends State<HomeView> {
           SliverList(
             delegate: SliverChildListDelegate(
               <Widget>[
-                const BoardStatus(),
                 HeaderTextCustom(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 15.0),
                   headerText: 'Features',
                   textStyle:
                       context.titleMedium.copyWith(fontWeight: FontWeight.w600),
-                  isShowSeeMore: true,
+                  isShowSeeMore: false,
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.0),

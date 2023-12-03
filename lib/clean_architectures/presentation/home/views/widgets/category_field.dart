@@ -17,9 +17,11 @@ class HomeCategoryField extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 if (index == 0) {
-                  context.openListPageWithRoute(Routes.chatBot);
+                  context.openListPageWithRoute(Routes.conservation);
                 } else if (index == 2) {
                   context.openListPageWithRoute(Routes.writer);
+                } else {
+                  context.openListPageWithRoute(Routes.imageGenerate);
                 }
               },
               child: Container(
@@ -52,6 +54,7 @@ class HomeCategoryField extends StatelessWidget {
                     Text(
                       e.content,
                       maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: context.titleSmall.copyWith(
                           fontWeight: FontWeight.w600, color: Colors.white),
                     )

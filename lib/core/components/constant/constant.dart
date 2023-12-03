@@ -25,7 +25,7 @@ class Constant {
         image: ImageConst.chat,
         color: '#7CD4FD'.toColor()),
     FeatureCategory(
-        content: 'keyboard',
+        content: 'Image generate',
         image: ImageConst.board,
         color: '#07AEAF'.toColor()),
     FeatureCategory(

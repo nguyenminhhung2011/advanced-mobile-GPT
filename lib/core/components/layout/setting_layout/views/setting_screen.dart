@@ -234,6 +234,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         .expand((e) => [e, const SizedBox(height: 3.0)])
                         .toList()
                       ..removeLast(),
+                    const SizedBox(height: 100.0),
                   ],
                 ),
               ),

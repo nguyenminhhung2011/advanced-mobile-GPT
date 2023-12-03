@@ -5,4 +5,6 @@ class Routes {
   static const String chatBot = '/chat_bot';
   static const String passCode = '/pass_code';
   static const String dashboard = '/dashboard';
+  static const String conservation = '/conservation';
+  static const String imageGenerate = '/image_generate';
 }

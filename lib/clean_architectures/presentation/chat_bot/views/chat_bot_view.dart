@@ -1,9 +1,15 @@
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_type.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_bloc.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_modal_state.dart';
+import 'package:advanced_mobile_gpt/core/components/widgets/loading_page.dart';
 import 'package:drag_ball/drag_ball.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/app_coordinator.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/image_custom.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/input_widget.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/message_item.dart';
@@ -16,13 +22,27 @@ class ChatBotView extends ConsumerStatefulWidget {
 }
 
 class _ChatBotViewState extends ConsumerState<ChatBotView> {
+  ChatBloc get _bloc => context.read<ChatBloc>();
+
+  ChatModalState get _data => _bloc.data;
+
+  List<Chat> get _chats => _data.chats;
+
   Color get _primaryColor => Theme.of(context).primaryColor;
 
   final TextEditingController _textController = TextEditingController();
 
   @override
   void initState() {
+    _bloc.add(const ChatEvent.getChat());
     super.initState();
+  }
+
+  void _listenStateChange(_, ChatState state) {
+    state.maybeWhen(
+      getChatFailed: (_, error) => context.showSnackBar("🐛[Get chat] $error"),
+      orElse: () {},
+    );
   }
 
   @override
@@ -33,89 +53,106 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
 
   @override
   Widget build(BuildContext context) {
-    return Dragball(
-      ball: _supportBall(context),
-      iconSize: 15.0,
-      onTap: () {},
-      initialPosition: const DragballPosition.defaultPosition(),
-      onPositionChanged: (_) {},
-      child: WillPopScope(
-        onWillPop: () async {
-          return true;
-        },
-        child: Stack(
-          children: [
-            Container(
-              color: Theme.of(context).scaffoldBackgroundColor,
-            ),
-            if (ImageConst.chatBackgroundImg.isNotEmpty)
-              Positioned.fill(
-                child: ImageCustom(
-                  imageUrl: ImageConst.chatBackgroundImg,
-                  fit: BoxFit.cover,
-                  color: _primaryColor.withOpacity(0.1),
-                  isNetworkImage: false,
-                ),
-              ),
-            Positioned.fill(
-              child: Container(
-                color: _primaryColor.withOpacity(0.1),
-              ),
-            ),
-            Scaffold(
-              backgroundColor: Colors.transparent,
-              appBar: AppBar(
-                backgroundColor: Theme.of(context).primaryColor,
-                leading: IconButton(
-                  onPressed: () => context.pop(),
-                  icon: const Icon(Icons.arrow_back),
-                ),
-                elevation: 0,
-                title: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Chat bot',
-                      style: context.titleLarge.copyWith(
-                          fontWeight: FontWeight.w600, color: Colors.white),
-                    ),
-                  ],
-                ),
-                actions: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.more_vert),
-                  )
-                ],
-              ),
-              body: Column(
+    return BlocConsumer<ChatBloc, ChatState>(
+        listener: _listenStateChange,
+        builder: (context, state) {
+          return Dragball(
+            ball: _supportBall(context),
+            iconSize: 15.0,
+            onTap: () {},
+            initialPosition: const DragballPosition.defaultPosition(),
+            onPositionChanged: (_) {},
+            child: WillPopScope(
+              onWillPop: () async {
+                return true;
+              },
+              child: Stack(
                 children: [
-                  Expanded(
-                    child: ListView.builder(
-                      reverse: true,
-                      itemCount: 10,
-                      itemBuilder: (_, index) => MessageItem(
-                        isBot: index % 2 == 0,
-                        content:
-                            'content content content content content content content content content content content',
-                        time: DateTime.now(),
-                        loading: false,
+                  Container(
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                  ),
+                  if (ImageConst.chatBackgroundImg.isNotEmpty)
+                    Positioned.fill(
+                      child: ImageCustom(
+                        imageUrl: ImageConst.chatBackgroundImg,
+                        fit: BoxFit.cover,
+                        color: _primaryColor.withOpacity(0.1),
+                        isNetworkImage: false,
                       ),
                     ),
+                  Positioned.fill(
+                    child: Container(color: _primaryColor.withOpacity(0.1)),
                   ),
-                  InputWidget(
-                    textEditingController: _textController,
-                    isListening: false,
-                    onVoiceStart: () {},
-                    onVoiceStop: () {},
-                    micAvailable: false,
-                    onSubmitted: () {},
-                  ),
+                  _body(context),
+                  if (state.loading)
+                    Container(
+                      color: Colors.black45,
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      child: Center(
+                        child: StyleLoadingWidget.foldingCube.renderWidget(
+                            size: 40.0, color: Theme.of(context).primaryColor),
+                      ),
+                    )
                 ],
               ),
+            ),
+          );
+        });
+  }
+
+  Scaffold _body(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        leading: IconButton(
+          onPressed: () => context.pop(),
+          icon: const Icon(Icons.arrow_back),
+        ),
+        elevation: 0,
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Chat bot',
+              style: context.titleLarge
+                  .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.more_vert),
+          )
+        ],
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+                reverse: true,
+                itemCount: _chats.length,
+                itemBuilder: (_, index) {
+                  final chat = _chats[index];
+                  return MessageItem(
+                    content: chat.title,
+                    loading: false,
+                    time: chat.createdAt,
+                    isBot: chat.chatType.isAssistant,
+                  );
+                }),
+          ),
+          InputWidget(
+            textEditingController: _textController,
+            isListening: false,
+            onVoiceStart: () {},
+            onVoiceStop: () {},
+            micAvailable: false,
+            onSubmitted: () {},
+          ),
+        ],
       ),
     );
   }
@@ -167,13 +204,6 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
               style: context.titleSmall.copyWith(fontSize: 10.0),
             ),
           ),
-          // TextButton(
-          //   onPressed: () {},
-          //   child: Text(
-          //     'Some option',
-          //     style: context.titleSmall.copyWith(fontSize: 12.0),
-          //   ),
-          // )
         ],
       ),
     );

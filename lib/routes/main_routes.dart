@@ -1,3 +1,4 @@
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/conversation_view.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/image_generate/views/image_generate_view.dart';
@@ -51,11 +52,17 @@ class MainRoutes {
         );
       case Routes.chatBot:
         return MaterialPageRoute(
-          settings: settings,
-          builder: (_) {
-            return const ChatBotView();
-          },
-        );
+            settings: settings,
+            builder: (_) {
+              if (settings.arguments is int) {
+                return BlocProvider<ChatBloc>(
+                  create: (_) =>
+                      injector.get<ChatBloc>(param1: settings.arguments),
+                  child: const ChatBotView(),
+                );
+              }
+              return const SizedBox();
+            });
       case Routes.writer:
         return MaterialPageRoute(
           settings: settings,

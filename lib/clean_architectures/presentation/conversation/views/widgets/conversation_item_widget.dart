@@ -3,6 +3,7 @@ import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/conversa
 import 'package:advanced_mobile_gpt/core/components/constant/handle_time.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
+import 'package:advanced_mobile_gpt/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 class ConversationItemWidget extends StatelessWidget {
@@ -27,6 +28,8 @@ class ConversationItemWidget extends StatelessWidget {
           onDelete.call();
         }
       },
+      onTap: () =>
+          context.openPageWithRouteAndParams(Routes.chatBot, conversation.id),
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.all(15.0),

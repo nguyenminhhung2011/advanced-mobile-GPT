@@ -1,3 +1,6 @@
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_status.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_type.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/hive_constant.dart';
 import 'package:hive/hive.dart';
 
@@ -35,4 +38,29 @@ class ChatModel extends HiveObject {
     required this.status,
     required this.type,
   });
+  Chat get toEntity => Chat(
+        id: id,
+        conversationId: conversationId,
+        title: title,
+        createdAt: DateTime.fromMillisecondsSinceEpoch(createdAt),
+        chatStatus:
+            ChatStatus.values.firstWhere((element) => element.name == status),
+        chatType: ChatType.values.firstWhere((element) => element.name == type),
+        updatedAt: DateTime.fromMillisecondsSinceEpoch(updatedAt ?? 0),
+      );
+
+  factory ChatModel.fromEntity(Chat chat) {
+    return ChatModel(
+      id: chat.id,
+      conversationId: chat.conversationId,
+      title: chat.title,
+      createdAt: chat.createdAt.millisecondsSinceEpoch,
+      updatedAt: chat.updatedAt?.millisecondsSinceEpoch,
+      status: chat.chatStatus.toStatusString,
+      type: chat.chatType.toTypeString,
+    );
+  }
+
+  Map<String, dynamic> get toJson =>
+      {"role": type.toLowerCase(), "content": title};
 }

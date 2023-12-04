@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+import 'package:either_dart/either.dart';
 
 class AppException implements Exception {
   final String message;
@@ -7,3 +7,4 @@ class AppException implements Exception {
   AppException({required this.message, this.code, this.s});
 }
 
+typedef SResult<T> = Either<AppException, T>;

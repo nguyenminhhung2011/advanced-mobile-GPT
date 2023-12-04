@@ -1,3 +1,4 @@
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/conversation/conversation.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/hive_constant.dart';
 import 'package:hive/hive.dart';
 
@@ -31,4 +32,13 @@ class ConversationModel extends HiveObject {
     this.lastMessage,
     this.lastUpdate,
   });
+
+  Conversation get toEntity => Conversation(
+        id: id,
+        createdAt: DateTime.fromMillisecondsSinceEpoch(createdAt),
+        header: header ?? "Assistant",
+        title: title ?? "Name",
+        lastMessage: lastMessage,
+        lastUpdate: DateTime.fromMillisecondsSinceEpoch(lastUpdate ?? 0),
+      );
 }

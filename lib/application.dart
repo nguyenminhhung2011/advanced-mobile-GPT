@@ -52,10 +52,10 @@ class _ApplicationState extends State<Application> with WidgetsBindingObserver {
       builder: (theme, darkTheme) => MultiBlocProvider(
         providers: [
           ...widget.providers,
-          BlocProvider<SettingBloc>(create: (_) => injector.get()),
+          BlocProvider<SettingBloc>(create: (_) => injector.get<SettingBloc>()),
         ],
         child: BuildMaterialApp(
-          widget: widget,
+          widget: widget, 
           light: theme,
           dark: darkTheme,
         ),
@@ -81,7 +81,7 @@ class BuildMaterialApp extends StatefulWidget {
 }
 
 class _BuildMaterialAppState extends State<BuildMaterialApp> {
-  SettingBloc get _settingController => BlocProvider.of<SettingBloc>(context);
+  SettingBloc get _settingController => context.read<SettingBloc>();
 
   @override
   void initState() {

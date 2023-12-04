@@ -1,6 +1,9 @@
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/conversation_view.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/image_generate/views/image_generate_view.dart';
+import 'package:advanced_mobile_gpt/core/dependency_injection/di.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/chat_bot_view.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/dashboard/views/dashboard_view.dart';
@@ -70,9 +73,10 @@ class MainRoutes {
       case Routes.conservation:
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) {
-            return const ConversationView();
-          },
+          builder: (_) => BlocProvider<ConversationBloc>(
+            create: (_) => injector.get<ConversationBloc>(),
+            child: const ConversationView(),
+          ),
         );
 
       default:

@@ -23,7 +23,7 @@ class AppDelegate {
 
     Configurations().setConfigurationValues(environment);
 
-    configureDependencies(environment: Environment.prod);
+    await configureDependencies(environment: Environment.prod);
     var isMobile = Configurations.isMobileMode;
     final savedThemeMode = await AdaptiveTheme.getThemeMode();
 
@@ -41,40 +41,5 @@ class AppDelegate {
     await Preferences.ensureInitedPreferences();
     WidgetsFlutterBinding.ensureInitialized();
     runApp(app);
-    // var myValue = Mutable<double>(0.0);
-
-    // await runZonedGuarded(() async {
-    //   await Preferences.ensureInitedPreferences();
-    //   WidgetsFlutterBinding.ensureInitialized();
-    //   // Initialize other stuff here...
-
-    //   await SentryFlutter.init(
-    //     (options) {
-    //       options.dsn = 'https://example@sentry.io/add-your-dsn-here';
-    //     },
-    //   );
-    //   // or here
-    //   runApp(app);
-    // }, (exception, stackTrace) async {
-    //   await Sentry.captureException(exception, stackTrace: stackTrace);
-    // });
-    // WidgetsFlutterBinding.ensureInitialized();
-    // Zone.current.fork(
-    //   zoneValues: {
-    //     'myKey': myValue,
-    //   },
-    // ).run(() {
-    //   var newValue = 1.0; // obtain value from plugin
-    //   myValue.value = newValue; // update value in Zone
-    //   runApp(app);
-    // });
-    // runZonedGuarded(
-    //   () => {runApp(app)},
-    //   (error, stack) {
-    //     if (kDebugMode) {
-    //       //Do nothing
-    //     }
-    //   },
-    // );
   }
 }

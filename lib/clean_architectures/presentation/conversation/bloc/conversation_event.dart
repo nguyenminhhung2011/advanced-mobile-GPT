@@ -5,4 +5,9 @@ class ConversationEvent with _$ConversationEvent {
   const factory ConversationEvent.stated() = _Started;
 
   const factory ConversationEvent.getConversation() = _GetConversation;
+
+  const factory ConversationEvent.createConversation() = _CreateConversation;
+
+  const factory ConversationEvent.deleteConversation(
+      {required int conversationId}) = _DeleteConversation;
 }

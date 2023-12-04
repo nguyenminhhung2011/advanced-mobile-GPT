@@ -12,13 +12,12 @@ GetIt injector = GetIt.instance;
   asExtension: false, // default
   externalPackageModulesBefore: [],
 )
-Future<GetIt> configureDependencies({
+Future<void> configureDependencies({
   String? environment,
   EnvironmentFilter? environmentFilter,
-}) async {
-  return init(
-    injector,
-    environment: environment,
-    environmentFilter: environmentFilter,
-  );
-}
+}) async =>
+    await init(
+      injector,
+      environment: environment,
+      environmentFilter: environmentFilter,
+    );

@@ -240,6 +240,16 @@ class S {
     );
   }
 
+  /// `Input your API Key`
+  String get inputYourApiKey {
+    return Intl.message(
+      'Input your API Key',
+      name: 'inputYourApiKey',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `I'm just starting out with my fitness journey and would like a suitable workout plan based on my goals and fitness level. Can you help me create an effective fitness routine?`
   String get prompt1 {
     return Intl.message(

@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorCode": MessageLookupByLibrary.simpleMessage("Error code"),
         "generalSettings":
             MessageLookupByLibrary.simpleMessage("General settings"),
+        "inputYourApiKey":
+            MessageLookupByLibrary.simpleMessage("Input your API Key"),
         "languages": MessageLookupByLibrary.simpleMessage("Languages"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light theme"),
         "lockAndSecurity":

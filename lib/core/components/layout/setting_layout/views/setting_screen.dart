@@ -53,7 +53,9 @@ class _SettingScreenState extends State<SettingScreen> {
 
   @override
   void initState() {
-    _settingController.add(const SettingEvent.getUserInfo());
+    if (widget.settingConfig.enableUser) {
+      _settingController.add(const SettingEvent.getUserInfo());
+    }
     super.initState();
   }
 
@@ -413,6 +415,10 @@ class _SettingScreenState extends State<SettingScreen> {
           );
           icon = Icons.security;
         }
+      case 'gpt':
+        icon = Icons.key;
+        title = S.of(context).inputYourApiKey;
+        onPress = () => context.openListPageWithRoute(Routes.inputApi);
       case 'about':
         icon = Icons.people;
         title = S.of(context).about;

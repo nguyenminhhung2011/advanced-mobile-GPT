@@ -84,7 +84,6 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
         ]),
       ),
     );
-    await Future.delayed(const Duration(seconds: 2));
     return (await _chatUseCase.sendChat(_conversationId)).fold(
       (left) => emit(_SendChatFailed(
           data: data.copyWith(

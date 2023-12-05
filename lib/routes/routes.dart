@@ -4,6 +4,7 @@ class Routes {
   static const String splash = '/splash';
   static const String chatBot = '/chat_bot';
   static const String passCode = '/pass_code';
+  static const String inputApi = '/input_api';
   static const String dashboard = '/dashboard';
   static const String conservation = '/conservation';
   static const String imageGenerate = '/image_generate';

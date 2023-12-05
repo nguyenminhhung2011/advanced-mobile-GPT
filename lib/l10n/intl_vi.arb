@@ -18,6 +18,7 @@
     "enterCode": "Nhâp mã",
     "errorCode": "Mã lỗi",
     "about": "Về chúng tôi",
+    "inputYourApiKey": "Nhâp vào API Key",
     "prompt1": "Tôi mới bắt đầu tập luyện và muốn có một kế hoạch tập thể dục phù hợp với mục tiêu và trình độ của tôi. Chuyên gia có thể giúp tôi thiết lập một kế hoạch tập luyện hiệu quả không?",
     "prompt2": "Tôi đang muốn giảm cân và cải thiện sức khỏe. Chuyên gia có thể tư vấn cho tôi về chế độ ăn và lịch trình tập luyện phù hợp để đạt được mục tiêu này không?",
     "prompt3": "Tôi gặp khó khăn khi thực hiện một bài tập cụ thể và muốn đảm bảo rằng tôi đang thực hiện đúng kỹ thuật. Chuyên gia có thể hướng dẫn tôi về kỹ thuật và cách sửa lỗi không?",

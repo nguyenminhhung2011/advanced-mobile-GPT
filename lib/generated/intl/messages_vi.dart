@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorCode": MessageLookupByLibrary.simpleMessage("Mã lỗi"),
         "generalSettings":
             MessageLookupByLibrary.simpleMessage("Cài đặt chung"),
+        "inputYourApiKey":
+            MessageLookupByLibrary.simpleMessage("Nhâp vào API Key"),
         "languages": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Chế độ sáng"),
         "lockAndSecurity":

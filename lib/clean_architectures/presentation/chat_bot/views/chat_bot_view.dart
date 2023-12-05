@@ -108,6 +108,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
 
   Scaffold _body(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,

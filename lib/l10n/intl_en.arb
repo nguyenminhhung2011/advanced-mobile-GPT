@@ -18,6 +18,7 @@
     "enterCode": "Enter code",
     "errorCode": "Error code",
     "about": "About",
+    "inputYourApiKey": "Input your API Key",
     "prompt1": "I'm just starting out with my fitness journey and would like a suitable workout plan based on my goals and fitness level. Can you help me create an effective fitness routine?",
     "prompt2": "I want to lose weight and improve my overall health. Can you provide guidance on the appropriate diet and exercise schedule to help me achieve this?",
     "prompt3": "I'm having trouble performing a specific exercise and want to ensure that I'm using the correct technique. Can you guide me on the proper form and how to correct any mistakes?",

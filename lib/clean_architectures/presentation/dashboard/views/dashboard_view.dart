@@ -1,4 +1,8 @@
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_bloc.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/conversation_view.dart';
+import 'package:advanced_mobile_gpt/core/dependency_injection/di.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:advanced_mobile_gpt/core/components/config/setting_config.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
@@ -28,7 +32,13 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
       svgAsset: ImageConst.homeIcon,
       screen: const HomeView(),
     ),
-    TabBarModel(svgAsset: ImageConst.documentIcon, screen: const SizedBox()),
+    TabBarModel(
+      svgAsset: ImageConst.documentIcon,
+      screen: BlocProvider(
+        create: (_) => injector.get<ConversationBloc>(),
+        child: const ConversationView(),
+      ),
+    ),
     TabBarModel(
       svgAsset: ImageConst.searchIcon,
       screen: const SizedBox(),
@@ -38,7 +48,6 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
       title: 'Profile',
       screen: SettingScreen(
         settingConfig: SettingConfig.fromJson({
-          'enable_user': true,
           'setting_layout': 'view1',
           'app_bar_color': '8763c4',
           'hPadding': 10.0,
@@ -47,7 +56,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
           'pop_up_route': Routes.splash,
           'behindBackground':
               'https://images.prismic.io//intuzwebsite/d9daef05-a416-4e84-b0f8-2d5e2e3b58d8_A+Comprehensive+Guide+to+Building+an+AI+Chatbot%402x.png?w=2400&q=80&auto=format,compress&fm=png8',
-          'list_view': ['security', 'lang', 'appearance', 'about'],
+          'list_view': ['security', 'gpt', 'lang', 'appearance', 'about'],
         }),
       ),
     )

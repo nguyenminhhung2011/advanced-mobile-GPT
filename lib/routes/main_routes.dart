@@ -2,6 +2,8 @@ import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bl
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/conversation_view.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/image_generate/views/image_generate_view.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/input_api/cubit/input_api_cubit.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/input_api/views/input_api_view.dart';
 import 'package:advanced_mobile_gpt/core/dependency_injection/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -63,6 +65,14 @@ class MainRoutes {
               }
               return const SizedBox();
             });
+      case Routes.inputApi:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => BlocProvider(
+            create: (_) => injector.get<InputApiCubit>(),
+            child: const InputApiView(),
+          ),
+        );
       case Routes.writer:
         return MaterialPageRoute(
           settings: settings,

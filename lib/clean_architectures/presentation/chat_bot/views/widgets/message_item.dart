@@ -36,7 +36,7 @@ class _MessageItemState extends State<MessageItem> {
   Widget build(BuildContext context) {
     final style = context.titleSmall.copyWith(
       fontSize: 13.0,
-      color: widget.isBot ? context.titleLarge.color : Colors.black,
+      color: widget.isBot ? context.titleLarge.color : Colors.white,
     );
     var content = [
       Flexible(

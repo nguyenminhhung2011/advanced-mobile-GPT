@@ -9,7 +9,19 @@ class ChatState with _$ChatState {
       _GetChatSuccess;
   const factory ChatState.getChatFailed(
       {required ChatModalState data, required String message}) = _GetChatFailed;
-  const factory ChatState.lLading({required ChatModalState data}) = _Loading;
+
+  const factory ChatState.sendChatSuccess({required ChatModalState data}) =
+      _SendChatSuccess;
+
+  const factory ChatState.sendChatFailed({
+    required ChatModalState data,
+    required String message,
+  }) = _SendChatFailed;
+
+  const factory ChatState.loading({required ChatModalState data}) = _Loading;
+
+  const factory ChatState.loadingSend({required ChatModalState data}) =
+      _LoadingSend;
 
   bool get loading => this is _Loading;
 }

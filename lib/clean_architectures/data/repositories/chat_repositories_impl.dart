@@ -32,7 +32,7 @@ class ChatRepositoriesImpl implements ChatRepositories {
       };
 
       ///[Call api here]
-      return Right("Reply content ${chats.first.title}");
+      return Right("Reply content ${chats.last.title}");
     } catch (error) {
       return Left(AppException(message: error.toString()));
     }

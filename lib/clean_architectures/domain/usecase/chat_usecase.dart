@@ -14,26 +14,18 @@ class ChatUseCase {
   Future<SResult<List<Chat>>> getChats(int conversationId) =>
       _chatRepositories.getChats(conversationId);
 
-  Future<SResult<Chat>> sendChat(
-      {required int conversationId, required Chat chat}) async {
+  Future<SResult<int>> saveChat(int conversationId, Chat chat) async =>
+      await _chatRepositories.saveMessage(
+          conversationId: conversationId, chat: chat);
+
+  Future<SResult<Chat>> sendChat(int conversationId) async {
     final chats = await getChats(conversationId);
     if (chats.isLeft) return Left(chats.left);
 
-    final response =
-        await _chatRepositories.sendMessage([...chats.right, chat]);
+    final response = await _chatRepositories.sendMessage(chats.right);
     if (response.isLeft || (response.isRight && response.right.isEmpty)) {
-      final _ = await _chatRepositories.saveMessage(
-        conversationId: 0,
-        chat: chat.copyWith(chatStatus: ChatStatus.error),
-      );
       return Left(response.left);
     }
-
-    final saveSendMess = await _chatRepositories.saveMessage(
-      conversationId: conversationId,
-      chat: chat.copyWith(chatStatus: ChatStatus.success),
-    );
-    if (saveSendMess.isLeft) return Left(saveSendMess.left);
 
     final newChat = Chat(
       id: 0,
@@ -45,10 +37,10 @@ class ChatUseCase {
       chatType: ChatType.assistant,
     );
 
-    final newChatId = await _chatRepositories.saveMessage(
+    final saveResponseMess = await _chatRepositories.saveMessage(
         chat: newChat, conversationId: conversationId);
-    if (newChatId.isLeft) return Left(newChatId.left);
+    if (saveResponseMess.isLeft) return Left(saveResponseMess.left);
 
-    return Right(newChat.copyWith(id: newChatId.right));
+    return Right(newChat.copyWith(id: saveResponseMess.right));
   }
 }

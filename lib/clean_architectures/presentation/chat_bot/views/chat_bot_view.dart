@@ -1,4 +1,5 @@
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_status.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_type.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_modal_state.dart';
@@ -41,6 +42,9 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
   void _listenStateChange(_, ChatState state) {
     state.maybeWhen(
       getChatFailed: (_, error) => context.showSnackBar("🐛[Get chat] $error"),
+      sendChatFailed: (_, error) =>
+          context.showSnackBar("🐛[Send message] $error"),
+      loadingSend: (_) => _textController.clear(),
       orElse: () {},
     );
   }
@@ -138,9 +142,11 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
                   final chat = _chats[index];
                   return MessageItem(
                     content: chat.title,
-                    loading: false,
+                    loading: chat.chatStatus.isLoading,
                     time: chat.createdAt,
                     isBot: chat.chatType.isAssistant,
+                    speechOnPress: () {},
+                    longPressText: () {},
                   );
                 }),
           ),
@@ -150,7 +156,8 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
             onVoiceStart: () {},
             onVoiceStop: () {},
             micAvailable: false,
-            onSubmitted: () {},
+            onSubmitted: () =>
+                _bloc.add(ChatEvent.sendChat(_textController.text)),
           ),
         ],
       ),

@@ -6,4 +6,5 @@ abstract class ConversationRepositories {
   Future<SResult<Conversation>> createdConversation();
   Future<SResult<bool>> updateConversation(Conversation newConversation);
   Future<SResult<bool>> deleteConversation(int conversationId);
+  Future<SResult<Conversation>> getConversationById(int conversationId);
 }

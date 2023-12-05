@@ -21,24 +21,24 @@ import '../../clean_architectures/data/model/conversation/conversation_model.dar
 import '../../clean_architectures/data/repositories/chat_repositories_impl.dart'
     as _i13;
 import '../../clean_architectures/data/repositories/conversation_repositorie_impl.dart'
-    as _i16;
+    as _i15;
 import '../../clean_architectures/domain/repositories/chat_repositories.dart'
     as _i12;
 import '../../clean_architectures/domain/repositories/conversation_repositories.dart'
-    as _i15;
-import '../../clean_architectures/domain/usecase/chat_usecase.dart' as _i14;
+    as _i14;
+import '../../clean_architectures/domain/usecase/chat_usecase.dart' as _i18;
 import '../../clean_architectures/domain/usecase/conversation_usecase.dart'
-    as _i17;
+    as _i16;
 import '../../clean_architectures/domain/usecase/setting/setting_usecase.dart'
     as _i9;
 import '../../clean_architectures/presentation/chat_bot/bloc/chat_bloc.dart'
-    as _i19;
-import '../../clean_architectures/presentation/conversation/bloc/conversation_bloc.dart'
     as _i20;
+import '../../clean_architectures/presentation/conversation/bloc/conversation_bloc.dart'
+    as _i19;
 import '../../clean_architectures/presentation/dashboard/view_model/dashboard_view_model.dart'
     as _i4;
 import '../components/layout/setting_layout/controller/setting_bloc.dart'
-    as _i18;
+    as _i17;
 import '../services/cloundinary_service.dart' as _i3;
 import '../services/image_pic_service.dart' as _i8;
 import 'modules/data_source_module.dart' as _i21;
@@ -78,24 +78,26 @@ Future<_i1.GetIt> init(
       hiveModule.chatBox(gh<_i7.HiveInterface>()));
   gh.factory<_i12.ChatRepositories>(
       () => _i13.ChatRepositoriesImpl(gh<_i6.GPTApi>()));
-  gh.factory<_i14.ChatUseCase>(
-      () => _i14.ChatUseCase(gh<_i12.ChatRepositories>()));
-  gh.factory<_i15.ConversationRepositories>(() =>
-      _i16.ConversationRepositoriesImpl(gh<_i7.Box<_i10.ConversationModel>>()));
-  gh.factory<_i17.ConversationUserCase>(
-      () => _i17.ConversationUserCase(gh<_i15.ConversationRepositories>()));
-  gh.factory<_i18.SettingBloc>(
-      () => _i18.SettingBloc(gh<_i9.SettingUseCase>()));
-  gh.factoryParam<_i19.ChatBloc, int, dynamic>((
+  gh.factory<_i14.ConversationRepositories>(() =>
+      _i15.ConversationRepositoriesImpl(gh<_i7.Box<_i10.ConversationModel>>()));
+  gh.factory<_i16.ConversationUserCase>(
+      () => _i16.ConversationUserCase(gh<_i14.ConversationRepositories>()));
+  gh.factory<_i17.SettingBloc>(
+      () => _i17.SettingBloc(gh<_i9.SettingUseCase>()));
+  gh.factory<_i18.ChatUseCase>(() => _i18.ChatUseCase(
+        gh<_i12.ChatRepositories>(),
+        gh<_i14.ConversationRepositories>(),
+      ));
+  gh.factory<_i19.ConversationBloc>(
+      () => _i19.ConversationBloc(gh<_i16.ConversationUserCase>()));
+  gh.factoryParam<_i20.ChatBloc, int, dynamic>((
     conversationId,
     _,
   ) =>
-      _i19.ChatBloc(
+      _i20.ChatBloc(
         conversationId,
-        gh<_i14.ChatUseCase>(),
+        gh<_i18.ChatUseCase>(),
       ));
-  gh.factory<_i20.ConversationBloc>(
-      () => _i20.ConversationBloc(gh<_i17.ConversationUserCase>()));
   return getIt;
 }
 

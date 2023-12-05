@@ -44,6 +44,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
       getChatFailed: (_, error) => context.showSnackBar("🐛[Get chat] $error"),
       sendChatFailed: (_, error) =>
           context.showSnackBar("🐛[Send message] $error"),
+      sendChatSuccess: (_) {},
       loadingSend: (_) => _textController.clear(),
       orElse: () {},
     );

@@ -1,5 +1,4 @@
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/dot_waiting.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';

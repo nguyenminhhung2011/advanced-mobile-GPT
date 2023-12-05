@@ -1,7 +1,9 @@
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_status.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_type.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/conversation/conversation.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/repositories/chat_repositories.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/domain/repositories/conversation_repositories.dart';
 import 'package:advanced_mobile_gpt/core/components/network/app_exception.dart';
 import 'package:either_dart/either.dart';
 import 'package:injectable/injectable.dart';
@@ -9,7 +11,8 @@ import 'package:injectable/injectable.dart';
 @injectable
 class ChatUseCase {
   final ChatRepositories _chatRepositories;
-  ChatUseCase(this._chatRepositories);
+  final ConversationRepositories _conversationRepositories;
+  ChatUseCase(this._chatRepositories, this._conversationRepositories);
 
   Future<SResult<List<Chat>>> getChats(int conversationId) =>
       _chatRepositories.getChats(conversationId);
@@ -43,4 +46,23 @@ class ChatUseCase {
 
     return Right(newChat.copyWith(id: saveResponseMess.right));
   }
+
+  Future<SResult<bool>> updateConversation({
+    required int conversationId,
+    required String title,
+    required String lastMessage,
+    required DateTime lastUpdated,
+  }) async =>
+      _conversationRepositories.updateConversation(
+        Conversation(
+          id: conversationId,
+          createdAt: DateTime.now(),
+          lastMessage: lastMessage,
+          lastUpdate: lastUpdated,
+          title: title,
+        ),
+      );
+
+  Future<SResult<Conversation>> getConversationById(int conversationId) =>
+      _conversationRepositories.getConversationById(conversationId);
 }

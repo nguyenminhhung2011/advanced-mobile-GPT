@@ -48,7 +48,30 @@ class ConversationRepositoriesImpl implements ConversationRepositories {
   }
 
   @override
-  Future<SResult<bool>> updateConversation(Conversation newConversation) {
-    throw UnimplementedError();
+  Future<SResult<bool>> updateConversation(Conversation newConversation) async {
+    try {
+      final conversation = _conversationBox.get(newConversation.id);
+      if (conversation == null) return Left(AppException(message: "Null"));
+      conversation
+        ..lastUpdate = newConversation.lastUpdate?.millisecondsSinceEpoch
+        ..lastMessage = newConversation.lastMessage
+        ..header = "Assistant"
+        ..title = newConversation.title;
+      await conversation.save();
+      return const Right(true);
+    } catch (error) {
+      return Left(AppException(message: error.toString()));
+    }
+  }
+
+  @override
+  Future<SResult<Conversation>> getConversationById(int conversationId) async {
+    try {
+      final conversation = _conversationBox.get(conversationId);
+      if (conversation == null) return Left(AppException(message: "Null"));
+      return Right(conversation.toEntity);
+    } catch (error) {
+      return Left(AppException(message: error.toString()));
+    }
   }
 }

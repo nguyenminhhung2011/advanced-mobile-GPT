@@ -6,6 +6,7 @@ import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/remote/
 import 'package:advanced_mobile_gpt/clean_architectures/data/model/chat/chat_model.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/repositories/chat_repositories.dart';
+import 'package:advanced_mobile_gpt/core/components/constant/gpt_constant.dart';
 import 'package:advanced_mobile_gpt/core/components/network/app_exception.dart';
 import 'package:either_dart/either.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -34,20 +35,21 @@ class ChatRepositoriesImpl extends BaseApi implements ChatRepositories {
   Future<SResult<String>> sendMessage(List<Chat> chats) async {
     try {
       final body = {
-        "model": "gpt-3.5-turbo",
-        "message": chats.map((e) => ChatModel.fromEntity(e).toJson).toList()
+        "model": GptConstant.model,
+        "messages": chats.map((e) => ChatModel.fromEntity(e).toJson).toList(),
+        "temperature": GptConstant.temperature,
       };
 
-      // final response =
-      //     await getStateOf(request: () async => await _gptApi.chat(body: body));
-      // if (response is DataFailed) {
-      //   return Left(
-      //       AppException(message: response.dioError?.message ?? baseError));
-      // }
-      // log("🎉[Response text] $response");
+      final response =
+          await getStateOf(request: () async => await _gptApi.chat(body: body));
+      if (response is DataFailed) {
+        return Left(
+            AppException(message: response.dioError?.message ?? baseError));
+      }
+      log("🎉[Response text] $response");
 
       ///[Call api here]
-      return Right("Reply content ${chats.last.title}");
+      return Right(response.data["choices"][0]?["message"]["content"] ?? "");
     } catch (error) {
       return Left(AppException(message: error.toString()));
     }

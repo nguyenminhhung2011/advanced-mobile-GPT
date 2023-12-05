@@ -31,6 +31,7 @@ class TokenInterceptor implements Interceptor {
   // final AuthApi _authApi = injector.get<AuthApi>();
 
   @override
+  // ignore: deprecated_member_use
   void onError(DioError err, ErrorInterceptorHandler handler) async {
     return handler.next(err);
   }
@@ -40,7 +41,8 @@ class TokenInterceptor implements Interceptor {
       RequestOptions options, RequestInterceptorHandler handler) async {
     String accessToken = CommonAppSettingPref.getAccessToken();
 
-    options.headers["Authorization"] = "Bearer $accessToken";
+    options.headers["Authorization"] =
+        "Bearer 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";
     return handler.next(options);
   }
 

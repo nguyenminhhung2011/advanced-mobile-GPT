@@ -82,7 +82,7 @@ dependencies:
   # ticket_widget: ^0.0.1
   # auto_size_text: ^3.0.0
   # date_time_picker: ^2.1.0
-  retrofit: ^4.0.1
+  retrofit: ^4.0.3
   dio: ^5.1.1
   # bot_interceptor: ^0.0.1
   # file_picker: ^5.2.10
@@ -139,6 +139,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   either_dart: ^1.0.0
+  animated_text_kit: ^4.2.2
   # table_calendar: ^3.0.8
   # readmore: ^2.2.0
 

@@ -147,6 +147,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
                     isBot: chat.chatType.isAssistant,
                     speechOnPress: () {},
                     longPressText: () {},
+                    isAnimatedText: index == 0,
                   );
                 }),
           ),

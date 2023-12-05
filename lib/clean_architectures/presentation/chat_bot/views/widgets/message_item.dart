@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class MessageItem extends StatefulWidget {
   final bool isBot;
@@ -13,10 +14,12 @@ class MessageItem extends StatefulWidget {
   final bool isSpeechText;
   final Function() longPressText;
   final Function() speechOnPress;
+  final bool isAnimatedText;
   const MessageItem({
     super.key,
     this.isErrorMessage = false,
     this.isSpeechText = false,
+    this.isAnimatedText = false,
     required this.isBot,
     required this.content,
     required this.time,
@@ -32,6 +35,10 @@ class MessageItem extends StatefulWidget {
 class _MessageItemState extends State<MessageItem> {
   @override
   Widget build(BuildContext context) {
+    final style = context.titleSmall.copyWith(
+      fontSize: 13.0,
+      color: widget.isBot ? context.titleLarge.color : Colors.black,
+    );
     var content = [
       Flexible(
         flex: 10,
@@ -75,29 +82,26 @@ class _MessageItemState extends State<MessageItem> {
                           ),
                         ),
                       )
-                    : Text(
-                        widget.content,
-                        style: context.titleSmall.copyWith(
-                          fontSize: 13.0,
-                          color: widget.isBot
-                              ? context.titleLarge.color
-                              : Colors.black,
-                        ),
-                      ),
+                    : widget.isAnimatedText
+                        ? AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                widget.content,
+                                textStyle: style,
+                                speed: const Duration(milliseconds: 60),
+                              ),
+                            ],
+                            isRepeatingAnimation: false,
+                            pause: const Duration(milliseconds: 60),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                          )
+                        : Text(widget.content, style: style),
               ),
-            ),
+            )
           ],
         ),
       ),
-      // if (widget.isBot) ...[
-      //   const SizedBox(width: 10.0),
-      //   InkWell(
-      //     onTap: widget.speechOnPress,
-      //     child: widget.isSpeechText
-      //         ? SpeechIcon()
-      //         : const Icon(CupertinoIcons.volume_mute, size: 16),
-      //   ),
-      // ],
       if (!widget.isBot) SizedBox(width: context.widthDevice * 0.1),
       SizedBox(width: context.widthDevice * 0.05)
     ];

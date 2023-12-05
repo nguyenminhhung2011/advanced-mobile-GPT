@@ -10,14 +10,11 @@ class AppCoreFactory {
     final dio = Dio(
       BaseOptions(
         baseUrl: baseUrl,
-        headers: {
-          "content-type": "application/json",
-          "Accept": "*/*",
-        },
+        headers: {"content-type": "application/json", "Accept": "*/*"},
       ),
     )
-      // ..interceptors.add(LogInterceptor(requestBody: true, responseBody: true)); // add with app have social login
-      ..interceptors.add(TokenInterceptor());
+      ..interceptors.add(TokenInterceptor())
+      ..interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     if (!kIsWeb) {
       (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
           (HttpClient client) {
@@ -42,39 +39,9 @@ class TokenInterceptor implements Interceptor {
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     String accessToken = CommonAppSettingPref.getAccessToken();
-    String refreshToken = CommonAppSettingPref.getRefreshToken();
-    int expiredTime = CommonAppSettingPref.getExpiredTime();
 
-    if (accessToken.isEmpty || refreshToken.isEmpty || expiredTime == -1) {
-      return handler.next(options);
-    }
-
-    final expiredTimeParsed = DateTime.fromMillisecondsSinceEpoch(expiredTime);
-    final isExpired = DateTime.now().isAfter(expiredTimeParsed);
-
-    if (isExpired) {
-      // try {
-      //   final response = await injector.get<AuthApi>().refreshToken();
-      //   if (response.response.statusCode == HttpStatus.ok &&
-      //       response.data.isSuccess) {
-      //     final responseData = response.data;
-      //     options.headers["Authorization"] =
-      //         "Bearer ${responseData.accessToken}";
-      //     await CommonAppSettingPref.setAccessToken(responseData.accessToken);
-      //     await CommonAppSettingPref.setRefreshToken(responseData.refreshToken);
-      //     await CommonAppSettingPref.setExpiredTime(responseData.expiredTime);
-      //     // return handler.next(options);
-      //   } else {
-      //     log("Logging out");
-      //   }
-      // } catch (e) {
-      //   log(e.toString());
-      //   return;
-      // }
-    } else {
-      options.headers["Authorization"] = "Bearer $accessToken";
-      return handler.next(options);
-    }
+    options.headers["Authorization"] = "Bearer $accessToken";
+    return handler.next(options);
   }
 
   @override

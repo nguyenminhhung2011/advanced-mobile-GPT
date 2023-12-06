@@ -1,5 +1,6 @@
 import 'package:advanced_mobile_gpt/app_coordinator.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/conversation/conversation.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/chat_bot_view.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_modal_state.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/widgets/conversation_item_widget.dart';
@@ -40,8 +41,19 @@ class _ConversationViewState extends State<ConversationView> {
       createConversationFailed: (_, error) =>
           context.showSnackBar("🐛[Create conversation] $error"),
       selectConversationFailed: (_) => context.apiKeyWarning(),
-      selectConversationSuccess: (_, id) =>
-          context.openPageWithRouteAndParams(Routes.chatBot, id),
+      selectConversationSuccess: (_, id) async {
+        final open =
+            await context.openPageWithRouteAndParams(Routes.chatBot, id);
+        if (open is MessageReturn) {
+          _bloc.add(
+            ConversationEvent.updateConversation(
+              conversationId: id,
+              lastMessage: open.lastMessage,
+              title: open.title,
+            ),
+          );
+        }
+      },
       orElse: () {},
     );
   }

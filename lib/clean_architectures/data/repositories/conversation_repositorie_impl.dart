@@ -48,7 +48,8 @@ class ConversationRepositoriesImpl implements ConversationRepositories {
   }
 
   @override
-  Future<SResult<bool>> updateConversation(Conversation newConversation) async {
+  Future<SResult<Conversation>> updateConversation(
+      Conversation newConversation) async {
     try {
       final conversation = _conversationBox.get(newConversation.id);
       if (conversation == null) return Left(AppException(message: "Null"));
@@ -58,7 +59,7 @@ class ConversationRepositoriesImpl implements ConversationRepositories {
         ..header = "Assistant"
         ..title = newConversation.title;
       await conversation.save();
-      return const Right(true);
+      return Right(conversation.toEntity);
     } catch (error) {
       return Left(AppException(message: error.toString()));
     }

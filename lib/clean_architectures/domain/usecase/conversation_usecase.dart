@@ -14,4 +14,20 @@ class ConversationUserCase {
       _conversationRepositories.createdConversation();
   Future<SResult<bool>> deleteConversation(int conversationId) =>
       _conversationRepositories.deleteConversation(conversationId);
+
+  Future<SResult<Conversation>> updateConversation({
+    required int conversationId,
+    required String title,
+    required String lastMessage,
+    required DateTime lastUpdated,
+  }) async =>
+      _conversationRepositories.updateConversation(
+        Conversation(
+          id: conversationId,
+          createdAt: DateTime.now(),
+          lastMessage: lastMessage,
+          lastUpdate: lastUpdated,
+          title: title,
+        ),
+      );
 }

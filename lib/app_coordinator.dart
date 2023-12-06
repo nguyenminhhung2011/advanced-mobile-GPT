@@ -178,6 +178,10 @@ extension AppCoordinator<T> on BuildContext {
     return null;
   }
 
+  void closeErrorMessage() {
+    ScaffoldMessenger.of(this).hideCurrentMaterialBanner();
+  }
+
   Future<T?> openListPageWithRoute(String route) {
     return Navigator.of(this).pushNamed(route);
   }

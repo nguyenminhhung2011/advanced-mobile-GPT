@@ -23,6 +23,9 @@ mixin _$ConversationEvent {
     required TResult Function() createConversation,
     required TResult Function(int conversationId) deleteConversation,
     required TResult Function(int conversationId) selectConversation,
+    required TResult Function(
+            int conversationId, String lastMessage, String? title)
+        updateConversation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +35,8 @@ mixin _$ConversationEvent {
     TResult? Function()? createConversation,
     TResult? Function(int conversationId)? deleteConversation,
     TResult? Function(int conversationId)? selectConversation,
+    TResult? Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +46,8 @@ mixin _$ConversationEvent {
     TResult Function()? createConversation,
     TResult Function(int conversationId)? deleteConversation,
     TResult Function(int conversationId)? selectConversation,
+    TResult Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +58,7 @@ mixin _$ConversationEvent {
     required TResult Function(_CreateConversation value) createConversation,
     required TResult Function(_DeleteConversation value) deleteConversation,
     required TResult Function(_SelectConversation value) selectConversation,
+    required TResult Function(_UpdateConversation value) updateConversation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +68,7 @@ mixin _$ConversationEvent {
     TResult? Function(_CreateConversation value)? createConversation,
     TResult? Function(_DeleteConversation value)? deleteConversation,
     TResult? Function(_SelectConversation value)? selectConversation,
+    TResult? Function(_UpdateConversation value)? updateConversation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +78,7 @@ mixin _$ConversationEvent {
     TResult Function(_CreateConversation value)? createConversation,
     TResult Function(_DeleteConversation value)? deleteConversation,
     TResult Function(_SelectConversation value)? selectConversation,
+    TResult Function(_UpdateConversation value)? updateConversation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +144,9 @@ class _$_Started implements _Started {
     required TResult Function() createConversation,
     required TResult Function(int conversationId) deleteConversation,
     required TResult Function(int conversationId) selectConversation,
+    required TResult Function(
+            int conversationId, String lastMessage, String? title)
+        updateConversation,
   }) {
     return stated();
   }
@@ -146,6 +159,8 @@ class _$_Started implements _Started {
     TResult? Function()? createConversation,
     TResult? Function(int conversationId)? deleteConversation,
     TResult? Function(int conversationId)? selectConversation,
+    TResult? Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
   }) {
     return stated?.call();
   }
@@ -158,6 +173,8 @@ class _$_Started implements _Started {
     TResult Function()? createConversation,
     TResult Function(int conversationId)? deleteConversation,
     TResult Function(int conversationId)? selectConversation,
+    TResult Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
     required TResult orElse(),
   }) {
     if (stated != null) {
@@ -174,6 +191,7 @@ class _$_Started implements _Started {
     required TResult Function(_CreateConversation value) createConversation,
     required TResult Function(_DeleteConversation value) deleteConversation,
     required TResult Function(_SelectConversation value) selectConversation,
+    required TResult Function(_UpdateConversation value) updateConversation,
   }) {
     return stated(this);
   }
@@ -186,6 +204,7 @@ class _$_Started implements _Started {
     TResult? Function(_CreateConversation value)? createConversation,
     TResult? Function(_DeleteConversation value)? deleteConversation,
     TResult? Function(_SelectConversation value)? selectConversation,
+    TResult? Function(_UpdateConversation value)? updateConversation,
   }) {
     return stated?.call(this);
   }
@@ -198,6 +217,7 @@ class _$_Started implements _Started {
     TResult Function(_CreateConversation value)? createConversation,
     TResult Function(_DeleteConversation value)? deleteConversation,
     TResult Function(_SelectConversation value)? selectConversation,
+    TResult Function(_UpdateConversation value)? updateConversation,
     required TResult orElse(),
   }) {
     if (stated != null) {
@@ -254,6 +274,9 @@ class _$_GetConversation implements _GetConversation {
     required TResult Function() createConversation,
     required TResult Function(int conversationId) deleteConversation,
     required TResult Function(int conversationId) selectConversation,
+    required TResult Function(
+            int conversationId, String lastMessage, String? title)
+        updateConversation,
   }) {
     return getConversation();
   }
@@ -266,6 +289,8 @@ class _$_GetConversation implements _GetConversation {
     TResult? Function()? createConversation,
     TResult? Function(int conversationId)? deleteConversation,
     TResult? Function(int conversationId)? selectConversation,
+    TResult? Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
   }) {
     return getConversation?.call();
   }
@@ -278,6 +303,8 @@ class _$_GetConversation implements _GetConversation {
     TResult Function()? createConversation,
     TResult Function(int conversationId)? deleteConversation,
     TResult Function(int conversationId)? selectConversation,
+    TResult Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
     required TResult orElse(),
   }) {
     if (getConversation != null) {
@@ -294,6 +321,7 @@ class _$_GetConversation implements _GetConversation {
     required TResult Function(_CreateConversation value) createConversation,
     required TResult Function(_DeleteConversation value) deleteConversation,
     required TResult Function(_SelectConversation value) selectConversation,
+    required TResult Function(_UpdateConversation value) updateConversation,
   }) {
     return getConversation(this);
   }
@@ -306,6 +334,7 @@ class _$_GetConversation implements _GetConversation {
     TResult? Function(_CreateConversation value)? createConversation,
     TResult? Function(_DeleteConversation value)? deleteConversation,
     TResult? Function(_SelectConversation value)? selectConversation,
+    TResult? Function(_UpdateConversation value)? updateConversation,
   }) {
     return getConversation?.call(this);
   }
@@ -318,6 +347,7 @@ class _$_GetConversation implements _GetConversation {
     TResult Function(_CreateConversation value)? createConversation,
     TResult Function(_DeleteConversation value)? deleteConversation,
     TResult Function(_SelectConversation value)? selectConversation,
+    TResult Function(_UpdateConversation value)? updateConversation,
     required TResult orElse(),
   }) {
     if (getConversation != null) {
@@ -374,6 +404,9 @@ class _$_CreateConversation implements _CreateConversation {
     required TResult Function() createConversation,
     required TResult Function(int conversationId) deleteConversation,
     required TResult Function(int conversationId) selectConversation,
+    required TResult Function(
+            int conversationId, String lastMessage, String? title)
+        updateConversation,
   }) {
     return createConversation();
   }
@@ -386,6 +419,8 @@ class _$_CreateConversation implements _CreateConversation {
     TResult? Function()? createConversation,
     TResult? Function(int conversationId)? deleteConversation,
     TResult? Function(int conversationId)? selectConversation,
+    TResult? Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
   }) {
     return createConversation?.call();
   }
@@ -398,6 +433,8 @@ class _$_CreateConversation implements _CreateConversation {
     TResult Function()? createConversation,
     TResult Function(int conversationId)? deleteConversation,
     TResult Function(int conversationId)? selectConversation,
+    TResult Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
     required TResult orElse(),
   }) {
     if (createConversation != null) {
@@ -414,6 +451,7 @@ class _$_CreateConversation implements _CreateConversation {
     required TResult Function(_CreateConversation value) createConversation,
     required TResult Function(_DeleteConversation value) deleteConversation,
     required TResult Function(_SelectConversation value) selectConversation,
+    required TResult Function(_UpdateConversation value) updateConversation,
   }) {
     return createConversation(this);
   }
@@ -426,6 +464,7 @@ class _$_CreateConversation implements _CreateConversation {
     TResult? Function(_CreateConversation value)? createConversation,
     TResult? Function(_DeleteConversation value)? deleteConversation,
     TResult? Function(_SelectConversation value)? selectConversation,
+    TResult? Function(_UpdateConversation value)? updateConversation,
   }) {
     return createConversation?.call(this);
   }
@@ -438,6 +477,7 @@ class _$_CreateConversation implements _CreateConversation {
     TResult Function(_CreateConversation value)? createConversation,
     TResult Function(_DeleteConversation value)? deleteConversation,
     TResult Function(_SelectConversation value)? selectConversation,
+    TResult Function(_UpdateConversation value)? updateConversation,
     required TResult orElse(),
   }) {
     if (createConversation != null) {
@@ -522,6 +562,9 @@ class _$_DeleteConversation implements _DeleteConversation {
     required TResult Function() createConversation,
     required TResult Function(int conversationId) deleteConversation,
     required TResult Function(int conversationId) selectConversation,
+    required TResult Function(
+            int conversationId, String lastMessage, String? title)
+        updateConversation,
   }) {
     return deleteConversation(conversationId);
   }
@@ -534,6 +577,8 @@ class _$_DeleteConversation implements _DeleteConversation {
     TResult? Function()? createConversation,
     TResult? Function(int conversationId)? deleteConversation,
     TResult? Function(int conversationId)? selectConversation,
+    TResult? Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
   }) {
     return deleteConversation?.call(conversationId);
   }
@@ -546,6 +591,8 @@ class _$_DeleteConversation implements _DeleteConversation {
     TResult Function()? createConversation,
     TResult Function(int conversationId)? deleteConversation,
     TResult Function(int conversationId)? selectConversation,
+    TResult Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
     required TResult orElse(),
   }) {
     if (deleteConversation != null) {
@@ -562,6 +609,7 @@ class _$_DeleteConversation implements _DeleteConversation {
     required TResult Function(_CreateConversation value) createConversation,
     required TResult Function(_DeleteConversation value) deleteConversation,
     required TResult Function(_SelectConversation value) selectConversation,
+    required TResult Function(_UpdateConversation value) updateConversation,
   }) {
     return deleteConversation(this);
   }
@@ -574,6 +622,7 @@ class _$_DeleteConversation implements _DeleteConversation {
     TResult? Function(_CreateConversation value)? createConversation,
     TResult? Function(_DeleteConversation value)? deleteConversation,
     TResult? Function(_SelectConversation value)? selectConversation,
+    TResult? Function(_UpdateConversation value)? updateConversation,
   }) {
     return deleteConversation?.call(this);
   }
@@ -586,6 +635,7 @@ class _$_DeleteConversation implements _DeleteConversation {
     TResult Function(_CreateConversation value)? createConversation,
     TResult Function(_DeleteConversation value)? deleteConversation,
     TResult Function(_SelectConversation value)? selectConversation,
+    TResult Function(_UpdateConversation value)? updateConversation,
     required TResult orElse(),
   }) {
     if (deleteConversation != null) {
@@ -676,6 +726,9 @@ class _$_SelectConversation implements _SelectConversation {
     required TResult Function() createConversation,
     required TResult Function(int conversationId) deleteConversation,
     required TResult Function(int conversationId) selectConversation,
+    required TResult Function(
+            int conversationId, String lastMessage, String? title)
+        updateConversation,
   }) {
     return selectConversation(conversationId);
   }
@@ -688,6 +741,8 @@ class _$_SelectConversation implements _SelectConversation {
     TResult? Function()? createConversation,
     TResult? Function(int conversationId)? deleteConversation,
     TResult? Function(int conversationId)? selectConversation,
+    TResult? Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
   }) {
     return selectConversation?.call(conversationId);
   }
@@ -700,6 +755,8 @@ class _$_SelectConversation implements _SelectConversation {
     TResult Function()? createConversation,
     TResult Function(int conversationId)? deleteConversation,
     TResult Function(int conversationId)? selectConversation,
+    TResult Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
     required TResult orElse(),
   }) {
     if (selectConversation != null) {
@@ -716,6 +773,7 @@ class _$_SelectConversation implements _SelectConversation {
     required TResult Function(_CreateConversation value) createConversation,
     required TResult Function(_DeleteConversation value) deleteConversation,
     required TResult Function(_SelectConversation value) selectConversation,
+    required TResult Function(_UpdateConversation value) updateConversation,
   }) {
     return selectConversation(this);
   }
@@ -728,6 +786,7 @@ class _$_SelectConversation implements _SelectConversation {
     TResult? Function(_CreateConversation value)? createConversation,
     TResult? Function(_DeleteConversation value)? deleteConversation,
     TResult? Function(_SelectConversation value)? selectConversation,
+    TResult? Function(_UpdateConversation value)? updateConversation,
   }) {
     return selectConversation?.call(this);
   }
@@ -740,6 +799,7 @@ class _$_SelectConversation implements _SelectConversation {
     TResult Function(_CreateConversation value)? createConversation,
     TResult Function(_DeleteConversation value)? deleteConversation,
     TResult Function(_SelectConversation value)? selectConversation,
+    TResult Function(_UpdateConversation value)? updateConversation,
     required TResult orElse(),
   }) {
     if (selectConversation != null) {
@@ -756,6 +816,193 @@ abstract class _SelectConversation implements ConversationEvent {
   int get conversationId;
   @JsonKey(ignore: true)
   _$$_SelectConversationCopyWith<_$_SelectConversation> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_UpdateConversationCopyWith<$Res> {
+  factory _$$_UpdateConversationCopyWith(_$_UpdateConversation value,
+          $Res Function(_$_UpdateConversation) then) =
+      __$$_UpdateConversationCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int conversationId, String lastMessage, String? title});
+}
+
+/// @nodoc
+class __$$_UpdateConversationCopyWithImpl<$Res>
+    extends _$ConversationEventCopyWithImpl<$Res, _$_UpdateConversation>
+    implements _$$_UpdateConversationCopyWith<$Res> {
+  __$$_UpdateConversationCopyWithImpl(
+      _$_UpdateConversation _value, $Res Function(_$_UpdateConversation) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? conversationId = null,
+    Object? lastMessage = null,
+    Object? title = freezed,
+  }) {
+    return _then(_$_UpdateConversation(
+      conversationId: null == conversationId
+          ? _value.conversationId
+          : conversationId // ignore: cast_nullable_to_non_nullable
+              as int,
+      lastMessage: null == lastMessage
+          ? _value.lastMessage
+          : lastMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateConversation implements _UpdateConversation {
+  const _$_UpdateConversation(
+      {required this.conversationId, required this.lastMessage, this.title});
+
+  @override
+  final int conversationId;
+  @override
+  final String lastMessage;
+  @override
+  final String? title;
+
+  @override
+  String toString() {
+    return 'ConversationEvent.updateConversation(conversationId: $conversationId, lastMessage: $lastMessage, title: $title)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateConversation &&
+            (identical(other.conversationId, conversationId) ||
+                other.conversationId == conversationId) &&
+            (identical(other.lastMessage, lastMessage) ||
+                other.lastMessage == lastMessage) &&
+            (identical(other.title, title) || other.title == title));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, conversationId, lastMessage, title);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UpdateConversationCopyWith<_$_UpdateConversation> get copyWith =>
+      __$$_UpdateConversationCopyWithImpl<_$_UpdateConversation>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() stated,
+    required TResult Function() getConversation,
+    required TResult Function() createConversation,
+    required TResult Function(int conversationId) deleteConversation,
+    required TResult Function(int conversationId) selectConversation,
+    required TResult Function(
+            int conversationId, String lastMessage, String? title)
+        updateConversation,
+  }) {
+    return updateConversation(conversationId, lastMessage, title);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? stated,
+    TResult? Function()? getConversation,
+    TResult? Function()? createConversation,
+    TResult? Function(int conversationId)? deleteConversation,
+    TResult? Function(int conversationId)? selectConversation,
+    TResult? Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
+  }) {
+    return updateConversation?.call(conversationId, lastMessage, title);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? stated,
+    TResult Function()? getConversation,
+    TResult Function()? createConversation,
+    TResult Function(int conversationId)? deleteConversation,
+    TResult Function(int conversationId)? selectConversation,
+    TResult Function(int conversationId, String lastMessage, String? title)?
+        updateConversation,
+    required TResult orElse(),
+  }) {
+    if (updateConversation != null) {
+      return updateConversation(conversationId, lastMessage, title);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) stated,
+    required TResult Function(_GetConversation value) getConversation,
+    required TResult Function(_CreateConversation value) createConversation,
+    required TResult Function(_DeleteConversation value) deleteConversation,
+    required TResult Function(_SelectConversation value) selectConversation,
+    required TResult Function(_UpdateConversation value) updateConversation,
+  }) {
+    return updateConversation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? stated,
+    TResult? Function(_GetConversation value)? getConversation,
+    TResult? Function(_CreateConversation value)? createConversation,
+    TResult? Function(_DeleteConversation value)? deleteConversation,
+    TResult? Function(_SelectConversation value)? selectConversation,
+    TResult? Function(_UpdateConversation value)? updateConversation,
+  }) {
+    return updateConversation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? stated,
+    TResult Function(_GetConversation value)? getConversation,
+    TResult Function(_CreateConversation value)? createConversation,
+    TResult Function(_DeleteConversation value)? deleteConversation,
+    TResult Function(_SelectConversation value)? selectConversation,
+    TResult Function(_UpdateConversation value)? updateConversation,
+    required TResult orElse(),
+  }) {
+    if (updateConversation != null) {
+      return updateConversation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateConversation implements ConversationEvent {
+  const factory _UpdateConversation(
+      {required final int conversationId,
+      required final String lastMessage,
+      final String? title}) = _$_UpdateConversation;
+
+  int get conversationId;
+  String get lastMessage;
+  String? get title;
+  @JsonKey(ignore: true)
+  _$$_UpdateConversationCopyWith<_$_UpdateConversation> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -781,6 +1028,10 @@ mixin _$ConversationState {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -799,6 +1050,9 @@ mixin _$ConversationState {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -817,6 +1071,9 @@ mixin _$ConversationState {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) =>
@@ -840,6 +1097,10 @@ mixin _$ConversationState {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -860,6 +1121,10 @@ mixin _$ConversationState {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -877,6 +1142,9 @@ mixin _$ConversationState {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) =>
@@ -1015,6 +1283,10 @@ class _$_Initial extends _Initial {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return initial(data);
@@ -1036,6 +1308,9 @@ class _$_Initial extends _Initial {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return initial?.call(data);
@@ -1057,6 +1332,9 @@ class _$_Initial extends _Initial {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -1086,6 +1364,10 @@ class _$_Initial extends _Initial {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return initial(this);
@@ -1109,6 +1391,10 @@ class _$_Initial extends _Initial {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return initial?.call(this);
@@ -1129,6 +1415,9 @@ class _$_Initial extends _Initial {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -1239,6 +1528,10 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return getConversationSuccess(data);
@@ -1260,6 +1553,9 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return getConversationSuccess?.call(data);
@@ -1281,6 +1577,9 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -1310,6 +1609,10 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return getConversationSuccess(this);
@@ -1333,6 +1636,10 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return getConversationSuccess?.call(this);
@@ -1353,6 +1660,9 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -1472,6 +1782,10 @@ class _$_GetConversationFailed extends _GetConversationFailed {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return getConversationFailed(data, message);
@@ -1493,6 +1807,9 @@ class _$_GetConversationFailed extends _GetConversationFailed {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return getConversationFailed?.call(data, message);
@@ -1514,6 +1831,9 @@ class _$_GetConversationFailed extends _GetConversationFailed {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -1543,6 +1863,10 @@ class _$_GetConversationFailed extends _GetConversationFailed {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return getConversationFailed(this);
@@ -1566,6 +1890,10 @@ class _$_GetConversationFailed extends _GetConversationFailed {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return getConversationFailed?.call(this);
@@ -1586,6 +1914,9 @@ class _$_GetConversationFailed extends _GetConversationFailed {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -1700,6 +2031,10 @@ class _$_CreateConversationSuccess extends _CreateConversationSuccess {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return createConversationSuccess(data);
@@ -1721,6 +2056,9 @@ class _$_CreateConversationSuccess extends _CreateConversationSuccess {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return createConversationSuccess?.call(data);
@@ -1742,6 +2080,9 @@ class _$_CreateConversationSuccess extends _CreateConversationSuccess {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -1771,6 +2112,10 @@ class _$_CreateConversationSuccess extends _CreateConversationSuccess {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return createConversationSuccess(this);
@@ -1794,6 +2139,10 @@ class _$_CreateConversationSuccess extends _CreateConversationSuccess {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return createConversationSuccess?.call(this);
@@ -1814,6 +2163,9 @@ class _$_CreateConversationSuccess extends _CreateConversationSuccess {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -1935,6 +2287,10 @@ class _$_CreateConversationFailed extends _CreateConversationFailed {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return createConversationFailed(data, message);
@@ -1956,6 +2312,9 @@ class _$_CreateConversationFailed extends _CreateConversationFailed {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return createConversationFailed?.call(data, message);
@@ -1977,6 +2336,9 @@ class _$_CreateConversationFailed extends _CreateConversationFailed {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -2006,6 +2368,10 @@ class _$_CreateConversationFailed extends _CreateConversationFailed {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return createConversationFailed(this);
@@ -2029,6 +2395,10 @@ class _$_CreateConversationFailed extends _CreateConversationFailed {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return createConversationFailed?.call(this);
@@ -2049,6 +2419,9 @@ class _$_CreateConversationFailed extends _CreateConversationFailed {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -2163,6 +2536,10 @@ class _$_DeleteConversationSuccess extends _DeleteConversationSuccess {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return deleteConversationSuccess(data);
@@ -2184,6 +2561,9 @@ class _$_DeleteConversationSuccess extends _DeleteConversationSuccess {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return deleteConversationSuccess?.call(data);
@@ -2205,6 +2585,9 @@ class _$_DeleteConversationSuccess extends _DeleteConversationSuccess {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -2234,6 +2617,10 @@ class _$_DeleteConversationSuccess extends _DeleteConversationSuccess {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return deleteConversationSuccess(this);
@@ -2257,6 +2644,10 @@ class _$_DeleteConversationSuccess extends _DeleteConversationSuccess {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return deleteConversationSuccess?.call(this);
@@ -2277,6 +2668,9 @@ class _$_DeleteConversationSuccess extends _DeleteConversationSuccess {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -2398,6 +2792,10 @@ class _$_DeleteConversationFailed extends _DeleteConversationFailed {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return deleteConversationFailed(data, message);
@@ -2419,6 +2817,9 @@ class _$_DeleteConversationFailed extends _DeleteConversationFailed {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return deleteConversationFailed?.call(data, message);
@@ -2440,6 +2841,9 @@ class _$_DeleteConversationFailed extends _DeleteConversationFailed {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -2469,6 +2873,10 @@ class _$_DeleteConversationFailed extends _DeleteConversationFailed {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return deleteConversationFailed(this);
@@ -2492,6 +2900,10 @@ class _$_DeleteConversationFailed extends _DeleteConversationFailed {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return deleteConversationFailed?.call(this);
@@ -2512,6 +2924,9 @@ class _$_DeleteConversationFailed extends _DeleteConversationFailed {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -2637,6 +3052,10 @@ class _$_SelectConversationSuccess extends _SelectConversationSuccess {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return selectConversationSuccess(data, conversationId);
@@ -2658,6 +3077,9 @@ class _$_SelectConversationSuccess extends _SelectConversationSuccess {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return selectConversationSuccess?.call(data, conversationId);
@@ -2679,6 +3101,9 @@ class _$_SelectConversationSuccess extends _SelectConversationSuccess {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -2708,6 +3133,10 @@ class _$_SelectConversationSuccess extends _SelectConversationSuccess {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return selectConversationSuccess(this);
@@ -2731,6 +3160,10 @@ class _$_SelectConversationSuccess extends _SelectConversationSuccess {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return selectConversationSuccess?.call(this);
@@ -2751,6 +3184,9 @@ class _$_SelectConversationSuccess extends _SelectConversationSuccess {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -2864,6 +3300,10 @@ class _$_SelectConversationFailed extends _SelectConversationFailed {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return selectConversationFailed(data);
@@ -2885,6 +3325,9 @@ class _$_SelectConversationFailed extends _SelectConversationFailed {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return selectConversationFailed?.call(data);
@@ -2906,6 +3349,9 @@ class _$_SelectConversationFailed extends _SelectConversationFailed {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -2935,6 +3381,10 @@ class _$_SelectConversationFailed extends _SelectConversationFailed {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return selectConversationFailed(this);
@@ -2958,6 +3408,10 @@ class _$_SelectConversationFailed extends _SelectConversationFailed {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return selectConversationFailed?.call(this);
@@ -2978,6 +3432,9 @@ class _$_SelectConversationFailed extends _SelectConversationFailed {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
@@ -2999,6 +3456,511 @@ abstract class _SelectConversationFailed extends ConversationState {
   @override
   @JsonKey(ignore: true)
   _$$_SelectConversationFailedCopyWith<_$_SelectConversationFailed>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_UpdateConversationSuccessCopyWith<$Res>
+    implements $ConversationStateCopyWith<$Res> {
+  factory _$$_UpdateConversationSuccessCopyWith(
+          _$_UpdateConversationSuccess value,
+          $Res Function(_$_UpdateConversationSuccess) then) =
+      __$$_UpdateConversationSuccessCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ConversationModalState data});
+
+  @override
+  $ConversationModalStateCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$_UpdateConversationSuccessCopyWithImpl<$Res>
+    extends _$ConversationStateCopyWithImpl<$Res, _$_UpdateConversationSuccess>
+    implements _$$_UpdateConversationSuccessCopyWith<$Res> {
+  __$$_UpdateConversationSuccessCopyWithImpl(
+      _$_UpdateConversationSuccess _value,
+      $Res Function(_$_UpdateConversationSuccess) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$_UpdateConversationSuccess(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ConversationModalState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateConversationSuccess extends _UpdateConversationSuccess {
+  const _$_UpdateConversationSuccess({required this.data}) : super._();
+
+  @override
+  final ConversationModalState data;
+
+  @override
+  String toString() {
+    return 'ConversationState.updateConversationSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateConversationSuccess &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UpdateConversationSuccessCopyWith<_$_UpdateConversationSuccess>
+      get copyWith => __$$_UpdateConversationSuccessCopyWithImpl<
+          _$_UpdateConversationSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ConversationModalState data) initial,
+    required TResult Function(ConversationModalState data)
+        getConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        getConversationFailed,
+    required TResult Function(ConversationModalState data)
+        createConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        createConversationFailed,
+    required TResult Function(ConversationModalState data)
+        deleteConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        deleteConversationFailed,
+    required TResult Function(ConversationModalState data, int conversationId)
+        selectConversationSuccess,
+    required TResult Function(ConversationModalState data)
+        selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
+    required TResult Function(ConversationModalState data) loading,
+  }) {
+    return updateConversationSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ConversationModalState data)? initial,
+    TResult? Function(ConversationModalState data)? getConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        getConversationFailed,
+    TResult? Function(ConversationModalState data)? createConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        createConversationFailed,
+    TResult? Function(ConversationModalState data)? deleteConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        deleteConversationFailed,
+    TResult? Function(ConversationModalState data, int conversationId)?
+        selectConversationSuccess,
+    TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
+    TResult? Function(ConversationModalState data)? loading,
+  }) {
+    return updateConversationSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ConversationModalState data)? initial,
+    TResult Function(ConversationModalState data)? getConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        getConversationFailed,
+    TResult Function(ConversationModalState data)? createConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        createConversationFailed,
+    TResult Function(ConversationModalState data)? deleteConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        deleteConversationFailed,
+    TResult Function(ConversationModalState data, int conversationId)?
+        selectConversationSuccess,
+    TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
+    TResult Function(ConversationModalState data)? loading,
+    required TResult orElse(),
+  }) {
+    if (updateConversationSuccess != null) {
+      return updateConversationSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFailed,
+    required TResult Function(_CreateConversationSuccess value)
+        createConversationSuccess,
+    required TResult Function(_CreateConversationFailed value)
+        createConversationFailed,
+    required TResult Function(_DeleteConversationSuccess value)
+        deleteConversationSuccess,
+    required TResult Function(_DeleteConversationFailed value)
+        deleteConversationFailed,
+    required TResult Function(_SelectConversationSuccess value)
+        selectConversationSuccess,
+    required TResult Function(_SelectConversationFailed value)
+        selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
+    required TResult Function(_Loading value) loading,
+  }) {
+    return updateConversationSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFailed,
+    TResult? Function(_CreateConversationSuccess value)?
+        createConversationSuccess,
+    TResult? Function(_CreateConversationFailed value)?
+        createConversationFailed,
+    TResult? Function(_DeleteConversationSuccess value)?
+        deleteConversationSuccess,
+    TResult? Function(_DeleteConversationFailed value)?
+        deleteConversationFailed,
+    TResult? Function(_SelectConversationSuccess value)?
+        selectConversationSuccess,
+    TResult? Function(_SelectConversationFailed value)?
+        selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
+    TResult? Function(_Loading value)? loading,
+  }) {
+    return updateConversationSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFailed,
+    TResult Function(_CreateConversationSuccess value)?
+        createConversationSuccess,
+    TResult Function(_CreateConversationFailed value)? createConversationFailed,
+    TResult Function(_DeleteConversationSuccess value)?
+        deleteConversationSuccess,
+    TResult Function(_DeleteConversationFailed value)? deleteConversationFailed,
+    TResult Function(_SelectConversationSuccess value)?
+        selectConversationSuccess,
+    TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
+    TResult Function(_Loading value)? loading,
+    required TResult orElse(),
+  }) {
+    if (updateConversationSuccess != null) {
+      return updateConversationSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateConversationSuccess extends ConversationState {
+  const factory _UpdateConversationSuccess(
+          {required final ConversationModalState data}) =
+      _$_UpdateConversationSuccess;
+  const _UpdateConversationSuccess._() : super._();
+
+  @override
+  ConversationModalState get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$_UpdateConversationSuccessCopyWith<_$_UpdateConversationSuccess>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_UpdateConversationFailedCopyWith<$Res>
+    implements $ConversationStateCopyWith<$Res> {
+  factory _$$_UpdateConversationFailedCopyWith(
+          _$_UpdateConversationFailed value,
+          $Res Function(_$_UpdateConversationFailed) then) =
+      __$$_UpdateConversationFailedCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ConversationModalState data, String message});
+
+  @override
+  $ConversationModalStateCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$_UpdateConversationFailedCopyWithImpl<$Res>
+    extends _$ConversationStateCopyWithImpl<$Res, _$_UpdateConversationFailed>
+    implements _$$_UpdateConversationFailedCopyWith<$Res> {
+  __$$_UpdateConversationFailedCopyWithImpl(_$_UpdateConversationFailed _value,
+      $Res Function(_$_UpdateConversationFailed) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = null,
+  }) {
+    return _then(_$_UpdateConversationFailed(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ConversationModalState,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateConversationFailed extends _UpdateConversationFailed {
+  const _$_UpdateConversationFailed({required this.data, required this.message})
+      : super._();
+
+  @override
+  final ConversationModalState data;
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'ConversationState.updateConversationFailed(data: $data, message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateConversationFailed &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UpdateConversationFailedCopyWith<_$_UpdateConversationFailed>
+      get copyWith => __$$_UpdateConversationFailedCopyWithImpl<
+          _$_UpdateConversationFailed>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ConversationModalState data) initial,
+    required TResult Function(ConversationModalState data)
+        getConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        getConversationFailed,
+    required TResult Function(ConversationModalState data)
+        createConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        createConversationFailed,
+    required TResult Function(ConversationModalState data)
+        deleteConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        deleteConversationFailed,
+    required TResult Function(ConversationModalState data, int conversationId)
+        selectConversationSuccess,
+    required TResult Function(ConversationModalState data)
+        selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
+    required TResult Function(ConversationModalState data) loading,
+  }) {
+    return updateConversationFailed(data, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ConversationModalState data)? initial,
+    TResult? Function(ConversationModalState data)? getConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        getConversationFailed,
+    TResult? Function(ConversationModalState data)? createConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        createConversationFailed,
+    TResult? Function(ConversationModalState data)? deleteConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        deleteConversationFailed,
+    TResult? Function(ConversationModalState data, int conversationId)?
+        selectConversationSuccess,
+    TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
+    TResult? Function(ConversationModalState data)? loading,
+  }) {
+    return updateConversationFailed?.call(data, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ConversationModalState data)? initial,
+    TResult Function(ConversationModalState data)? getConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        getConversationFailed,
+    TResult Function(ConversationModalState data)? createConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        createConversationFailed,
+    TResult Function(ConversationModalState data)? deleteConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        deleteConversationFailed,
+    TResult Function(ConversationModalState data, int conversationId)?
+        selectConversationSuccess,
+    TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
+    TResult Function(ConversationModalState data)? loading,
+    required TResult orElse(),
+  }) {
+    if (updateConversationFailed != null) {
+      return updateConversationFailed(data, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFailed,
+    required TResult Function(_CreateConversationSuccess value)
+        createConversationSuccess,
+    required TResult Function(_CreateConversationFailed value)
+        createConversationFailed,
+    required TResult Function(_DeleteConversationSuccess value)
+        deleteConversationSuccess,
+    required TResult Function(_DeleteConversationFailed value)
+        deleteConversationFailed,
+    required TResult Function(_SelectConversationSuccess value)
+        selectConversationSuccess,
+    required TResult Function(_SelectConversationFailed value)
+        selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
+    required TResult Function(_Loading value) loading,
+  }) {
+    return updateConversationFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFailed,
+    TResult? Function(_CreateConversationSuccess value)?
+        createConversationSuccess,
+    TResult? Function(_CreateConversationFailed value)?
+        createConversationFailed,
+    TResult? Function(_DeleteConversationSuccess value)?
+        deleteConversationSuccess,
+    TResult? Function(_DeleteConversationFailed value)?
+        deleteConversationFailed,
+    TResult? Function(_SelectConversationSuccess value)?
+        selectConversationSuccess,
+    TResult? Function(_SelectConversationFailed value)?
+        selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
+    TResult? Function(_Loading value)? loading,
+  }) {
+    return updateConversationFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFailed,
+    TResult Function(_CreateConversationSuccess value)?
+        createConversationSuccess,
+    TResult Function(_CreateConversationFailed value)? createConversationFailed,
+    TResult Function(_DeleteConversationSuccess value)?
+        deleteConversationSuccess,
+    TResult Function(_DeleteConversationFailed value)? deleteConversationFailed,
+    TResult Function(_SelectConversationSuccess value)?
+        selectConversationSuccess,
+    TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
+    TResult Function(_Loading value)? loading,
+    required TResult orElse(),
+  }) {
+    if (updateConversationFailed != null) {
+      return updateConversationFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateConversationFailed extends ConversationState {
+  const factory _UpdateConversationFailed(
+      {required final ConversationModalState data,
+      required final String message}) = _$_UpdateConversationFailed;
+  const _UpdateConversationFailed._() : super._();
+
+  @override
+  ConversationModalState get data;
+  String get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$_UpdateConversationFailedCopyWith<_$_UpdateConversationFailed>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3087,6 +4049,10 @@ class _$_Loading extends _Loading {
         selectConversationSuccess,
     required TResult Function(ConversationModalState data)
         selectConversationFailed,
+    required TResult Function(ConversationModalState data)
+        updateConversationSuccess,
+    required TResult Function(ConversationModalState data, String message)
+        updateConversationFailed,
     required TResult Function(ConversationModalState data) loading,
   }) {
     return loading(data);
@@ -3108,6 +4074,9 @@ class _$_Loading extends _Loading {
     TResult? Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult? Function(ConversationModalState data)? selectConversationFailed,
+    TResult? Function(ConversationModalState data)? updateConversationSuccess,
+    TResult? Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult? Function(ConversationModalState data)? loading,
   }) {
     return loading?.call(data);
@@ -3129,6 +4098,9 @@ class _$_Loading extends _Loading {
     TResult Function(ConversationModalState data, int conversationId)?
         selectConversationSuccess,
     TResult Function(ConversationModalState data)? selectConversationFailed,
+    TResult Function(ConversationModalState data)? updateConversationSuccess,
+    TResult Function(ConversationModalState data, String message)?
+        updateConversationFailed,
     TResult Function(ConversationModalState data)? loading,
     required TResult orElse(),
   }) {
@@ -3158,6 +4130,10 @@ class _$_Loading extends _Loading {
         selectConversationSuccess,
     required TResult Function(_SelectConversationFailed value)
         selectConversationFailed,
+    required TResult Function(_UpdateConversationSuccess value)
+        updateConversationSuccess,
+    required TResult Function(_UpdateConversationFailed value)
+        updateConversationFailed,
     required TResult Function(_Loading value) loading,
   }) {
     return loading(this);
@@ -3181,6 +4157,10 @@ class _$_Loading extends _Loading {
         selectConversationSuccess,
     TResult? Function(_SelectConversationFailed value)?
         selectConversationFailed,
+    TResult? Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult? Function(_UpdateConversationFailed value)?
+        updateConversationFailed,
     TResult? Function(_Loading value)? loading,
   }) {
     return loading?.call(this);
@@ -3201,6 +4181,9 @@ class _$_Loading extends _Loading {
     TResult Function(_SelectConversationSuccess value)?
         selectConversationSuccess,
     TResult Function(_SelectConversationFailed value)? selectConversationFailed,
+    TResult Function(_UpdateConversationSuccess value)?
+        updateConversationSuccess,
+    TResult Function(_UpdateConversationFailed value)? updateConversationFailed,
     TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {

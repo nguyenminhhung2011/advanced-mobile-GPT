@@ -4,6 +4,7 @@ import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/cha
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/conversation/conversation.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_modal_state.dart';
+import 'package:advanced_mobile_gpt/core/components/extensions/string_extensions.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/loading_page.dart';
 import 'package:drag_ball/drag_ball.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/input_widget.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/message_item.dart';
+
+class MessageReturn {
+  final String title;
+  final String lastMessage;
+
+  MessageReturn({required this.title, required this.lastMessage});
+}
 
 class ChatBotView extends ConsumerStatefulWidget {
   const ChatBotView({super.key});
@@ -54,6 +62,18 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
     );
   }
 
+  void _pop() {
+    if (_chats.isNotEmpty) {
+      context.popArgs(
+        MessageReturn(
+            title: _chats.last.title.toHeaderConversation,
+            lastMessage: _chats.first.title),
+      );
+    } else {
+      context.pop();
+    }
+  }
+
   @override
   void dispose() {
     _textController.dispose();
@@ -73,6 +93,8 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
             onPositionChanged: (_) {},
             child: WillPopScope(
               onWillPop: () async {
+                context.closeErrorMessage();
+                _pop();
                 return true;
               },
               child: Stack(
@@ -117,7 +139,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         leading: IconButton(
-          onPressed: () => context.pop(),
+          onPressed: _pop,
           icon: const Icon(Icons.arrow_back),
         ),
         elevation: 0,

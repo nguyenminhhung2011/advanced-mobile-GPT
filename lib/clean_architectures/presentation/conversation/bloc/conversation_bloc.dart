@@ -27,6 +27,7 @@ class ConversationBloc extends Bloc<ConversationEvent, ConversationState> {
     on<_CreateConversation>(_onCreateConversation);
     on<_DeleteConversation>(_onDeleteConversation);
     on<_SelectConversation>(_onSelectConversation);
+    on<_UpdateConversation>(_onUpdateConversation);
   }
 
   ConversationModalState get data => state.data;
@@ -90,6 +91,33 @@ class ConversationBloc extends Bloc<ConversationEvent, ConversationState> {
           ),
         ),
       ),
+    );
+  }
+
+  FutureOr<void> _onUpdateConversation(
+    _UpdateConversation event,
+    Emitter<ConversationState> emit,
+  ) async {
+    emit(_Loading(data: data));
+    (await _conversationUserCase.updateConversation(
+            conversationId: event.conversationId,
+            title: event.title ??
+                data.conversations
+                    .firstWhere((element) => element.id == event.conversationId)
+                    .title,
+            lastMessage: event.lastMessage,
+            lastUpdated: DateTime.now()))
+        .fold(
+      (left) =>
+          emit(_UpdateConversationFailed(data: data, message: left.message)),
+      (right) => emit(_UpdateConversationSuccess(
+          data: data.copyWith(
+              conversations: data.conversations.map((e) {
+        if (e.id == right.id) {
+          return right;
+        }
+        return e;
+      }).toList()))),
     );
   }
 }

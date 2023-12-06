@@ -8,4 +8,6 @@ extension ColorExtension on String {
     buffer.write(hexString.replaceFirst('#', ''));
     return Color(int.parse(buffer.toString(), radix: 16));
   }
+
+  String get toHeaderConversation => length > 20 ? substring(0, 20) : this;
 }

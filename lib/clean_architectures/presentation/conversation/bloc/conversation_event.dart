@@ -13,4 +13,10 @@ class ConversationEvent with _$ConversationEvent {
 
   const factory ConversationEvent.selectConversation(
       {required int conversationId}) = _SelectConversation;
+
+  const factory ConversationEvent.updateConversation({
+    required int conversationId,
+    required String lastMessage,
+    String? title,
+  }) = _UpdateConversation;
 }

@@ -42,6 +42,14 @@ class ConversationState with _$ConversationState {
     required ConversationModalState data,
   }) = _SelectConversationFailed;
 
+  const factory ConversationState.updateConversationSuccess(
+      {required ConversationModalState data}) = _UpdateConversationSuccess;
+
+  const factory ConversationState.updateConversationFailed({
+    required ConversationModalState data,
+    required String message,
+  }) = _UpdateConversationFailed;
+
   const factory ConversationState.loading(
       {required ConversationModalState data}) = _Loading;
 

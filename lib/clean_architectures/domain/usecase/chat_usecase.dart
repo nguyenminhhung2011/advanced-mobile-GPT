@@ -47,10 +47,10 @@ class ChatUseCase {
     return Right(newChat.copyWith(id: saveResponseMess.right));
   }
 
-  Future<SResult<bool>> updateConversation({
+  Future<SResult<Conversation>> updateConversation({
     required int conversationId,
-    required String title,
     required String lastMessage,
+    required String title,
     required DateTime lastUpdated,
   }) async =>
       _conversationRepositories.updateConversation(

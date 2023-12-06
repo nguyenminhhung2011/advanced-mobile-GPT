@@ -33,6 +33,15 @@ class ConversationState with _$ConversationState {
     required String message,
   }) = _DeleteConversationFailed;
 
+  const factory ConversationState.selectConversationSuccess({
+    required ConversationModalState data,
+    required int conversationId,
+  }) = _SelectConversationSuccess;
+
+  const factory ConversationState.selectConversationFailed({
+    required ConversationModalState data,
+  }) = _SelectConversationFailed;
+
   const factory ConversationState.loading(
       {required ConversationModalState data}) = _Loading;
 

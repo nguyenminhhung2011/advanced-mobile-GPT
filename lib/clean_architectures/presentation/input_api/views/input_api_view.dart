@@ -75,6 +75,7 @@ class _InputApiViewState extends State<InputApiView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(GptConstant.content, style: _smallText),
+            const SizedBox(),
             _textBox(),
             ButtonCustom(
                 onPress: () => _bloc.saveApiKey(_controller.text),

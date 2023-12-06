@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/local/preferences.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/conversation/conversation.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/usecase/conversation_usecase.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_modal_state.dart';
@@ -25,9 +26,24 @@ class ConversationBloc extends Bloc<ConversationEvent, ConversationState> {
     on<_GetConversation>(_onGetConversation);
     on<_CreateConversation>(_onCreateConversation);
     on<_DeleteConversation>(_onDeleteConversation);
+    on<_SelectConversation>(_onSelectConversation);
   }
 
   ConversationModalState get data => state.data;
+
+  FutureOr<void> _onSelectConversation(
+    _SelectConversation event,
+    Emitter<ConversationState> emit,
+  ) async {
+    emit(_Loading(data: data));
+    if (CommonAppSettingPref.getAccessToken().isEmpty) {
+      return emit(_SelectConversationFailed(data: data));
+    }
+    return emit(
+      _SelectConversationSuccess(
+          data: data, conversationId: event.conversationId),
+    );
+  }
 
   FutureOr<void> _onGetConversation(
     _GetConversation event,

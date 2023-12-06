@@ -6,6 +6,7 @@ import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversatio
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/button_custom.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/loading_page.dart';
+import 'package:advanced_mobile_gpt/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,6 +39,9 @@ class _ConversationViewState extends State<ConversationView> {
           context.showSnackBar("🐛[Get conversation] $error"),
       createConversationFailed: (_, error) =>
           context.showSnackBar("🐛[Create conversation] $error"),
+      selectConversationFailed: (_) => context.apiKeyWarning(),
+      selectConversationSuccess: (_, id) =>
+          context.openPageWithRouteAndParams(Routes.chatBot, id),
       orElse: () {},
     );
   }
@@ -95,6 +99,10 @@ class _ConversationViewState extends State<ConversationView> {
               conversation: conversation,
               onDelete: () => _bloc.add(
                 ConversationEvent.deleteConversation(
+                    conversationId: conversation.id),
+              ),
+              onSelectConversation: () => _bloc.add(
+                ConversationEvent.selectConversation(
                     conversationId: conversation.id),
               ),
             );

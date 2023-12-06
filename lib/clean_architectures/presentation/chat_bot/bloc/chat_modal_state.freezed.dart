@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ChatModalState {
   List<Chat> get chats => throw _privateConstructorUsedError;
+  Conversation? get conversation => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatModalStateCopyWith<ChatModalState> get copyWith =>
@@ -29,7 +30,9 @@ abstract class $ChatModalStateCopyWith<$Res> {
           ChatModalState value, $Res Function(ChatModalState) then) =
       _$ChatModalStateCopyWithImpl<$Res, ChatModalState>;
   @useResult
-  $Res call({List<Chat> chats});
+  $Res call({List<Chat> chats, Conversation? conversation});
+
+  $ConversationCopyWith<$Res>? get conversation;
 }
 
 /// @nodoc
@@ -46,13 +49,30 @@ class _$ChatModalStateCopyWithImpl<$Res, $Val extends ChatModalState>
   @override
   $Res call({
     Object? chats = null,
+    Object? conversation = freezed,
   }) {
     return _then(_value.copyWith(
       chats: null == chats
           ? _value.chats
           : chats // ignore: cast_nullable_to_non_nullable
               as List<Chat>,
+      conversation: freezed == conversation
+          ? _value.conversation
+          : conversation // ignore: cast_nullable_to_non_nullable
+              as Conversation?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ConversationCopyWith<$Res>? get conversation {
+    if (_value.conversation == null) {
+      return null;
+    }
+
+    return $ConversationCopyWith<$Res>(_value.conversation!, (value) {
+      return _then(_value.copyWith(conversation: value) as $Val);
+    });
   }
 }
 
@@ -64,7 +84,10 @@ abstract class _$$_ChatModalStateCopyWith<$Res>
       __$$_ChatModalStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Chat> chats});
+  $Res call({List<Chat> chats, Conversation? conversation});
+
+  @override
+  $ConversationCopyWith<$Res>? get conversation;
 }
 
 /// @nodoc
@@ -79,12 +102,17 @@ class __$$_ChatModalStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? chats = null,
+    Object? conversation = freezed,
   }) {
     return _then(_$_ChatModalState(
       chats: null == chats
           ? _value._chats
           : chats // ignore: cast_nullable_to_non_nullable
               as List<Chat>,
+      conversation: freezed == conversation
+          ? _value.conversation
+          : conversation // ignore: cast_nullable_to_non_nullable
+              as Conversation?,
     ));
   }
 }
@@ -92,7 +120,8 @@ class __$$_ChatModalStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ChatModalState implements _ChatModalState {
-  const _$_ChatModalState({required final List<Chat> chats}) : _chats = chats;
+  const _$_ChatModalState({required final List<Chat> chats, this.conversation})
+      : _chats = chats;
 
   final List<Chat> _chats;
   @override
@@ -103,8 +132,11 @@ class _$_ChatModalState implements _ChatModalState {
   }
 
   @override
+  final Conversation? conversation;
+
+  @override
   String toString() {
-    return 'ChatModalState(chats: $chats)';
+    return 'ChatModalState(chats: $chats, conversation: $conversation)';
   }
 
   @override
@@ -112,12 +144,14 @@ class _$_ChatModalState implements _ChatModalState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ChatModalState &&
-            const DeepCollectionEquality().equals(other._chats, _chats));
+            const DeepCollectionEquality().equals(other._chats, _chats) &&
+            (identical(other.conversation, conversation) ||
+                other.conversation == conversation));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_chats));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_chats), conversation);
 
   @JsonKey(ignore: true)
   @override
@@ -127,11 +161,14 @@ class _$_ChatModalState implements _ChatModalState {
 }
 
 abstract class _ChatModalState implements ChatModalState {
-  const factory _ChatModalState({required final List<Chat> chats}) =
-      _$_ChatModalState;
+  const factory _ChatModalState(
+      {required final List<Chat> chats,
+      final Conversation? conversation}) = _$_ChatModalState;
 
   @override
   List<Chat> get chats;
+  @override
+  Conversation? get conversation;
   @override
   @JsonKey(ignore: true)
   _$$_ChatModalStateCopyWith<_$_ChatModalState> get copyWith =>

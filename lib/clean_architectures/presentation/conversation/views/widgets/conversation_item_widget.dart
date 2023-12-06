@@ -9,10 +9,12 @@ import 'package:flutter/material.dart';
 class ConversationItemWidget extends StatelessWidget {
   final Conversation conversation;
   final Function onDelete;
+  final Function onSelectConversation;
   const ConversationItemWidget({
     super.key,
     required this.conversation,
     required this.onDelete,
+    required this.onSelectConversation,
   });
 
   @override
@@ -28,8 +30,7 @@ class ConversationItemWidget extends StatelessWidget {
           onDelete.call();
         }
       },
-      onTap: () =>
-          context.openPageWithRouteAndParams(Routes.chatBot, conversation.id),
+      onTap: () => onSelectConversation.call(),
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.all(15.0),

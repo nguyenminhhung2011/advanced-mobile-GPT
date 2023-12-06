@@ -29,8 +29,22 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
         ) {
     on<_GetChat>(_onGetChat);
     on<_SendChat>(_onSendChat);
+    on<_GetConversation>(_onGetConversation);
   }
   ChatModalState get data => state.data;
+
+  FutureOr<void> _onGetConversation(
+    _GetConversation event,
+    Emitter<ChatState> emit,
+  ) async {
+    emit(_Loading(data: data));
+    (await _chatUseCase.getConversationById(_conversationId)).fold(
+      (left) => emit(_GetConversationFailed(data: data, message: left.message)),
+      (right) => emit(
+        _GetConversationSuccess(data: data.copyWith(conversation: right)),
+      ),
+    );
+  }
 
   FutureOr<void> _onGetChat(
     _GetChat event,

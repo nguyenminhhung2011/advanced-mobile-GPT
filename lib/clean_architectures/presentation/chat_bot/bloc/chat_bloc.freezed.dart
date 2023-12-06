@@ -21,6 +21,7 @@ mixin _$ChatEvent {
     required TResult Function() started,
     required TResult Function() getChat,
     required TResult Function(String content) sendChat,
+    required TResult Function() getConversation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$ChatEvent {
     TResult? Function()? started,
     TResult? Function()? getChat,
     TResult? Function(String content)? sendChat,
+    TResult? Function()? getConversation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$ChatEvent {
     TResult Function()? started,
     TResult Function()? getChat,
     TResult Function(String content)? sendChat,
+    TResult Function()? getConversation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$ChatEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_GetChat value) getChat,
     required TResult Function(_SendChat value) sendChat,
+    required TResult Function(_GetConversation value) getConversation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$ChatEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetChat value)? getChat,
     TResult? Function(_SendChat value)? sendChat,
+    TResult? Function(_GetConversation value)? getConversation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$ChatEvent {
     TResult Function(_Started value)? started,
     TResult Function(_GetChat value)? getChat,
     TResult Function(_SendChat value)? sendChat,
+    TResult Function(_GetConversation value)? getConversation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,6 +125,7 @@ class _$_Started implements _Started {
     required TResult Function() started,
     required TResult Function() getChat,
     required TResult Function(String content) sendChat,
+    required TResult Function() getConversation,
   }) {
     return started();
   }
@@ -129,6 +136,7 @@ class _$_Started implements _Started {
     TResult? Function()? started,
     TResult? Function()? getChat,
     TResult? Function(String content)? sendChat,
+    TResult? Function()? getConversation,
   }) {
     return started?.call();
   }
@@ -139,6 +147,7 @@ class _$_Started implements _Started {
     TResult Function()? started,
     TResult Function()? getChat,
     TResult Function(String content)? sendChat,
+    TResult Function()? getConversation,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -153,6 +162,7 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_GetChat value) getChat,
     required TResult Function(_SendChat value) sendChat,
+    required TResult Function(_GetConversation value) getConversation,
   }) {
     return started(this);
   }
@@ -163,6 +173,7 @@ class _$_Started implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetChat value)? getChat,
     TResult? Function(_SendChat value)? sendChat,
+    TResult? Function(_GetConversation value)? getConversation,
   }) {
     return started?.call(this);
   }
@@ -173,6 +184,7 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_GetChat value)? getChat,
     TResult Function(_SendChat value)? sendChat,
+    TResult Function(_GetConversation value)? getConversation,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -226,6 +238,7 @@ class _$_GetChat implements _GetChat {
     required TResult Function() started,
     required TResult Function() getChat,
     required TResult Function(String content) sendChat,
+    required TResult Function() getConversation,
   }) {
     return getChat();
   }
@@ -236,6 +249,7 @@ class _$_GetChat implements _GetChat {
     TResult? Function()? started,
     TResult? Function()? getChat,
     TResult? Function(String content)? sendChat,
+    TResult? Function()? getConversation,
   }) {
     return getChat?.call();
   }
@@ -246,6 +260,7 @@ class _$_GetChat implements _GetChat {
     TResult Function()? started,
     TResult Function()? getChat,
     TResult Function(String content)? sendChat,
+    TResult Function()? getConversation,
     required TResult orElse(),
   }) {
     if (getChat != null) {
@@ -260,6 +275,7 @@ class _$_GetChat implements _GetChat {
     required TResult Function(_Started value) started,
     required TResult Function(_GetChat value) getChat,
     required TResult Function(_SendChat value) sendChat,
+    required TResult Function(_GetConversation value) getConversation,
   }) {
     return getChat(this);
   }
@@ -270,6 +286,7 @@ class _$_GetChat implements _GetChat {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetChat value)? getChat,
     TResult? Function(_SendChat value)? sendChat,
+    TResult? Function(_GetConversation value)? getConversation,
   }) {
     return getChat?.call(this);
   }
@@ -280,6 +297,7 @@ class _$_GetChat implements _GetChat {
     TResult Function(_Started value)? started,
     TResult Function(_GetChat value)? getChat,
     TResult Function(_SendChat value)? sendChat,
+    TResult Function(_GetConversation value)? getConversation,
     required TResult orElse(),
   }) {
     if (getChat != null) {
@@ -360,6 +378,7 @@ class _$_SendChat implements _SendChat {
     required TResult Function() started,
     required TResult Function() getChat,
     required TResult Function(String content) sendChat,
+    required TResult Function() getConversation,
   }) {
     return sendChat(content);
   }
@@ -370,6 +389,7 @@ class _$_SendChat implements _SendChat {
     TResult? Function()? started,
     TResult? Function()? getChat,
     TResult? Function(String content)? sendChat,
+    TResult? Function()? getConversation,
   }) {
     return sendChat?.call(content);
   }
@@ -380,6 +400,7 @@ class _$_SendChat implements _SendChat {
     TResult Function()? started,
     TResult Function()? getChat,
     TResult Function(String content)? sendChat,
+    TResult Function()? getConversation,
     required TResult orElse(),
   }) {
     if (sendChat != null) {
@@ -394,6 +415,7 @@ class _$_SendChat implements _SendChat {
     required TResult Function(_Started value) started,
     required TResult Function(_GetChat value) getChat,
     required TResult Function(_SendChat value) sendChat,
+    required TResult Function(_GetConversation value) getConversation,
   }) {
     return sendChat(this);
   }
@@ -404,6 +426,7 @@ class _$_SendChat implements _SendChat {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetChat value)? getChat,
     TResult? Function(_SendChat value)? sendChat,
+    TResult? Function(_GetConversation value)? getConversation,
   }) {
     return sendChat?.call(this);
   }
@@ -414,6 +437,7 @@ class _$_SendChat implements _SendChat {
     TResult Function(_Started value)? started,
     TResult Function(_GetChat value)? getChat,
     TResult Function(_SendChat value)? sendChat,
+    TResult Function(_GetConversation value)? getConversation,
     required TResult orElse(),
   }) {
     if (sendChat != null) {
@@ -433,6 +457,120 @@ abstract class _SendChat implements ChatEvent {
 }
 
 /// @nodoc
+abstract class _$$_GetConversationCopyWith<$Res> {
+  factory _$$_GetConversationCopyWith(
+          _$_GetConversation value, $Res Function(_$_GetConversation) then) =
+      __$$_GetConversationCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GetConversationCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$_GetConversation>
+    implements _$$_GetConversationCopyWith<$Res> {
+  __$$_GetConversationCopyWithImpl(
+      _$_GetConversation _value, $Res Function(_$_GetConversation) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_GetConversation implements _GetConversation {
+  const _$_GetConversation();
+
+  @override
+  String toString() {
+    return 'ChatEvent.getConversation()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetConversation);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getChat,
+    required TResult Function(String content) sendChat,
+    required TResult Function() getConversation,
+  }) {
+    return getConversation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getChat,
+    TResult? Function(String content)? sendChat,
+    TResult? Function()? getConversation,
+  }) {
+    return getConversation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getChat,
+    TResult Function(String content)? sendChat,
+    TResult Function()? getConversation,
+    required TResult orElse(),
+  }) {
+    if (getConversation != null) {
+      return getConversation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetChat value) getChat,
+    required TResult Function(_SendChat value) sendChat,
+    required TResult Function(_GetConversation value) getConversation,
+  }) {
+    return getConversation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetChat value)? getChat,
+    TResult? Function(_SendChat value)? sendChat,
+    TResult? Function(_GetConversation value)? getConversation,
+  }) {
+    return getConversation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetChat value)? getChat,
+    TResult Function(_SendChat value)? sendChat,
+    TResult Function(_GetConversation value)? getConversation,
+    required TResult orElse(),
+  }) {
+    if (getConversation != null) {
+      return getConversation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetConversation implements ChatEvent {
+  const factory _GetConversation() = _$_GetConversation;
+}
+
+/// @nodoc
 mixin _$ChatState {
   ChatModalState get data => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -444,6 +582,9 @@ mixin _$ChatState {
     required TResult Function(ChatModalState data) sendChatSuccess,
     required TResult Function(ChatModalState data, String message)
         sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
     required TResult Function(ChatModalState data) loading,
     required TResult Function(ChatModalState data) loadingSend,
   }) =>
@@ -455,6 +596,9 @@ mixin _$ChatState {
     TResult? Function(ChatModalState data, String message)? getChatFailed,
     TResult? Function(ChatModalState data)? sendChatSuccess,
     TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult? Function(ChatModalState data)? loading,
     TResult? Function(ChatModalState data)? loadingSend,
   }) =>
@@ -466,6 +610,9 @@ mixin _$ChatState {
     TResult Function(ChatModalState data, String message)? getChatFailed,
     TResult Function(ChatModalState data)? sendChatSuccess,
     TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult Function(ChatModalState data)? loading,
     TResult Function(ChatModalState data)? loadingSend,
     required TResult orElse(),
@@ -478,6 +625,10 @@ mixin _$ChatState {
     required TResult Function(_GetChatFailed value) getChatFailed,
     required TResult Function(_SendChatSuccess value) sendChatSuccess,
     required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingSend value) loadingSend,
   }) =>
@@ -489,6 +640,8 @@ mixin _$ChatState {
     TResult? Function(_GetChatFailed value)? getChatFailed,
     TResult? Function(_SendChatSuccess value)? sendChatSuccess,
     TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingSend value)? loadingSend,
   }) =>
@@ -500,6 +653,8 @@ mixin _$ChatState {
     TResult Function(_GetChatFailed value)? getChatFailed,
     TResult Function(_SendChatSuccess value)? sendChatSuccess,
     TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingSend value)? loadingSend,
     required TResult orElse(),
@@ -627,6 +782,9 @@ class _$_Initial extends _Initial {
     required TResult Function(ChatModalState data) sendChatSuccess,
     required TResult Function(ChatModalState data, String message)
         sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
     required TResult Function(ChatModalState data) loading,
     required TResult Function(ChatModalState data) loadingSend,
   }) {
@@ -641,6 +799,9 @@ class _$_Initial extends _Initial {
     TResult? Function(ChatModalState data, String message)? getChatFailed,
     TResult? Function(ChatModalState data)? sendChatSuccess,
     TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult? Function(ChatModalState data)? loading,
     TResult? Function(ChatModalState data)? loadingSend,
   }) {
@@ -655,6 +816,9 @@ class _$_Initial extends _Initial {
     TResult Function(ChatModalState data, String message)? getChatFailed,
     TResult Function(ChatModalState data)? sendChatSuccess,
     TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult Function(ChatModalState data)? loading,
     TResult Function(ChatModalState data)? loadingSend,
     required TResult orElse(),
@@ -673,6 +837,10 @@ class _$_Initial extends _Initial {
     required TResult Function(_GetChatFailed value) getChatFailed,
     required TResult Function(_SendChatSuccess value) sendChatSuccess,
     required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingSend value) loadingSend,
   }) {
@@ -687,6 +855,8 @@ class _$_Initial extends _Initial {
     TResult? Function(_GetChatFailed value)? getChatFailed,
     TResult? Function(_SendChatSuccess value)? sendChatSuccess,
     TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingSend value)? loadingSend,
   }) {
@@ -701,6 +871,8 @@ class _$_Initial extends _Initial {
     TResult Function(_GetChatFailed value)? getChatFailed,
     TResult Function(_SendChatSuccess value)? sendChatSuccess,
     TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingSend value)? loadingSend,
     required TResult orElse(),
@@ -800,6 +972,9 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     required TResult Function(ChatModalState data) sendChatSuccess,
     required TResult Function(ChatModalState data, String message)
         sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
     required TResult Function(ChatModalState data) loading,
     required TResult Function(ChatModalState data) loadingSend,
   }) {
@@ -814,6 +989,9 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     TResult? Function(ChatModalState data, String message)? getChatFailed,
     TResult? Function(ChatModalState data)? sendChatSuccess,
     TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult? Function(ChatModalState data)? loading,
     TResult? Function(ChatModalState data)? loadingSend,
   }) {
@@ -828,6 +1006,9 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     TResult Function(ChatModalState data, String message)? getChatFailed,
     TResult Function(ChatModalState data)? sendChatSuccess,
     TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult Function(ChatModalState data)? loading,
     TResult Function(ChatModalState data)? loadingSend,
     required TResult orElse(),
@@ -846,6 +1027,10 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     required TResult Function(_GetChatFailed value) getChatFailed,
     required TResult Function(_SendChatSuccess value) sendChatSuccess,
     required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingSend value) loadingSend,
   }) {
@@ -860,6 +1045,8 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     TResult? Function(_GetChatFailed value)? getChatFailed,
     TResult? Function(_SendChatSuccess value)? sendChatSuccess,
     TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingSend value)? loadingSend,
   }) {
@@ -874,6 +1061,8 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     TResult Function(_GetChatFailed value)? getChatFailed,
     TResult Function(_SendChatSuccess value)? sendChatSuccess,
     TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingSend value)? loadingSend,
     required TResult orElse(),
@@ -983,6 +1172,9 @@ class _$_GetChatFailed extends _GetChatFailed {
     required TResult Function(ChatModalState data) sendChatSuccess,
     required TResult Function(ChatModalState data, String message)
         sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
     required TResult Function(ChatModalState data) loading,
     required TResult Function(ChatModalState data) loadingSend,
   }) {
@@ -997,6 +1189,9 @@ class _$_GetChatFailed extends _GetChatFailed {
     TResult? Function(ChatModalState data, String message)? getChatFailed,
     TResult? Function(ChatModalState data)? sendChatSuccess,
     TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult? Function(ChatModalState data)? loading,
     TResult? Function(ChatModalState data)? loadingSend,
   }) {
@@ -1011,6 +1206,9 @@ class _$_GetChatFailed extends _GetChatFailed {
     TResult Function(ChatModalState data, String message)? getChatFailed,
     TResult Function(ChatModalState data)? sendChatSuccess,
     TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult Function(ChatModalState data)? loading,
     TResult Function(ChatModalState data)? loadingSend,
     required TResult orElse(),
@@ -1029,6 +1227,10 @@ class _$_GetChatFailed extends _GetChatFailed {
     required TResult Function(_GetChatFailed value) getChatFailed,
     required TResult Function(_SendChatSuccess value) sendChatSuccess,
     required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingSend value) loadingSend,
   }) {
@@ -1043,6 +1245,8 @@ class _$_GetChatFailed extends _GetChatFailed {
     TResult? Function(_GetChatFailed value)? getChatFailed,
     TResult? Function(_SendChatSuccess value)? sendChatSuccess,
     TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingSend value)? loadingSend,
   }) {
@@ -1057,6 +1261,8 @@ class _$_GetChatFailed extends _GetChatFailed {
     TResult Function(_GetChatFailed value)? getChatFailed,
     TResult Function(_SendChatSuccess value)? sendChatSuccess,
     TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingSend value)? loadingSend,
     required TResult orElse(),
@@ -1159,6 +1365,9 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     required TResult Function(ChatModalState data) sendChatSuccess,
     required TResult Function(ChatModalState data, String message)
         sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
     required TResult Function(ChatModalState data) loading,
     required TResult Function(ChatModalState data) loadingSend,
   }) {
@@ -1173,6 +1382,9 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     TResult? Function(ChatModalState data, String message)? getChatFailed,
     TResult? Function(ChatModalState data)? sendChatSuccess,
     TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult? Function(ChatModalState data)? loading,
     TResult? Function(ChatModalState data)? loadingSend,
   }) {
@@ -1187,6 +1399,9 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     TResult Function(ChatModalState data, String message)? getChatFailed,
     TResult Function(ChatModalState data)? sendChatSuccess,
     TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult Function(ChatModalState data)? loading,
     TResult Function(ChatModalState data)? loadingSend,
     required TResult orElse(),
@@ -1205,6 +1420,10 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     required TResult Function(_GetChatFailed value) getChatFailed,
     required TResult Function(_SendChatSuccess value) sendChatSuccess,
     required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingSend value) loadingSend,
   }) {
@@ -1219,6 +1438,8 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     TResult? Function(_GetChatFailed value)? getChatFailed,
     TResult? Function(_SendChatSuccess value)? sendChatSuccess,
     TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingSend value)? loadingSend,
   }) {
@@ -1233,6 +1454,8 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     TResult Function(_GetChatFailed value)? getChatFailed,
     TResult Function(_SendChatSuccess value)? sendChatSuccess,
     TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingSend value)? loadingSend,
     required TResult orElse(),
@@ -1342,6 +1565,9 @@ class _$_SendChatFailed extends _SendChatFailed {
     required TResult Function(ChatModalState data) sendChatSuccess,
     required TResult Function(ChatModalState data, String message)
         sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
     required TResult Function(ChatModalState data) loading,
     required TResult Function(ChatModalState data) loadingSend,
   }) {
@@ -1356,6 +1582,9 @@ class _$_SendChatFailed extends _SendChatFailed {
     TResult? Function(ChatModalState data, String message)? getChatFailed,
     TResult? Function(ChatModalState data)? sendChatSuccess,
     TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult? Function(ChatModalState data)? loading,
     TResult? Function(ChatModalState data)? loadingSend,
   }) {
@@ -1370,6 +1599,9 @@ class _$_SendChatFailed extends _SendChatFailed {
     TResult Function(ChatModalState data, String message)? getChatFailed,
     TResult Function(ChatModalState data)? sendChatSuccess,
     TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult Function(ChatModalState data)? loading,
     TResult Function(ChatModalState data)? loadingSend,
     required TResult orElse(),
@@ -1388,6 +1620,10 @@ class _$_SendChatFailed extends _SendChatFailed {
     required TResult Function(_GetChatFailed value) getChatFailed,
     required TResult Function(_SendChatSuccess value) sendChatSuccess,
     required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingSend value) loadingSend,
   }) {
@@ -1402,6 +1638,8 @@ class _$_SendChatFailed extends _SendChatFailed {
     TResult? Function(_GetChatFailed value)? getChatFailed,
     TResult? Function(_SendChatSuccess value)? sendChatSuccess,
     TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingSend value)? loadingSend,
   }) {
@@ -1416,6 +1654,8 @@ class _$_SendChatFailed extends _SendChatFailed {
     TResult Function(_GetChatFailed value)? getChatFailed,
     TResult Function(_SendChatSuccess value)? sendChatSuccess,
     TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingSend value)? loadingSend,
     required TResult orElse(),
@@ -1439,6 +1679,401 @@ abstract class _SendChatFailed extends ChatState {
   @override
   @JsonKey(ignore: true)
   _$$_SendChatFailedCopyWith<_$_SendChatFailed> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GetConversationSuccessCopyWith<$Res>
+    implements $ChatStateCopyWith<$Res> {
+  factory _$$_GetConversationSuccessCopyWith(_$_GetConversationSuccess value,
+          $Res Function(_$_GetConversationSuccess) then) =
+      __$$_GetConversationSuccessCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ChatModalState data});
+
+  @override
+  $ChatModalStateCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$_GetConversationSuccessCopyWithImpl<$Res>
+    extends _$ChatStateCopyWithImpl<$Res, _$_GetConversationSuccess>
+    implements _$$_GetConversationSuccessCopyWith<$Res> {
+  __$$_GetConversationSuccessCopyWithImpl(_$_GetConversationSuccess _value,
+      $Res Function(_$_GetConversationSuccess) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$_GetConversationSuccess(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ChatModalState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetConversationSuccess extends _GetConversationSuccess {
+  const _$_GetConversationSuccess({required this.data}) : super._();
+
+  @override
+  final ChatModalState data;
+
+  @override
+  String toString() {
+    return 'ChatState.getConversationSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetConversationSuccess &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GetConversationSuccessCopyWith<_$_GetConversationSuccess> get copyWith =>
+      __$$_GetConversationSuccessCopyWithImpl<_$_GetConversationSuccess>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChatModalState data) initial,
+    required TResult Function(ChatModalState data) getChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getChatFailed,
+    required TResult Function(ChatModalState data) sendChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
+    required TResult Function(ChatModalState data) loading,
+    required TResult Function(ChatModalState data) loadingSend,
+  }) {
+    return getConversationSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatModalState data)? initial,
+    TResult? Function(ChatModalState data)? getChatSuccess,
+    TResult? Function(ChatModalState data, String message)? getChatFailed,
+    TResult? Function(ChatModalState data)? sendChatSuccess,
+    TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
+    TResult? Function(ChatModalState data)? loading,
+    TResult? Function(ChatModalState data)? loadingSend,
+  }) {
+    return getConversationSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatModalState data)? initial,
+    TResult Function(ChatModalState data)? getChatSuccess,
+    TResult Function(ChatModalState data, String message)? getChatFailed,
+    TResult Function(ChatModalState data)? sendChatSuccess,
+    TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
+    TResult Function(ChatModalState data)? loading,
+    TResult Function(ChatModalState data)? loadingSend,
+    required TResult orElse(),
+  }) {
+    if (getConversationSuccess != null) {
+      return getConversationSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetChatSuccess value) getChatSuccess,
+    required TResult Function(_GetChatFailed value) getChatFailed,
+    required TResult Function(_SendChatSuccess value) sendChatSuccess,
+    required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingSend value) loadingSend,
+  }) {
+    return getConversationSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetChatSuccess value)? getChatSuccess,
+    TResult? Function(_GetChatFailed value)? getChatFailed,
+    TResult? Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingSend value)? loadingSend,
+  }) {
+    return getConversationSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetChatSuccess value)? getChatSuccess,
+    TResult Function(_GetChatFailed value)? getChatFailed,
+    TResult Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingSend value)? loadingSend,
+    required TResult orElse(),
+  }) {
+    if (getConversationSuccess != null) {
+      return getConversationSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetConversationSuccess extends ChatState {
+  const factory _GetConversationSuccess({required final ChatModalState data}) =
+      _$_GetConversationSuccess;
+  const _GetConversationSuccess._() : super._();
+
+  @override
+  ChatModalState get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$_GetConversationSuccessCopyWith<_$_GetConversationSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GetConversationFailedCopyWith<$Res>
+    implements $ChatStateCopyWith<$Res> {
+  factory _$$_GetConversationFailedCopyWith(_$_GetConversationFailed value,
+          $Res Function(_$_GetConversationFailed) then) =
+      __$$_GetConversationFailedCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ChatModalState data, String message});
+
+  @override
+  $ChatModalStateCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$_GetConversationFailedCopyWithImpl<$Res>
+    extends _$ChatStateCopyWithImpl<$Res, _$_GetConversationFailed>
+    implements _$$_GetConversationFailedCopyWith<$Res> {
+  __$$_GetConversationFailedCopyWithImpl(_$_GetConversationFailed _value,
+      $Res Function(_$_GetConversationFailed) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = null,
+  }) {
+    return _then(_$_GetConversationFailed(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ChatModalState,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetConversationFailed extends _GetConversationFailed {
+  const _$_GetConversationFailed({required this.data, required this.message})
+      : super._();
+
+  @override
+  final ChatModalState data;
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'ChatState.getConversationFalied(data: $data, message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetConversationFailed &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GetConversationFailedCopyWith<_$_GetConversationFailed> get copyWith =>
+      __$$_GetConversationFailedCopyWithImpl<_$_GetConversationFailed>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChatModalState data) initial,
+    required TResult Function(ChatModalState data) getChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getChatFailed,
+    required TResult Function(ChatModalState data) sendChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
+    required TResult Function(ChatModalState data) loading,
+    required TResult Function(ChatModalState data) loadingSend,
+  }) {
+    return getConversationFalied(data, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatModalState data)? initial,
+    TResult? Function(ChatModalState data)? getChatSuccess,
+    TResult? Function(ChatModalState data, String message)? getChatFailed,
+    TResult? Function(ChatModalState data)? sendChatSuccess,
+    TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
+    TResult? Function(ChatModalState data)? loading,
+    TResult? Function(ChatModalState data)? loadingSend,
+  }) {
+    return getConversationFalied?.call(data, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatModalState data)? initial,
+    TResult Function(ChatModalState data)? getChatSuccess,
+    TResult Function(ChatModalState data, String message)? getChatFailed,
+    TResult Function(ChatModalState data)? sendChatSuccess,
+    TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
+    TResult Function(ChatModalState data)? loading,
+    TResult Function(ChatModalState data)? loadingSend,
+    required TResult orElse(),
+  }) {
+    if (getConversationFalied != null) {
+      return getConversationFalied(data, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetChatSuccess value) getChatSuccess,
+    required TResult Function(_GetChatFailed value) getChatFailed,
+    required TResult Function(_SendChatSuccess value) sendChatSuccess,
+    required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingSend value) loadingSend,
+  }) {
+    return getConversationFalied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetChatSuccess value)? getChatSuccess,
+    TResult? Function(_GetChatFailed value)? getChatFailed,
+    TResult? Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingSend value)? loadingSend,
+  }) {
+    return getConversationFalied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetChatSuccess value)? getChatSuccess,
+    TResult Function(_GetChatFailed value)? getChatFailed,
+    TResult Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingSend value)? loadingSend,
+    required TResult orElse(),
+  }) {
+    if (getConversationFalied != null) {
+      return getConversationFalied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetConversationFailed extends ChatState {
+  const factory _GetConversationFailed(
+      {required final ChatModalState data,
+      required final String message}) = _$_GetConversationFailed;
+  const _GetConversationFailed._() : super._();
+
+  @override
+  ChatModalState get data;
+  String get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$_GetConversationFailedCopyWith<_$_GetConversationFailed> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1516,6 +2151,9 @@ class _$_Loading extends _Loading {
     required TResult Function(ChatModalState data) sendChatSuccess,
     required TResult Function(ChatModalState data, String message)
         sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
     required TResult Function(ChatModalState data) loading,
     required TResult Function(ChatModalState data) loadingSend,
   }) {
@@ -1530,6 +2168,9 @@ class _$_Loading extends _Loading {
     TResult? Function(ChatModalState data, String message)? getChatFailed,
     TResult? Function(ChatModalState data)? sendChatSuccess,
     TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult? Function(ChatModalState data)? loading,
     TResult? Function(ChatModalState data)? loadingSend,
   }) {
@@ -1544,6 +2185,9 @@ class _$_Loading extends _Loading {
     TResult Function(ChatModalState data, String message)? getChatFailed,
     TResult Function(ChatModalState data)? sendChatSuccess,
     TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult Function(ChatModalState data)? loading,
     TResult Function(ChatModalState data)? loadingSend,
     required TResult orElse(),
@@ -1562,6 +2206,10 @@ class _$_Loading extends _Loading {
     required TResult Function(_GetChatFailed value) getChatFailed,
     required TResult Function(_SendChatSuccess value) sendChatSuccess,
     required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingSend value) loadingSend,
   }) {
@@ -1576,6 +2224,8 @@ class _$_Loading extends _Loading {
     TResult? Function(_GetChatFailed value)? getChatFailed,
     TResult? Function(_SendChatSuccess value)? sendChatSuccess,
     TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingSend value)? loadingSend,
   }) {
@@ -1590,6 +2240,8 @@ class _$_Loading extends _Loading {
     TResult Function(_GetChatFailed value)? getChatFailed,
     TResult Function(_SendChatSuccess value)? sendChatSuccess,
     TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingSend value)? loadingSend,
     required TResult orElse(),
@@ -1689,6 +2341,9 @@ class _$_LoadingSend extends _LoadingSend {
     required TResult Function(ChatModalState data) sendChatSuccess,
     required TResult Function(ChatModalState data, String message)
         sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFalied,
     required TResult Function(ChatModalState data) loading,
     required TResult Function(ChatModalState data) loadingSend,
   }) {
@@ -1703,6 +2358,9 @@ class _$_LoadingSend extends _LoadingSend {
     TResult? Function(ChatModalState data, String message)? getChatFailed,
     TResult? Function(ChatModalState data)? sendChatSuccess,
     TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult? Function(ChatModalState data)? loading,
     TResult? Function(ChatModalState data)? loadingSend,
   }) {
@@ -1717,6 +2375,9 @@ class _$_LoadingSend extends _LoadingSend {
     TResult Function(ChatModalState data, String message)? getChatFailed,
     TResult Function(ChatModalState data)? sendChatSuccess,
     TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFalied,
     TResult Function(ChatModalState data)? loading,
     TResult Function(ChatModalState data)? loadingSend,
     required TResult orElse(),
@@ -1735,6 +2396,10 @@ class _$_LoadingSend extends _LoadingSend {
     required TResult Function(_GetChatFailed value) getChatFailed,
     required TResult Function(_SendChatSuccess value) sendChatSuccess,
     required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFalied,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingSend value) loadingSend,
   }) {
@@ -1749,6 +2414,8 @@ class _$_LoadingSend extends _LoadingSend {
     TResult? Function(_GetChatFailed value)? getChatFailed,
     TResult? Function(_SendChatSuccess value)? sendChatSuccess,
     TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFalied,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingSend value)? loadingSend,
   }) {
@@ -1763,6 +2430,8 @@ class _$_LoadingSend extends _LoadingSend {
     TResult Function(_GetChatFailed value)? getChatFailed,
     TResult Function(_SendChatSuccess value)? sendChatSuccess,
     TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFalied,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingSend value)? loadingSend,
     required TResult orElse(),

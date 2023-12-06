@@ -1,6 +1,7 @@
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_status.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_type.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/conversation/conversation.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_modal_state.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/loading_page.dart';
@@ -29,12 +30,15 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
 
   List<Chat> get _chats => _data.chats;
 
+  Conversation? get _conversation => _data.conversation;
+
   Color get _primaryColor => Theme.of(context).primaryColor;
 
   final TextEditingController _textController = TextEditingController();
 
   @override
   void initState() {
+    _bloc.add(const ChatEvent.getConversation());
     _bloc.add(const ChatEvent.getChat());
     super.initState();
   }
@@ -117,12 +121,18 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
           icon: const Icon(Icons.arrow_back),
         ),
         elevation: 0,
-        title: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Chat bot',
-              style: context.titleLarge
+              _conversation?.header ?? "",
+              style: context.titleSmall
+                  .copyWith(fontSize: 10.0, color: Colors.white),
+            ),
+            Text(
+              _conversation?.title ?? "Chat bot",
+              style: context.titleMedium
                   .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
             ),
           ],
@@ -147,6 +157,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
                     loading: chat.chatStatus.isLoading,
                     time: chat.createdAt,
                     isBot: chat.chatType.isAssistant,
+                    isErrorMessage: chat.chatStatus.isError,
                     speechOnPress: () {},
                     longPressText: () {},
                     isAnimatedText: index == 0,

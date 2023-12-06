@@ -10,4 +10,7 @@ class ConversationEvent with _$ConversationEvent {
 
   const factory ConversationEvent.deleteConversation(
       {required int conversationId}) = _DeleteConversation;
+
+  const factory ConversationEvent.selectConversation(
+      {required int conversationId}) = _SelectConversation;
 }

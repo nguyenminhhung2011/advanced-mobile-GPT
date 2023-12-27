@@ -140,6 +140,8 @@ dependencies:
   hive_flutter: ^1.1.0
   either_dart: ^1.0.0
   animated_text_kit: ^4.2.2
+  speech_to_text: ^6.5.1
+  flutter_tts: ^3.8.5
   # table_calendar: ^3.0.8
   # readmore: ^2.2.0
 

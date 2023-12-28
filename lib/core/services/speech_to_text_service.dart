@@ -3,10 +3,10 @@ import 'package:injectable/injectable.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
 @injectable
-class SpeechTextService {
+class SpeechToTextService {
   late SpeechToText speechToText;
 
-  SpeechTextService();
+  SpeechToTextService();
 
   String _currentLocaleId = 'en-US';
 

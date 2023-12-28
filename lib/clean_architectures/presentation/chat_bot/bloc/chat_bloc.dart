@@ -5,6 +5,8 @@ import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/cha
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_type.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/usecase/chat_usecase.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_modal_state.dart';
+import 'package:advanced_mobile_gpt/core/services/speech_to_text_service.dart';
+import 'package:advanced_mobile_gpt/core/services/text_to_speech_service.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,10 +20,14 @@ part 'chat_bloc.freezed.dart';
 @injectable
 class ChatBloc extends Bloc<ChatEvent, ChatState> {
   final ChatUseCase _chatUseCase;
+  final SpeechToTextService _speechToTextService;
+  final TextToSpeechService _textToSpeechService;
   final int _conversationId;
   ChatBloc(
     @factoryParam int conversationId,
     this._chatUseCase,
+    this._speechToTextService,
+    this._textToSpeechService,
   )   : _conversationId = conversationId,
         super(
           _Initial(
@@ -30,9 +36,61 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     on<_GetChat>(_onGetChat);
     on<_SendChat>(_onSendChat);
     on<_GetConversation>(_onGetConversation);
+    on<_InitialTextToSpeechService>(_onInitialTextToSpeechService);
+    on<_CancelSpeechText>(_onCancelSpeechText);
+    on<_StartSpeechText>(_onStartSpeechText);
+    on<_StopSpeechText>(_onStopSpeechText);
   }
   ChatModalState get data => state.data;
 
+  ///[🔊 Text to speech handler]
+  FutureOr<void> _onInitialTextToSpeechService(
+    _InitialTextToSpeechService event,
+    Emitter<ChatState> emit,
+  ) async {
+    await _textToSpeechService.initTextToSpeech();
+  }
+
+  FutureOr<void> _onStartSpeechText(
+    _StartSpeechText event,
+    Emitter<ChatState> emit,
+  ) async {
+    if (state.loadingSend) {
+      return;
+    }
+    try {
+      emit(_StartSpeechTextSuccess(
+          data: data.copyWith(messageId: event.messageSpeechId)));
+      await _textToSpeechService.startHandler(text: event.content);
+      if (data.messageId == event.messageSpeechId) {
+        emit(_StopSpeechTextSuccess(data: data.copyWith(messageId: null)));
+      }
+    } catch (exception) {
+      emit(_StopSpeechTextSuccess(data: data.copyWith(messageId: null)));
+    }
+  }
+
+  FutureOr<void> _onCancelSpeechText(
+    _CancelSpeechText event,
+    Emitter<ChatState> emit,
+  ) {
+    add(const _StopSpeechText());
+    if (event.previousMessageId != event.messageId) {
+      event.functionCall.call();
+    }
+  }
+
+  FutureOr<void> _onStopSpeechText(
+    _StopSpeechText event,
+    Emitter<ChatState> emit,
+  ) async {
+    emit(_StopSpeechTextSuccess(data: data.copyWith(messageId: null)));
+    await _textToSpeechService.cancelHandler();
+  }
+
+  ///[🎙️Speech to text handler]
+
+  ///[🎉Chat handler]
   FutureOr<void> _onGetConversation(
     _GetConversation event,
     Emitter<ChatState> emit,

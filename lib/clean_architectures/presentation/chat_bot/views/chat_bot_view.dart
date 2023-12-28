@@ -34,7 +34,11 @@ class ChatBotView extends ConsumerStatefulWidget {
 class _ChatBotViewState extends ConsumerState<ChatBotView> {
   ChatBloc get _bloc => context.read<ChatBloc>();
 
+  ChatState get _state => _bloc.state;
+
   ChatModalState get _data => _bloc.data;
+
+  int? get _speechMessageId => _data.messageId;
 
   List<Chat> get _chats => _data.chats;
 
@@ -46,6 +50,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
 
   @override
   void initState() {
+    _bloc.add(const ChatEvent.initialTextToSpeechService());
     _bloc.add(const ChatEvent.getConversation());
     _bloc.add(const ChatEvent.getChat());
     super.initState();
@@ -72,6 +77,25 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
     } else {
       context.pop();
     }
+  }
+
+  void _handleSpeechText({required int messageId, required String content}) {
+    _state.maybeWhen(
+      startSpeechTextSuccess: (data) {
+        _bloc.add(
+          ChatEvent.cancelSpeechText(
+            messageId: messageId,
+            previousMessageId: data.messageId ?? -1,
+            functionCall: () => _bloc.add(
+              ChatEvent.startSpeechText(
+                  content: content, messageSpeechId: messageId),
+            ),
+          ),
+        );
+      },
+      orElse: () => _bloc.add(ChatEvent.startSpeechText(
+          content: content, messageSpeechId: messageId)),
+    );
   }
 
   @override
@@ -180,8 +204,10 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
                     time: chat.createdAt,
                     isBot: chat.chatType.isAssistant,
                     isErrorMessage: chat.chatStatus.isError,
-                    speechOnPress: () {},
+                    speechOnPress: () => _handleSpeechText(
+                        messageId: chat.id, content: chat.title),
                     longPressText: () {},
+                    isSpeechText: _state.isSpeechText(chat.id),
                     isAnimatedText: index == 0,
                   );
                 }),

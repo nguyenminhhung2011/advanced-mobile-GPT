@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/remote/base_api.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/remote/data_state.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/remote/gpt_api.dart';
@@ -46,7 +44,6 @@ class ChatRepositoriesImpl extends BaseApi implements ChatRepositories {
         return Left(
             AppException(message: response.dioError?.message ?? baseError));
       }
-      log("🎉[Response text] $response");
 
       ///[Call api here]
       return Right(response.data["choices"][0]?["message"]["content"] ?? "");

@@ -48,8 +48,8 @@ class _ConversationViewState extends State<ConversationView> {
           _bloc.add(
             ConversationEvent.updateConversation(
               conversationId: id,
-              lastMessage: open.lastMessage,
               title: open.title,
+              lastMessage: open.lastMessage,
             ),
           );
         }

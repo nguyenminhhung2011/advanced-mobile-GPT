@@ -8,6 +8,7 @@ part 'chat_modal_state.freezed.dart';
 class ChatModalState with _$ChatModalState {
   const factory ChatModalState({
     required List<Chat> chats,
-    Conversation? conversation, 
+    Conversation? conversation,
+    int? messageId,
   }) = _ChatModalState;
 }

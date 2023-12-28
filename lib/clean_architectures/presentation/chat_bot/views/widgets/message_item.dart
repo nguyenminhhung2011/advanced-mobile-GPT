@@ -1,4 +1,6 @@
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/dot_waiting.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/speech_icon.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
@@ -101,13 +103,26 @@ class _MessageItemState extends State<MessageItem> {
           ],
         ),
       ),
+      if (widget.isBot) ...[
+        const SizedBox(width: 10.0),
+        InkWell(
+          onTap: widget.speechOnPress,
+          child: widget.isSpeechText
+              ? const SpeechIcon()
+              : Icon(
+                  Icons.volume_down,
+                  size: 18,
+                  color: Theme.of(context).primaryColor.withOpacity(0.8),
+                ),
+        ),
+      ],
       if (!widget.isBot) SizedBox(width: context.widthDevice * 0.1),
       SizedBox(width: context.widthDevice * 0.05)
     ];
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment:
             widget.isBot ? MainAxisAlignment.start : MainAxisAlignment.end,
         children: widget.isBot ? content : content.reversed.toList(),

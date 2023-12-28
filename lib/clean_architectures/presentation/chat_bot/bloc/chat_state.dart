@@ -21,7 +21,7 @@ class ChatState with _$ChatState {
   const factory ChatState.getConversationSuccess(
       {required ChatModalState data}) = _GetConversationSuccess;
 
-  const factory ChatState.getConversationFalied({
+  const factory ChatState.getConversationFailed({
     required ChatModalState data,
     required String message,
   }) = _GetConversationFailed;
@@ -31,5 +31,16 @@ class ChatState with _$ChatState {
   const factory ChatState.loadingSend({required ChatModalState data}) =
       _LoadingSend;
 
+  ///[🔊 Text to speech state]
+  const factory ChatState.startSpeechTextSuccess(
+      {required ChatModalState data}) = _StartSpeechTextSuccess;
+
+  const factory ChatState.stopSpeechTextSuccess(
+      {required ChatModalState data}) = _StopSpeechTextSuccess;
+
   bool get loading => this is _Loading;
+  bool get loadingSend => this is _LoadingSend;
+  bool isSpeechText(int messageSpeech) => maybeWhen(
+      orElse: () => false,
+      startSpeechTextSuccess: (data) => messageSpeech == data.messageId);
 }

@@ -5,10 +5,10 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class TextSpeechService {
+class TextToSpeechService {
   late FlutterTts flutterTts;
 
-  TextSpeechService();
+  TextToSpeechService();
 
   Future _setAwaitOptions() async {
     await flutterTts.awaitSpeakCompletion(true);

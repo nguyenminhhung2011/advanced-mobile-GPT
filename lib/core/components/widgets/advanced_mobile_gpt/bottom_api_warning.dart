@@ -1,4 +1,5 @@
 import 'package:advanced_mobile_gpt/app_coordinator.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/local/preferences.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/button_custom.dart';
 import 'package:advanced_mobile_gpt/routes/routes.dart';
@@ -35,7 +36,13 @@ class BottomApiWarning extends StatelessWidget {
         ButtonCustom(
           height: 40.0,
           radius: 5.0,
-          onPress: () => context.openListPageWithRoute(Routes.inputApi),
+          onPress: () async {
+            await context.openListPageWithRoute(Routes.inputApi);
+            if (CommonAppSettingPref.getAccessToken().isNotEmpty) {
+              // ignore: use_build_context_synchronously
+              context.pop();
+            }
+          },
           child: Text("Input api key",
               style: textStyle.copyWith(
                   color: Colors.white, fontWeight: FontWeight.bold)),

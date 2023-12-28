@@ -99,6 +99,12 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
   }
 
   @override
+  void deactivate() {
+    _bloc.add(const ChatEvent.stopSpeechText());
+    super.deactivate();
+  }
+
+  @override
   void dispose() {
     _textController.dispose();
     super.dispose();

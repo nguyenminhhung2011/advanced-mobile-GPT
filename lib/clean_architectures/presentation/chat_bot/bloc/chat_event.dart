@@ -31,4 +31,10 @@ class ChatEvent with _$ChatEvent {
 
   const factory ChatEvent.initialSpeechToTextService() =
       _InitialSpeechToTextService;
+
+  const factory ChatEvent.startListenSpeech() = _StartListenSpeech;
+
+  const factory ChatEvent.stopListenSpeech() = _StopListenSpeech;
+
+  const factory ChatEvent.listeningCompletedEvent() = _ListeningCompletedEvent;
 }

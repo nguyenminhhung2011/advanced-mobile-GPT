@@ -10,5 +10,6 @@ class ChatModalState with _$ChatModalState {
     required List<Chat> chats,
     Conversation? conversation,
     int? messageId,
+    @Default(false) bool micAvailable,
   }) = _ChatModalState;
 }

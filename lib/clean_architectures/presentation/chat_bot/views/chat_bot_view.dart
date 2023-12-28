@@ -38,7 +38,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
 
   ChatModalState get _data => _bloc.data;
 
-  int? get _speechMessageId => _data.messageId;
+  bool get _micAvailable => _data.micAvailable;
 
   List<Chat> get _chats => _data.chats;
 
@@ -50,6 +50,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
 
   @override
   void initState() {
+    _bloc.add(const ChatEvent.initialSpeechToTextService());
     _bloc.add(const ChatEvent.initialTextToSpeechService());
     _bloc.add(const ChatEvent.getConversation());
     _bloc.add(const ChatEvent.getChat());
@@ -63,6 +64,9 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
           context.showSnackBar("🐛[Send message] $error"),
       sendChatSuccess: (_) {},
       loadingSend: (_) => _textController.clear(),
+      listeningSpeech: (_, textResponse) => _textController
+        ..text = textResponse
+        ..selection = TextSelection.collapsed(offset: textResponse.length),
       orElse: () {},
     );
   }
@@ -101,6 +105,7 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
   @override
   void deactivate() {
     _bloc.add(const ChatEvent.stopSpeechText());
+    _bloc.add(const ChatEvent.stopListenSpeech());
     super.deactivate();
   }
 
@@ -220,10 +225,10 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
           ),
           InputWidget(
             textEditingController: _textController,
-            isListening: false,
-            onVoiceStart: () {},
-            onVoiceStop: () {},
-            micAvailable: false,
+            isListening: _state.listenSpeech,
+            onVoiceStart: () => _bloc.add(const ChatEvent.startListenSpeech()),
+            onVoiceStop: () => _bloc.add(const ChatEvent.stopListenSpeech()),
+            micAvailable: _micAvailable,
             onSubmitted: () =>
                 _bloc.add(ChatEvent.sendChat(_textController.text)),
           ),

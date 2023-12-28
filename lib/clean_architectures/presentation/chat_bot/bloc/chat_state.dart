@@ -38,9 +38,28 @@ class ChatState with _$ChatState {
   const factory ChatState.stopSpeechTextSuccess(
       {required ChatModalState data}) = _StopSpeechTextSuccess;
 
+  ///[🎙️ Speech to text state]
+
+  const factory ChatState.listeningSpeech({
+    required ChatModalState data,
+    required String textResponse,
+  }) = _ListeningSpeech;
+
+  const factory ChatState.stopListeningSpeech({required ChatModalState data}) =
+      _StopListeningSpeech;
+
+  const factory ChatState.listeningCompleted({required ChatModalState data}) =
+      _ListeningCompleted;
+
+  const factory ChatState.initSpeechToTextSuccess(
+      {required ChatModalState data}) = _InitialSpeechToTextSuccess;
+
   bool get loading => this is _Loading;
+
   bool get loadingSend => this is _LoadingSend;
+
   bool isSpeechText(int messageSpeech) => maybeWhen(
       orElse: () => false,
       startSpeechTextSuccess: (data) => messageSpeech == data.messageId);
+  bool get listenSpeech => this is _ListeningSpeech;
 }

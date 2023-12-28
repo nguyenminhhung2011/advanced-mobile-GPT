@@ -30,6 +30,9 @@ mixin _$ChatEvent {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,6 +48,9 @@ mixin _$ChatEvent {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +66,9 @@ mixin _$ChatEvent {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -76,6 +85,10 @@ mixin _$ChatEvent {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,6 +104,9 @@ mixin _$ChatEvent {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -106,6 +122,9 @@ mixin _$ChatEvent {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -177,6 +196,9 @@ class _$_Started implements _Started {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return started();
   }
@@ -195,6 +217,9 @@ class _$_Started implements _Started {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return started?.call();
   }
@@ -213,6 +238,9 @@ class _$_Started implements _Started {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -235,6 +263,10 @@ class _$_Started implements _Started {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return started(this);
   }
@@ -253,6 +285,9 @@ class _$_Started implements _Started {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return started?.call(this);
   }
@@ -271,6 +306,9 @@ class _$_Started implements _Started {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -333,6 +371,9 @@ class _$_GetChat implements _GetChat {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return getChat();
   }
@@ -351,6 +392,9 @@ class _$_GetChat implements _GetChat {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return getChat?.call();
   }
@@ -369,6 +413,9 @@ class _$_GetChat implements _GetChat {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (getChat != null) {
@@ -391,6 +438,10 @@ class _$_GetChat implements _GetChat {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return getChat(this);
   }
@@ -409,6 +460,9 @@ class _$_GetChat implements _GetChat {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return getChat?.call(this);
   }
@@ -427,6 +481,9 @@ class _$_GetChat implements _GetChat {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (getChat != null) {
@@ -516,6 +573,9 @@ class _$_SendChat implements _SendChat {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return sendChat(content);
   }
@@ -534,6 +594,9 @@ class _$_SendChat implements _SendChat {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return sendChat?.call(content);
   }
@@ -552,6 +615,9 @@ class _$_SendChat implements _SendChat {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (sendChat != null) {
@@ -574,6 +640,10 @@ class _$_SendChat implements _SendChat {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return sendChat(this);
   }
@@ -592,6 +662,9 @@ class _$_SendChat implements _SendChat {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return sendChat?.call(this);
   }
@@ -610,6 +683,9 @@ class _$_SendChat implements _SendChat {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (sendChat != null) {
@@ -678,6 +754,9 @@ class _$_GetConversation implements _GetConversation {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return getConversation();
   }
@@ -696,6 +775,9 @@ class _$_GetConversation implements _GetConversation {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return getConversation?.call();
   }
@@ -714,6 +796,9 @@ class _$_GetConversation implements _GetConversation {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (getConversation != null) {
@@ -736,6 +821,10 @@ class _$_GetConversation implements _GetConversation {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return getConversation(this);
   }
@@ -754,6 +843,9 @@ class _$_GetConversation implements _GetConversation {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return getConversation?.call(this);
   }
@@ -772,6 +864,9 @@ class _$_GetConversation implements _GetConversation {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (getConversation != null) {
@@ -838,6 +933,9 @@ class _$_InitialTextToSpeechService implements _InitialTextToSpeechService {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return initialTextToSpeechService();
   }
@@ -856,6 +954,9 @@ class _$_InitialTextToSpeechService implements _InitialTextToSpeechService {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return initialTextToSpeechService?.call();
   }
@@ -874,6 +975,9 @@ class _$_InitialTextToSpeechService implements _InitialTextToSpeechService {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (initialTextToSpeechService != null) {
@@ -896,6 +1000,10 @@ class _$_InitialTextToSpeechService implements _InitialTextToSpeechService {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return initialTextToSpeechService(this);
   }
@@ -914,6 +1022,9 @@ class _$_InitialTextToSpeechService implements _InitialTextToSpeechService {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return initialTextToSpeechService?.call(this);
   }
@@ -932,6 +1043,9 @@ class _$_InitialTextToSpeechService implements _InitialTextToSpeechService {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (initialTextToSpeechService != null) {
@@ -1031,6 +1145,9 @@ class _$_StartSpeechText implements _StartSpeechText {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return startSpeechText(content, messageSpeechId);
   }
@@ -1049,6 +1166,9 @@ class _$_StartSpeechText implements _StartSpeechText {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return startSpeechText?.call(content, messageSpeechId);
   }
@@ -1067,6 +1187,9 @@ class _$_StartSpeechText implements _StartSpeechText {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (startSpeechText != null) {
@@ -1089,6 +1212,10 @@ class _$_StartSpeechText implements _StartSpeechText {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return startSpeechText(this);
   }
@@ -1107,6 +1234,9 @@ class _$_StartSpeechText implements _StartSpeechText {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return startSpeechText?.call(this);
   }
@@ -1125,6 +1255,9 @@ class _$_StartSpeechText implements _StartSpeechText {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (startSpeechText != null) {
@@ -1196,6 +1329,9 @@ class _$_StopSpeechText implements _StopSpeechText {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return stopSpeechText();
   }
@@ -1214,6 +1350,9 @@ class _$_StopSpeechText implements _StopSpeechText {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return stopSpeechText?.call();
   }
@@ -1232,6 +1371,9 @@ class _$_StopSpeechText implements _StopSpeechText {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (stopSpeechText != null) {
@@ -1254,6 +1396,10 @@ class _$_StopSpeechText implements _StopSpeechText {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return stopSpeechText(this);
   }
@@ -1272,6 +1418,9 @@ class _$_StopSpeechText implements _StopSpeechText {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return stopSpeechText?.call(this);
   }
@@ -1290,6 +1439,9 @@ class _$_StopSpeechText implements _StopSpeechText {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (stopSpeechText != null) {
@@ -1403,6 +1555,9 @@ class _$_CancelSpeechText implements _CancelSpeechText {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return cancelSpeechText(messageId, previousMessageId, functionCall);
   }
@@ -1421,6 +1576,9 @@ class _$_CancelSpeechText implements _CancelSpeechText {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return cancelSpeechText?.call(messageId, previousMessageId, functionCall);
   }
@@ -1439,6 +1597,9 @@ class _$_CancelSpeechText implements _CancelSpeechText {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (cancelSpeechText != null) {
@@ -1461,6 +1622,10 @@ class _$_CancelSpeechText implements _CancelSpeechText {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return cancelSpeechText(this);
   }
@@ -1479,6 +1644,9 @@ class _$_CancelSpeechText implements _CancelSpeechText {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return cancelSpeechText?.call(this);
   }
@@ -1497,6 +1665,9 @@ class _$_CancelSpeechText implements _CancelSpeechText {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (cancelSpeechText != null) {
@@ -1573,6 +1744,9 @@ class _$_InitialSpeechToTextService implements _InitialSpeechToTextService {
             dynamic Function() functionCall)
         cancelSpeechText,
     required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
   }) {
     return initialSpeechToTextService();
   }
@@ -1591,6 +1765,9 @@ class _$_InitialSpeechToTextService implements _InitialSpeechToTextService {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
   }) {
     return initialSpeechToTextService?.call();
   }
@@ -1609,6 +1786,9 @@ class _$_InitialSpeechToTextService implements _InitialSpeechToTextService {
             dynamic Function() functionCall)?
         cancelSpeechText,
     TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (initialSpeechToTextService != null) {
@@ -1631,6 +1811,10 @@ class _$_InitialSpeechToTextService implements _InitialSpeechToTextService {
     required TResult Function(_CancelSpeechText value) cancelSpeechText,
     required TResult Function(_InitialSpeechToTextService value)
         initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
   }) {
     return initialSpeechToTextService(this);
   }
@@ -1649,6 +1833,9 @@ class _$_InitialSpeechToTextService implements _InitialSpeechToTextService {
     TResult? Function(_CancelSpeechText value)? cancelSpeechText,
     TResult? Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
   }) {
     return initialSpeechToTextService?.call(this);
   }
@@ -1667,6 +1854,9 @@ class _$_InitialSpeechToTextService implements _InitialSpeechToTextService {
     TResult Function(_CancelSpeechText value)? cancelSpeechText,
     TResult Function(_InitialSpeechToTextService value)?
         initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
     required TResult orElse(),
   }) {
     if (initialSpeechToTextService != null) {
@@ -1678,6 +1868,535 @@ class _$_InitialSpeechToTextService implements _InitialSpeechToTextService {
 
 abstract class _InitialSpeechToTextService implements ChatEvent {
   const factory _InitialSpeechToTextService() = _$_InitialSpeechToTextService;
+}
+
+/// @nodoc
+abstract class _$$_StartListenSpeechCopyWith<$Res> {
+  factory _$$_StartListenSpeechCopyWith(_$_StartListenSpeech value,
+          $Res Function(_$_StartListenSpeech) then) =
+      __$$_StartListenSpeechCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_StartListenSpeechCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$_StartListenSpeech>
+    implements _$$_StartListenSpeechCopyWith<$Res> {
+  __$$_StartListenSpeechCopyWithImpl(
+      _$_StartListenSpeech _value, $Res Function(_$_StartListenSpeech) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_StartListenSpeech implements _StartListenSpeech {
+  const _$_StartListenSpeech();
+
+  @override
+  String toString() {
+    return 'ChatEvent.startListenSpeech()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_StartListenSpeech);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getChat,
+    required TResult Function(String content) sendChat,
+    required TResult Function() getConversation,
+    required TResult Function() initialTextToSpeechService,
+    required TResult Function(String content, int messageSpeechId)
+        startSpeechText,
+    required TResult Function() stopSpeechText,
+    required TResult Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)
+        cancelSpeechText,
+    required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
+  }) {
+    return startListenSpeech();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getChat,
+    TResult? Function(String content)? sendChat,
+    TResult? Function()? getConversation,
+    TResult? Function()? initialTextToSpeechService,
+    TResult? Function(String content, int messageSpeechId)? startSpeechText,
+    TResult? Function()? stopSpeechText,
+    TResult? Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)?
+        cancelSpeechText,
+    TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
+  }) {
+    return startListenSpeech?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getChat,
+    TResult Function(String content)? sendChat,
+    TResult Function()? getConversation,
+    TResult Function()? initialTextToSpeechService,
+    TResult Function(String content, int messageSpeechId)? startSpeechText,
+    TResult Function()? stopSpeechText,
+    TResult Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)?
+        cancelSpeechText,
+    TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
+    required TResult orElse(),
+  }) {
+    if (startListenSpeech != null) {
+      return startListenSpeech();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetChat value) getChat,
+    required TResult Function(_SendChat value) sendChat,
+    required TResult Function(_GetConversation value) getConversation,
+    required TResult Function(_InitialTextToSpeechService value)
+        initialTextToSpeechService,
+    required TResult Function(_StartSpeechText value) startSpeechText,
+    required TResult Function(_StopSpeechText value) stopSpeechText,
+    required TResult Function(_CancelSpeechText value) cancelSpeechText,
+    required TResult Function(_InitialSpeechToTextService value)
+        initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
+  }) {
+    return startListenSpeech(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetChat value)? getChat,
+    TResult? Function(_SendChat value)? sendChat,
+    TResult? Function(_GetConversation value)? getConversation,
+    TResult? Function(_InitialTextToSpeechService value)?
+        initialTextToSpeechService,
+    TResult? Function(_StartSpeechText value)? startSpeechText,
+    TResult? Function(_StopSpeechText value)? stopSpeechText,
+    TResult? Function(_CancelSpeechText value)? cancelSpeechText,
+    TResult? Function(_InitialSpeechToTextService value)?
+        initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
+  }) {
+    return startListenSpeech?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetChat value)? getChat,
+    TResult Function(_SendChat value)? sendChat,
+    TResult Function(_GetConversation value)? getConversation,
+    TResult Function(_InitialTextToSpeechService value)?
+        initialTextToSpeechService,
+    TResult Function(_StartSpeechText value)? startSpeechText,
+    TResult Function(_StopSpeechText value)? stopSpeechText,
+    TResult Function(_CancelSpeechText value)? cancelSpeechText,
+    TResult Function(_InitialSpeechToTextService value)?
+        initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
+    required TResult orElse(),
+  }) {
+    if (startListenSpeech != null) {
+      return startListenSpeech(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StartListenSpeech implements ChatEvent {
+  const factory _StartListenSpeech() = _$_StartListenSpeech;
+}
+
+/// @nodoc
+abstract class _$$_StopListenSpeechCopyWith<$Res> {
+  factory _$$_StopListenSpeechCopyWith(
+          _$_StopListenSpeech value, $Res Function(_$_StopListenSpeech) then) =
+      __$$_StopListenSpeechCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_StopListenSpeechCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$_StopListenSpeech>
+    implements _$$_StopListenSpeechCopyWith<$Res> {
+  __$$_StopListenSpeechCopyWithImpl(
+      _$_StopListenSpeech _value, $Res Function(_$_StopListenSpeech) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_StopListenSpeech implements _StopListenSpeech {
+  const _$_StopListenSpeech();
+
+  @override
+  String toString() {
+    return 'ChatEvent.stopListenSpeech()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_StopListenSpeech);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getChat,
+    required TResult Function(String content) sendChat,
+    required TResult Function() getConversation,
+    required TResult Function() initialTextToSpeechService,
+    required TResult Function(String content, int messageSpeechId)
+        startSpeechText,
+    required TResult Function() stopSpeechText,
+    required TResult Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)
+        cancelSpeechText,
+    required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
+  }) {
+    return stopListenSpeech();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getChat,
+    TResult? Function(String content)? sendChat,
+    TResult? Function()? getConversation,
+    TResult? Function()? initialTextToSpeechService,
+    TResult? Function(String content, int messageSpeechId)? startSpeechText,
+    TResult? Function()? stopSpeechText,
+    TResult? Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)?
+        cancelSpeechText,
+    TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
+  }) {
+    return stopListenSpeech?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getChat,
+    TResult Function(String content)? sendChat,
+    TResult Function()? getConversation,
+    TResult Function()? initialTextToSpeechService,
+    TResult Function(String content, int messageSpeechId)? startSpeechText,
+    TResult Function()? stopSpeechText,
+    TResult Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)?
+        cancelSpeechText,
+    TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
+    required TResult orElse(),
+  }) {
+    if (stopListenSpeech != null) {
+      return stopListenSpeech();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetChat value) getChat,
+    required TResult Function(_SendChat value) sendChat,
+    required TResult Function(_GetConversation value) getConversation,
+    required TResult Function(_InitialTextToSpeechService value)
+        initialTextToSpeechService,
+    required TResult Function(_StartSpeechText value) startSpeechText,
+    required TResult Function(_StopSpeechText value) stopSpeechText,
+    required TResult Function(_CancelSpeechText value) cancelSpeechText,
+    required TResult Function(_InitialSpeechToTextService value)
+        initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
+  }) {
+    return stopListenSpeech(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetChat value)? getChat,
+    TResult? Function(_SendChat value)? sendChat,
+    TResult? Function(_GetConversation value)? getConversation,
+    TResult? Function(_InitialTextToSpeechService value)?
+        initialTextToSpeechService,
+    TResult? Function(_StartSpeechText value)? startSpeechText,
+    TResult? Function(_StopSpeechText value)? stopSpeechText,
+    TResult? Function(_CancelSpeechText value)? cancelSpeechText,
+    TResult? Function(_InitialSpeechToTextService value)?
+        initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
+  }) {
+    return stopListenSpeech?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetChat value)? getChat,
+    TResult Function(_SendChat value)? sendChat,
+    TResult Function(_GetConversation value)? getConversation,
+    TResult Function(_InitialTextToSpeechService value)?
+        initialTextToSpeechService,
+    TResult Function(_StartSpeechText value)? startSpeechText,
+    TResult Function(_StopSpeechText value)? stopSpeechText,
+    TResult Function(_CancelSpeechText value)? cancelSpeechText,
+    TResult Function(_InitialSpeechToTextService value)?
+        initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
+    required TResult orElse(),
+  }) {
+    if (stopListenSpeech != null) {
+      return stopListenSpeech(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StopListenSpeech implements ChatEvent {
+  const factory _StopListenSpeech() = _$_StopListenSpeech;
+}
+
+/// @nodoc
+abstract class _$$_ListeningCompletedEventCopyWith<$Res> {
+  factory _$$_ListeningCompletedEventCopyWith(_$_ListeningCompletedEvent value,
+          $Res Function(_$_ListeningCompletedEvent) then) =
+      __$$_ListeningCompletedEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ListeningCompletedEventCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$_ListeningCompletedEvent>
+    implements _$$_ListeningCompletedEventCopyWith<$Res> {
+  __$$_ListeningCompletedEventCopyWithImpl(_$_ListeningCompletedEvent _value,
+      $Res Function(_$_ListeningCompletedEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_ListeningCompletedEvent implements _ListeningCompletedEvent {
+  const _$_ListeningCompletedEvent();
+
+  @override
+  String toString() {
+    return 'ChatEvent.listeningCompletedEvent()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ListeningCompletedEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getChat,
+    required TResult Function(String content) sendChat,
+    required TResult Function() getConversation,
+    required TResult Function() initialTextToSpeechService,
+    required TResult Function(String content, int messageSpeechId)
+        startSpeechText,
+    required TResult Function() stopSpeechText,
+    required TResult Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)
+        cancelSpeechText,
+    required TResult Function() initialSpeechToTextService,
+    required TResult Function() startListenSpeech,
+    required TResult Function() stopListenSpeech,
+    required TResult Function() listeningCompletedEvent,
+  }) {
+    return listeningCompletedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getChat,
+    TResult? Function(String content)? sendChat,
+    TResult? Function()? getConversation,
+    TResult? Function()? initialTextToSpeechService,
+    TResult? Function(String content, int messageSpeechId)? startSpeechText,
+    TResult? Function()? stopSpeechText,
+    TResult? Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)?
+        cancelSpeechText,
+    TResult? Function()? initialSpeechToTextService,
+    TResult? Function()? startListenSpeech,
+    TResult? Function()? stopListenSpeech,
+    TResult? Function()? listeningCompletedEvent,
+  }) {
+    return listeningCompletedEvent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getChat,
+    TResult Function(String content)? sendChat,
+    TResult Function()? getConversation,
+    TResult Function()? initialTextToSpeechService,
+    TResult Function(String content, int messageSpeechId)? startSpeechText,
+    TResult Function()? stopSpeechText,
+    TResult Function(int messageId, int previousMessageId,
+            dynamic Function() functionCall)?
+        cancelSpeechText,
+    TResult Function()? initialSpeechToTextService,
+    TResult Function()? startListenSpeech,
+    TResult Function()? stopListenSpeech,
+    TResult Function()? listeningCompletedEvent,
+    required TResult orElse(),
+  }) {
+    if (listeningCompletedEvent != null) {
+      return listeningCompletedEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetChat value) getChat,
+    required TResult Function(_SendChat value) sendChat,
+    required TResult Function(_GetConversation value) getConversation,
+    required TResult Function(_InitialTextToSpeechService value)
+        initialTextToSpeechService,
+    required TResult Function(_StartSpeechText value) startSpeechText,
+    required TResult Function(_StopSpeechText value) stopSpeechText,
+    required TResult Function(_CancelSpeechText value) cancelSpeechText,
+    required TResult Function(_InitialSpeechToTextService value)
+        initialSpeechToTextService,
+    required TResult Function(_StartListenSpeech value) startListenSpeech,
+    required TResult Function(_StopListenSpeech value) stopListenSpeech,
+    required TResult Function(_ListeningCompletedEvent value)
+        listeningCompletedEvent,
+  }) {
+    return listeningCompletedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetChat value)? getChat,
+    TResult? Function(_SendChat value)? sendChat,
+    TResult? Function(_GetConversation value)? getConversation,
+    TResult? Function(_InitialTextToSpeechService value)?
+        initialTextToSpeechService,
+    TResult? Function(_StartSpeechText value)? startSpeechText,
+    TResult? Function(_StopSpeechText value)? stopSpeechText,
+    TResult? Function(_CancelSpeechText value)? cancelSpeechText,
+    TResult? Function(_InitialSpeechToTextService value)?
+        initialSpeechToTextService,
+    TResult? Function(_StartListenSpeech value)? startListenSpeech,
+    TResult? Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult? Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
+  }) {
+    return listeningCompletedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetChat value)? getChat,
+    TResult Function(_SendChat value)? sendChat,
+    TResult Function(_GetConversation value)? getConversation,
+    TResult Function(_InitialTextToSpeechService value)?
+        initialTextToSpeechService,
+    TResult Function(_StartSpeechText value)? startSpeechText,
+    TResult Function(_StopSpeechText value)? stopSpeechText,
+    TResult Function(_CancelSpeechText value)? cancelSpeechText,
+    TResult Function(_InitialSpeechToTextService value)?
+        initialSpeechToTextService,
+    TResult Function(_StartListenSpeech value)? startListenSpeech,
+    TResult Function(_StopListenSpeech value)? stopListenSpeech,
+    TResult Function(_ListeningCompletedEvent value)? listeningCompletedEvent,
+    required TResult orElse(),
+  }) {
+    if (listeningCompletedEvent != null) {
+      return listeningCompletedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ListeningCompletedEvent implements ChatEvent {
+  const factory _ListeningCompletedEvent() = _$_ListeningCompletedEvent;
 }
 
 /// @nodoc
@@ -1699,6 +2418,11 @@ mixin _$ChatState {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1715,6 +2439,11 @@ mixin _$ChatState {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1731,6 +2460,10 @@ mixin _$ChatState {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1751,6 +2484,11 @@ mixin _$ChatState {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1766,6 +2504,11 @@ mixin _$ChatState {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1781,6 +2524,11 @@ mixin _$ChatState {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1913,6 +2661,11 @@ class _$_Initial extends _Initial {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return initial(data);
   }
@@ -1932,6 +2685,11 @@ class _$_Initial extends _Initial {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return initial?.call(data);
   }
@@ -1951,6 +2709,10 @@ class _$_Initial extends _Initial {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1977,6 +2739,11 @@ class _$_Initial extends _Initial {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return initial(this);
   }
@@ -1995,6 +2762,11 @@ class _$_Initial extends _Initial {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return initial?.call(this);
   }
@@ -2013,6 +2785,11 @@ class _$_Initial extends _Initial {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -2117,6 +2894,11 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return getChatSuccess(data);
   }
@@ -2136,6 +2918,11 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return getChatSuccess?.call(data);
   }
@@ -2155,6 +2942,10 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (getChatSuccess != null) {
@@ -2181,6 +2972,11 @@ class _$_GetChatSuccess extends _GetChatSuccess {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return getChatSuccess(this);
   }
@@ -2199,6 +2995,11 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return getChatSuccess?.call(this);
   }
@@ -2217,6 +3018,11 @@ class _$_GetChatSuccess extends _GetChatSuccess {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (getChatSuccess != null) {
@@ -2331,6 +3137,11 @@ class _$_GetChatFailed extends _GetChatFailed {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return getChatFailed(data, message);
   }
@@ -2350,6 +3161,11 @@ class _$_GetChatFailed extends _GetChatFailed {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return getChatFailed?.call(data, message);
   }
@@ -2369,6 +3185,10 @@ class _$_GetChatFailed extends _GetChatFailed {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (getChatFailed != null) {
@@ -2395,6 +3215,11 @@ class _$_GetChatFailed extends _GetChatFailed {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return getChatFailed(this);
   }
@@ -2413,6 +3238,11 @@ class _$_GetChatFailed extends _GetChatFailed {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return getChatFailed?.call(this);
   }
@@ -2431,6 +3261,11 @@ class _$_GetChatFailed extends _GetChatFailed {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (getChatFailed != null) {
@@ -2538,6 +3373,11 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return sendChatSuccess(data);
   }
@@ -2557,6 +3397,11 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return sendChatSuccess?.call(data);
   }
@@ -2576,6 +3421,10 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (sendChatSuccess != null) {
@@ -2602,6 +3451,11 @@ class _$_SendChatSuccess extends _SendChatSuccess {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return sendChatSuccess(this);
   }
@@ -2620,6 +3474,11 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return sendChatSuccess?.call(this);
   }
@@ -2638,6 +3497,11 @@ class _$_SendChatSuccess extends _SendChatSuccess {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (sendChatSuccess != null) {
@@ -2752,6 +3616,11 @@ class _$_SendChatFailed extends _SendChatFailed {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return sendChatFailed(data, message);
   }
@@ -2771,6 +3640,11 @@ class _$_SendChatFailed extends _SendChatFailed {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return sendChatFailed?.call(data, message);
   }
@@ -2790,6 +3664,10 @@ class _$_SendChatFailed extends _SendChatFailed {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (sendChatFailed != null) {
@@ -2816,6 +3694,11 @@ class _$_SendChatFailed extends _SendChatFailed {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return sendChatFailed(this);
   }
@@ -2834,6 +3717,11 @@ class _$_SendChatFailed extends _SendChatFailed {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return sendChatFailed?.call(this);
   }
@@ -2852,6 +3740,11 @@ class _$_SendChatFailed extends _SendChatFailed {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (sendChatFailed != null) {
@@ -2960,6 +3853,11 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return getConversationSuccess(data);
   }
@@ -2979,6 +3877,11 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return getConversationSuccess?.call(data);
   }
@@ -2998,6 +3901,10 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (getConversationSuccess != null) {
@@ -3024,6 +3931,11 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return getConversationSuccess(this);
   }
@@ -3042,6 +3954,11 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return getConversationSuccess?.call(this);
   }
@@ -3060,6 +3977,11 @@ class _$_GetConversationSuccess extends _GetConversationSuccess {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (getConversationSuccess != null) {
@@ -3175,6 +4097,11 @@ class _$_GetConversationFailed extends _GetConversationFailed {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return getConversationFailed(data, message);
   }
@@ -3194,6 +4121,11 @@ class _$_GetConversationFailed extends _GetConversationFailed {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return getConversationFailed?.call(data, message);
   }
@@ -3213,6 +4145,10 @@ class _$_GetConversationFailed extends _GetConversationFailed {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (getConversationFailed != null) {
@@ -3239,6 +4175,11 @@ class _$_GetConversationFailed extends _GetConversationFailed {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return getConversationFailed(this);
   }
@@ -3257,6 +4198,11 @@ class _$_GetConversationFailed extends _GetConversationFailed {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return getConversationFailed?.call(this);
   }
@@ -3275,6 +4221,11 @@ class _$_GetConversationFailed extends _GetConversationFailed {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (getConversationFailed != null) {
@@ -3380,6 +4331,11 @@ class _$_Loading extends _Loading {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return loading(data);
   }
@@ -3399,6 +4355,11 @@ class _$_Loading extends _Loading {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return loading?.call(data);
   }
@@ -3418,6 +4379,10 @@ class _$_Loading extends _Loading {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -3444,6 +4409,11 @@ class _$_Loading extends _Loading {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return loading(this);
   }
@@ -3462,6 +4432,11 @@ class _$_Loading extends _Loading {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return loading?.call(this);
   }
@@ -3480,6 +4455,11 @@ class _$_Loading extends _Loading {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -3584,6 +4564,11 @@ class _$_LoadingSend extends _LoadingSend {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return loadingSend(data);
   }
@@ -3603,6 +4588,11 @@ class _$_LoadingSend extends _LoadingSend {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return loadingSend?.call(data);
   }
@@ -3622,6 +4612,10 @@ class _$_LoadingSend extends _LoadingSend {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (loadingSend != null) {
@@ -3648,6 +4642,11 @@ class _$_LoadingSend extends _LoadingSend {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return loadingSend(this);
   }
@@ -3666,6 +4665,11 @@ class _$_LoadingSend extends _LoadingSend {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return loadingSend?.call(this);
   }
@@ -3684,6 +4688,11 @@ class _$_LoadingSend extends _LoadingSend {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (loadingSend != null) {
@@ -3790,6 +4799,11 @@ class _$_StartSpeechTextSuccess extends _StartSpeechTextSuccess {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return startSpeechTextSuccess(data);
   }
@@ -3809,6 +4823,11 @@ class _$_StartSpeechTextSuccess extends _StartSpeechTextSuccess {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return startSpeechTextSuccess?.call(data);
   }
@@ -3828,6 +4847,10 @@ class _$_StartSpeechTextSuccess extends _StartSpeechTextSuccess {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (startSpeechTextSuccess != null) {
@@ -3854,6 +4877,11 @@ class _$_StartSpeechTextSuccess extends _StartSpeechTextSuccess {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return startSpeechTextSuccess(this);
   }
@@ -3872,6 +4900,11 @@ class _$_StartSpeechTextSuccess extends _StartSpeechTextSuccess {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return startSpeechTextSuccess?.call(this);
   }
@@ -3890,6 +4923,11 @@ class _$_StartSpeechTextSuccess extends _StartSpeechTextSuccess {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (startSpeechTextSuccess != null) {
@@ -3996,6 +5034,11 @@ class _$_StopSpeechTextSuccess extends _StopSpeechTextSuccess {
     required TResult Function(ChatModalState data) loadingSend,
     required TResult Function(ChatModalState data) startSpeechTextSuccess,
     required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
   }) {
     return stopSpeechTextSuccess(data);
   }
@@ -4015,6 +5058,11 @@ class _$_StopSpeechTextSuccess extends _StopSpeechTextSuccess {
     TResult? Function(ChatModalState data)? loadingSend,
     TResult? Function(ChatModalState data)? startSpeechTextSuccess,
     TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
   }) {
     return stopSpeechTextSuccess?.call(data);
   }
@@ -4034,6 +5082,10 @@ class _$_StopSpeechTextSuccess extends _StopSpeechTextSuccess {
     TResult Function(ChatModalState data)? loadingSend,
     TResult Function(ChatModalState data)? startSpeechTextSuccess,
     TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (stopSpeechTextSuccess != null) {
@@ -4060,6 +5112,11 @@ class _$_StopSpeechTextSuccess extends _StopSpeechTextSuccess {
         startSpeechTextSuccess,
     required TResult Function(_StopSpeechTextSuccess value)
         stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
   }) {
     return stopSpeechTextSuccess(this);
   }
@@ -4078,6 +5135,11 @@ class _$_StopSpeechTextSuccess extends _StopSpeechTextSuccess {
     TResult? Function(_LoadingSend value)? loadingSend,
     TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
   }) {
     return stopSpeechTextSuccess?.call(this);
   }
@@ -4096,6 +5158,11 @@ class _$_StopSpeechTextSuccess extends _StopSpeechTextSuccess {
     TResult Function(_LoadingSend value)? loadingSend,
     TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
     TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
     required TResult orElse(),
   }) {
     if (stopSpeechTextSuccess != null) {
@@ -4116,4 +5183,957 @@ abstract class _StopSpeechTextSuccess extends ChatState {
   @JsonKey(ignore: true)
   _$$_StopSpeechTextSuccessCopyWith<_$_StopSpeechTextSuccess> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ListeningSpeechCopyWith<$Res>
+    implements $ChatStateCopyWith<$Res> {
+  factory _$$_ListeningSpeechCopyWith(
+          _$_ListeningSpeech value, $Res Function(_$_ListeningSpeech) then) =
+      __$$_ListeningSpeechCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ChatModalState data, String textResponse});
+
+  @override
+  $ChatModalStateCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$_ListeningSpeechCopyWithImpl<$Res>
+    extends _$ChatStateCopyWithImpl<$Res, _$_ListeningSpeech>
+    implements _$$_ListeningSpeechCopyWith<$Res> {
+  __$$_ListeningSpeechCopyWithImpl(
+      _$_ListeningSpeech _value, $Res Function(_$_ListeningSpeech) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? textResponse = null,
+  }) {
+    return _then(_$_ListeningSpeech(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ChatModalState,
+      textResponse: null == textResponse
+          ? _value.textResponse
+          : textResponse // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ListeningSpeech extends _ListeningSpeech {
+  const _$_ListeningSpeech({required this.data, required this.textResponse})
+      : super._();
+
+  @override
+  final ChatModalState data;
+  @override
+  final String textResponse;
+
+  @override
+  String toString() {
+    return 'ChatState.listeningSpeech(data: $data, textResponse: $textResponse)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ListeningSpeech &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.textResponse, textResponse) ||
+                other.textResponse == textResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, textResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ListeningSpeechCopyWith<_$_ListeningSpeech> get copyWith =>
+      __$$_ListeningSpeechCopyWithImpl<_$_ListeningSpeech>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChatModalState data) initial,
+    required TResult Function(ChatModalState data) getChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getChatFailed,
+    required TResult Function(ChatModalState data) sendChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFailed,
+    required TResult Function(ChatModalState data) loading,
+    required TResult Function(ChatModalState data) loadingSend,
+    required TResult Function(ChatModalState data) startSpeechTextSuccess,
+    required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
+  }) {
+    return listeningSpeech(data, textResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatModalState data)? initial,
+    TResult? Function(ChatModalState data)? getChatSuccess,
+    TResult? Function(ChatModalState data, String message)? getChatFailed,
+    TResult? Function(ChatModalState data)? sendChatSuccess,
+    TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFailed,
+    TResult? Function(ChatModalState data)? loading,
+    TResult? Function(ChatModalState data)? loadingSend,
+    TResult? Function(ChatModalState data)? startSpeechTextSuccess,
+    TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
+  }) {
+    return listeningSpeech?.call(data, textResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatModalState data)? initial,
+    TResult Function(ChatModalState data)? getChatSuccess,
+    TResult Function(ChatModalState data, String message)? getChatFailed,
+    TResult Function(ChatModalState data)? sendChatSuccess,
+    TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFailed,
+    TResult Function(ChatModalState data)? loading,
+    TResult Function(ChatModalState data)? loadingSend,
+    TResult Function(ChatModalState data)? startSpeechTextSuccess,
+    TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
+    required TResult orElse(),
+  }) {
+    if (listeningSpeech != null) {
+      return listeningSpeech(data, textResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetChatSuccess value) getChatSuccess,
+    required TResult Function(_GetChatFailed value) getChatFailed,
+    required TResult Function(_SendChatSuccess value) sendChatSuccess,
+    required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFailed,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingSend value) loadingSend,
+    required TResult Function(_StartSpeechTextSuccess value)
+        startSpeechTextSuccess,
+    required TResult Function(_StopSpeechTextSuccess value)
+        stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
+  }) {
+    return listeningSpeech(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetChatSuccess value)? getChatSuccess,
+    TResult? Function(_GetChatFailed value)? getChatFailed,
+    TResult? Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFailed,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingSend value)? loadingSend,
+    TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
+    TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
+  }) {
+    return listeningSpeech?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetChatSuccess value)? getChatSuccess,
+    TResult Function(_GetChatFailed value)? getChatFailed,
+    TResult Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFailed,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingSend value)? loadingSend,
+    TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
+    TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
+    required TResult orElse(),
+  }) {
+    if (listeningSpeech != null) {
+      return listeningSpeech(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ListeningSpeech extends ChatState {
+  const factory _ListeningSpeech(
+      {required final ChatModalState data,
+      required final String textResponse}) = _$_ListeningSpeech;
+  const _ListeningSpeech._() : super._();
+
+  @override
+  ChatModalState get data;
+  String get textResponse;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ListeningSpeechCopyWith<_$_ListeningSpeech> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_StopListeningSpeechCopyWith<$Res>
+    implements $ChatStateCopyWith<$Res> {
+  factory _$$_StopListeningSpeechCopyWith(_$_StopListeningSpeech value,
+          $Res Function(_$_StopListeningSpeech) then) =
+      __$$_StopListeningSpeechCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ChatModalState data});
+
+  @override
+  $ChatModalStateCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$_StopListeningSpeechCopyWithImpl<$Res>
+    extends _$ChatStateCopyWithImpl<$Res, _$_StopListeningSpeech>
+    implements _$$_StopListeningSpeechCopyWith<$Res> {
+  __$$_StopListeningSpeechCopyWithImpl(_$_StopListeningSpeech _value,
+      $Res Function(_$_StopListeningSpeech) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$_StopListeningSpeech(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ChatModalState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_StopListeningSpeech extends _StopListeningSpeech {
+  const _$_StopListeningSpeech({required this.data}) : super._();
+
+  @override
+  final ChatModalState data;
+
+  @override
+  String toString() {
+    return 'ChatState.stopListeningSpeech(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_StopListeningSpeech &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_StopListeningSpeechCopyWith<_$_StopListeningSpeech> get copyWith =>
+      __$$_StopListeningSpeechCopyWithImpl<_$_StopListeningSpeech>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChatModalState data) initial,
+    required TResult Function(ChatModalState data) getChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getChatFailed,
+    required TResult Function(ChatModalState data) sendChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFailed,
+    required TResult Function(ChatModalState data) loading,
+    required TResult Function(ChatModalState data) loadingSend,
+    required TResult Function(ChatModalState data) startSpeechTextSuccess,
+    required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
+  }) {
+    return stopListeningSpeech(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatModalState data)? initial,
+    TResult? Function(ChatModalState data)? getChatSuccess,
+    TResult? Function(ChatModalState data, String message)? getChatFailed,
+    TResult? Function(ChatModalState data)? sendChatSuccess,
+    TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFailed,
+    TResult? Function(ChatModalState data)? loading,
+    TResult? Function(ChatModalState data)? loadingSend,
+    TResult? Function(ChatModalState data)? startSpeechTextSuccess,
+    TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
+  }) {
+    return stopListeningSpeech?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatModalState data)? initial,
+    TResult Function(ChatModalState data)? getChatSuccess,
+    TResult Function(ChatModalState data, String message)? getChatFailed,
+    TResult Function(ChatModalState data)? sendChatSuccess,
+    TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFailed,
+    TResult Function(ChatModalState data)? loading,
+    TResult Function(ChatModalState data)? loadingSend,
+    TResult Function(ChatModalState data)? startSpeechTextSuccess,
+    TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
+    required TResult orElse(),
+  }) {
+    if (stopListeningSpeech != null) {
+      return stopListeningSpeech(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetChatSuccess value) getChatSuccess,
+    required TResult Function(_GetChatFailed value) getChatFailed,
+    required TResult Function(_SendChatSuccess value) sendChatSuccess,
+    required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFailed,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingSend value) loadingSend,
+    required TResult Function(_StartSpeechTextSuccess value)
+        startSpeechTextSuccess,
+    required TResult Function(_StopSpeechTextSuccess value)
+        stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
+  }) {
+    return stopListeningSpeech(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetChatSuccess value)? getChatSuccess,
+    TResult? Function(_GetChatFailed value)? getChatFailed,
+    TResult? Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFailed,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingSend value)? loadingSend,
+    TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
+    TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
+  }) {
+    return stopListeningSpeech?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetChatSuccess value)? getChatSuccess,
+    TResult Function(_GetChatFailed value)? getChatFailed,
+    TResult Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFailed,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingSend value)? loadingSend,
+    TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
+    TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
+    required TResult orElse(),
+  }) {
+    if (stopListeningSpeech != null) {
+      return stopListeningSpeech(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StopListeningSpeech extends ChatState {
+  const factory _StopListeningSpeech({required final ChatModalState data}) =
+      _$_StopListeningSpeech;
+  const _StopListeningSpeech._() : super._();
+
+  @override
+  ChatModalState get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$_StopListeningSpeechCopyWith<_$_StopListeningSpeech> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ListeningCompletedCopyWith<$Res>
+    implements $ChatStateCopyWith<$Res> {
+  factory _$$_ListeningCompletedCopyWith(_$_ListeningCompleted value,
+          $Res Function(_$_ListeningCompleted) then) =
+      __$$_ListeningCompletedCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ChatModalState data});
+
+  @override
+  $ChatModalStateCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$_ListeningCompletedCopyWithImpl<$Res>
+    extends _$ChatStateCopyWithImpl<$Res, _$_ListeningCompleted>
+    implements _$$_ListeningCompletedCopyWith<$Res> {
+  __$$_ListeningCompletedCopyWithImpl(
+      _$_ListeningCompleted _value, $Res Function(_$_ListeningCompleted) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$_ListeningCompleted(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ChatModalState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ListeningCompleted extends _ListeningCompleted {
+  const _$_ListeningCompleted({required this.data}) : super._();
+
+  @override
+  final ChatModalState data;
+
+  @override
+  String toString() {
+    return 'ChatState.listeningCompleted(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ListeningCompleted &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ListeningCompletedCopyWith<_$_ListeningCompleted> get copyWith =>
+      __$$_ListeningCompletedCopyWithImpl<_$_ListeningCompleted>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChatModalState data) initial,
+    required TResult Function(ChatModalState data) getChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getChatFailed,
+    required TResult Function(ChatModalState data) sendChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFailed,
+    required TResult Function(ChatModalState data) loading,
+    required TResult Function(ChatModalState data) loadingSend,
+    required TResult Function(ChatModalState data) startSpeechTextSuccess,
+    required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
+  }) {
+    return listeningCompleted(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatModalState data)? initial,
+    TResult? Function(ChatModalState data)? getChatSuccess,
+    TResult? Function(ChatModalState data, String message)? getChatFailed,
+    TResult? Function(ChatModalState data)? sendChatSuccess,
+    TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFailed,
+    TResult? Function(ChatModalState data)? loading,
+    TResult? Function(ChatModalState data)? loadingSend,
+    TResult? Function(ChatModalState data)? startSpeechTextSuccess,
+    TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
+  }) {
+    return listeningCompleted?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatModalState data)? initial,
+    TResult Function(ChatModalState data)? getChatSuccess,
+    TResult Function(ChatModalState data, String message)? getChatFailed,
+    TResult Function(ChatModalState data)? sendChatSuccess,
+    TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFailed,
+    TResult Function(ChatModalState data)? loading,
+    TResult Function(ChatModalState data)? loadingSend,
+    TResult Function(ChatModalState data)? startSpeechTextSuccess,
+    TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
+    required TResult orElse(),
+  }) {
+    if (listeningCompleted != null) {
+      return listeningCompleted(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetChatSuccess value) getChatSuccess,
+    required TResult Function(_GetChatFailed value) getChatFailed,
+    required TResult Function(_SendChatSuccess value) sendChatSuccess,
+    required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFailed,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingSend value) loadingSend,
+    required TResult Function(_StartSpeechTextSuccess value)
+        startSpeechTextSuccess,
+    required TResult Function(_StopSpeechTextSuccess value)
+        stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
+  }) {
+    return listeningCompleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetChatSuccess value)? getChatSuccess,
+    TResult? Function(_GetChatFailed value)? getChatFailed,
+    TResult? Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFailed,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingSend value)? loadingSend,
+    TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
+    TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
+  }) {
+    return listeningCompleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetChatSuccess value)? getChatSuccess,
+    TResult Function(_GetChatFailed value)? getChatFailed,
+    TResult Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFailed,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingSend value)? loadingSend,
+    TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
+    TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
+    required TResult orElse(),
+  }) {
+    if (listeningCompleted != null) {
+      return listeningCompleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ListeningCompleted extends ChatState {
+  const factory _ListeningCompleted({required final ChatModalState data}) =
+      _$_ListeningCompleted;
+  const _ListeningCompleted._() : super._();
+
+  @override
+  ChatModalState get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ListeningCompletedCopyWith<_$_ListeningCompleted> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_InitialSpeechToTextSuccessCopyWith<$Res>
+    implements $ChatStateCopyWith<$Res> {
+  factory _$$_InitialSpeechToTextSuccessCopyWith(
+          _$_InitialSpeechToTextSuccess value,
+          $Res Function(_$_InitialSpeechToTextSuccess) then) =
+      __$$_InitialSpeechToTextSuccessCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ChatModalState data});
+
+  @override
+  $ChatModalStateCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$_InitialSpeechToTextSuccessCopyWithImpl<$Res>
+    extends _$ChatStateCopyWithImpl<$Res, _$_InitialSpeechToTextSuccess>
+    implements _$$_InitialSpeechToTextSuccessCopyWith<$Res> {
+  __$$_InitialSpeechToTextSuccessCopyWithImpl(
+      _$_InitialSpeechToTextSuccess _value,
+      $Res Function(_$_InitialSpeechToTextSuccess) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$_InitialSpeechToTextSuccess(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ChatModalState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_InitialSpeechToTextSuccess extends _InitialSpeechToTextSuccess {
+  const _$_InitialSpeechToTextSuccess({required this.data}) : super._();
+
+  @override
+  final ChatModalState data;
+
+  @override
+  String toString() {
+    return 'ChatState.initSpeechToTextSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_InitialSpeechToTextSuccess &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_InitialSpeechToTextSuccessCopyWith<_$_InitialSpeechToTextSuccess>
+      get copyWith => __$$_InitialSpeechToTextSuccessCopyWithImpl<
+          _$_InitialSpeechToTextSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChatModalState data) initial,
+    required TResult Function(ChatModalState data) getChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getChatFailed,
+    required TResult Function(ChatModalState data) sendChatSuccess,
+    required TResult Function(ChatModalState data, String message)
+        sendChatFailed,
+    required TResult Function(ChatModalState data) getConversationSuccess,
+    required TResult Function(ChatModalState data, String message)
+        getConversationFailed,
+    required TResult Function(ChatModalState data) loading,
+    required TResult Function(ChatModalState data) loadingSend,
+    required TResult Function(ChatModalState data) startSpeechTextSuccess,
+    required TResult Function(ChatModalState data) stopSpeechTextSuccess,
+    required TResult Function(ChatModalState data, String textResponse)
+        listeningSpeech,
+    required TResult Function(ChatModalState data) stopListeningSpeech,
+    required TResult Function(ChatModalState data) listeningCompleted,
+    required TResult Function(ChatModalState data) initSpeechToTextSuccess,
+  }) {
+    return initSpeechToTextSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatModalState data)? initial,
+    TResult? Function(ChatModalState data)? getChatSuccess,
+    TResult? Function(ChatModalState data, String message)? getChatFailed,
+    TResult? Function(ChatModalState data)? sendChatSuccess,
+    TResult? Function(ChatModalState data, String message)? sendChatFailed,
+    TResult? Function(ChatModalState data)? getConversationSuccess,
+    TResult? Function(ChatModalState data, String message)?
+        getConversationFailed,
+    TResult? Function(ChatModalState data)? loading,
+    TResult? Function(ChatModalState data)? loadingSend,
+    TResult? Function(ChatModalState data)? startSpeechTextSuccess,
+    TResult? Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult? Function(ChatModalState data, String textResponse)?
+        listeningSpeech,
+    TResult? Function(ChatModalState data)? stopListeningSpeech,
+    TResult? Function(ChatModalState data)? listeningCompleted,
+    TResult? Function(ChatModalState data)? initSpeechToTextSuccess,
+  }) {
+    return initSpeechToTextSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatModalState data)? initial,
+    TResult Function(ChatModalState data)? getChatSuccess,
+    TResult Function(ChatModalState data, String message)? getChatFailed,
+    TResult Function(ChatModalState data)? sendChatSuccess,
+    TResult Function(ChatModalState data, String message)? sendChatFailed,
+    TResult Function(ChatModalState data)? getConversationSuccess,
+    TResult Function(ChatModalState data, String message)?
+        getConversationFailed,
+    TResult Function(ChatModalState data)? loading,
+    TResult Function(ChatModalState data)? loadingSend,
+    TResult Function(ChatModalState data)? startSpeechTextSuccess,
+    TResult Function(ChatModalState data)? stopSpeechTextSuccess,
+    TResult Function(ChatModalState data, String textResponse)? listeningSpeech,
+    TResult Function(ChatModalState data)? stopListeningSpeech,
+    TResult Function(ChatModalState data)? listeningCompleted,
+    TResult Function(ChatModalState data)? initSpeechToTextSuccess,
+    required TResult orElse(),
+  }) {
+    if (initSpeechToTextSuccess != null) {
+      return initSpeechToTextSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetChatSuccess value) getChatSuccess,
+    required TResult Function(_GetChatFailed value) getChatFailed,
+    required TResult Function(_SendChatSuccess value) sendChatSuccess,
+    required TResult Function(_SendChatFailed value) sendChatFailed,
+    required TResult Function(_GetConversationSuccess value)
+        getConversationSuccess,
+    required TResult Function(_GetConversationFailed value)
+        getConversationFailed,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingSend value) loadingSend,
+    required TResult Function(_StartSpeechTextSuccess value)
+        startSpeechTextSuccess,
+    required TResult Function(_StopSpeechTextSuccess value)
+        stopSpeechTextSuccess,
+    required TResult Function(_ListeningSpeech value) listeningSpeech,
+    required TResult Function(_StopListeningSpeech value) stopListeningSpeech,
+    required TResult Function(_ListeningCompleted value) listeningCompleted,
+    required TResult Function(_InitialSpeechToTextSuccess value)
+        initSpeechToTextSuccess,
+  }) {
+    return initSpeechToTextSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetChatSuccess value)? getChatSuccess,
+    TResult? Function(_GetChatFailed value)? getChatFailed,
+    TResult? Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult? Function(_SendChatFailed value)? sendChatFailed,
+    TResult? Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult? Function(_GetConversationFailed value)? getConversationFailed,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingSend value)? loadingSend,
+    TResult? Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
+    TResult? Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult? Function(_ListeningSpeech value)? listeningSpeech,
+    TResult? Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult? Function(_ListeningCompleted value)? listeningCompleted,
+    TResult? Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
+  }) {
+    return initSpeechToTextSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetChatSuccess value)? getChatSuccess,
+    TResult Function(_GetChatFailed value)? getChatFailed,
+    TResult Function(_SendChatSuccess value)? sendChatSuccess,
+    TResult Function(_SendChatFailed value)? sendChatFailed,
+    TResult Function(_GetConversationSuccess value)? getConversationSuccess,
+    TResult Function(_GetConversationFailed value)? getConversationFailed,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingSend value)? loadingSend,
+    TResult Function(_StartSpeechTextSuccess value)? startSpeechTextSuccess,
+    TResult Function(_StopSpeechTextSuccess value)? stopSpeechTextSuccess,
+    TResult Function(_ListeningSpeech value)? listeningSpeech,
+    TResult Function(_StopListeningSpeech value)? stopListeningSpeech,
+    TResult Function(_ListeningCompleted value)? listeningCompleted,
+    TResult Function(_InitialSpeechToTextSuccess value)?
+        initSpeechToTextSuccess,
+    required TResult orElse(),
+  }) {
+    if (initSpeechToTextSuccess != null) {
+      return initSpeechToTextSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitialSpeechToTextSuccess extends ChatState {
+  const factory _InitialSpeechToTextSuccess(
+      {required final ChatModalState data}) = _$_InitialSpeechToTextSuccess;
+  const _InitialSpeechToTextSuccess._() : super._();
+
+  @override
+  ChatModalState get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$_InitialSpeechToTextSuccessCopyWith<_$_InitialSpeechToTextSuccess>
+      get copyWith => throw _privateConstructorUsedError;
 }

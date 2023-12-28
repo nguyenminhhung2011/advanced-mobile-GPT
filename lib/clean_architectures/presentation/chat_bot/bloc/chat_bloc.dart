@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/chat/chat_status.dart';
@@ -40,6 +41,10 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     on<_CancelSpeechText>(_onCancelSpeechText);
     on<_StartSpeechText>(_onStartSpeechText);
     on<_StopSpeechText>(_onStopSpeechText);
+    on<_InitialSpeechToTextService>(_onInitialSpeechToText);
+    on<_StartListenSpeech>(_onStartListenSpeech);
+    on<_StopListenSpeech>(_onStopListenSpeech);
+    on<_ListeningCompletedEvent>(_onListeningCompletedEvent);
   }
   ChatModalState get data => state.data;
 
@@ -59,6 +64,9 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
       return;
     }
     try {
+      if (state.listenSpeech) {
+        await _speechToTextService.stopSpeak();
+      }
       emit(_StartSpeechTextSuccess(
           data: data.copyWith(messageId: event.messageSpeechId)));
       await _textToSpeechService.startHandler(text: event.content);
@@ -89,6 +97,61 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
   }
 
   ///[🎙️Speech to text handler]
+  FutureOr<void> _onInitialSpeechToText(
+    _InitialSpeechToTextService event,
+    Emitter<ChatState> emit,
+  ) async {
+    final initSpeech = await _speechToTextService.initSpeechToText((status) {
+      log("🎙️[Status] $status");
+      if (status == "done" || status == "notListening") {
+        add(const _ListeningCompletedEvent());
+      }
+    });
+    if (initSpeech) {
+      emit(
+        _InitialSpeechToTextSuccess(data: data.copyWith(micAvailable: true)),
+      );
+    }
+  }
+
+  FutureOr<void> _onListeningCompletedEvent(
+      _ListeningCompletedEvent event, Emitter<ChatState> emit) {
+    emit(_ListeningCompleted(data: data));
+  }
+
+  FutureOr<void> _onStopListenSpeech(
+    _StopListenSpeech event,
+    Emitter<ChatState> emit,
+  ) async {
+    emit(_StopListeningSpeech(data: data));
+    await _speechToTextService.stopSpeak();
+  }
+
+  FutureOr<void> _onStartListenSpeech(
+    _StartListenSpeech event,
+    Emitter<ChatState> emit,
+  ) async {
+    if (state.loadingSend) {
+      return;
+    }
+    if (!data.micAvailable) {
+      return;
+    }
+    try {
+      if (state is _StartSpeechTextSuccess) {
+        emit(_StopSpeechTextSuccess(data: data.copyWith(messageId: null)));
+        await _textToSpeechService.cancelHandler();
+      }
+      emit(_ListeningSpeech(data: data, textResponse: ''));
+      _speechToTextService.startSpeak(
+        (text) {
+          emit(_ListeningSpeech(data: data, textResponse: text));
+        },
+      );
+    } catch (exception) {
+      add(const _StopListenSpeech());
+    }
+  }
 
   ///[🎉Chat handler]
   FutureOr<void> _onGetConversation(

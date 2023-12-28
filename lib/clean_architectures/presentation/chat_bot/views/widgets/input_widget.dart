@@ -49,10 +49,7 @@ class _InputWidgetState extends State<InputWidget> {
                 padding: const EdgeInsets.only(bottom: 8),
                 icon: widget.isListening
                     ? const ListeningIcon()
-                    : Icon(
-                        micIcon,
-                        color: Theme.of(context).hintColor,
-                      ),
+                    : Icon(micIcon, color: Theme.of(context).hintColor),
               ),
               Expanded(
                 child: TextField(

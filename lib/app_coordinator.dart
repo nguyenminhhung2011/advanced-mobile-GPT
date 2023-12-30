@@ -5,7 +5,6 @@ import 'package:advanced_mobile_gpt/core/components/constant/constant.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/bottom_selected_prompt.dart';
 
 import 'core/components/layout/setting_layout/views/language_choose.dart';
-import 'core/components/widgets/range_date_picker_custom.dart';
 
 extension AppCoordinator<T> on BuildContext {
   void pop() => Navigator.of(this).pop();
@@ -121,25 +120,6 @@ extension AppCoordinator<T> on BuildContext {
     );
   }
 
-  Future<List<DateTime>?> pickRangeDate(
-    RangeDateController rangeDateController,
-  ) async {
-    final dates = await showDialog(
-      context: this,
-      builder: (_) => Dialog(
-        backgroundColor: Colors.transparent,
-        child: RangeDatePicDialog(
-          height: 450,
-          rangeDateController: rangeDateController,
-        ),
-      ),
-    );
-    if (dates is List<DateTime>) {
-      return dates;
-    }
-    return null;
-  }
-
   Future<String> langBottom() async {
     final data = await showModalBottomSheet(
       context: this,
@@ -156,26 +136,6 @@ extension AppCoordinator<T> on BuildContext {
       return data;
     }
     return '';
-  }
-
-  Future<List<DateTime>?> pickWeekRange(
-    RangeDateController rangeDateController,
-  ) async {
-    final dates = await showDialog(
-      context: this,
-      builder: (_) => Dialog(
-        backgroundColor: Colors.transparent,
-        child: RangeDatePicDialog(
-          height: 450,
-          rangeDateController: rangeDateController,
-          rangeDatePicType: RangeDatePicType.weekRange,
-        ),
-      ),
-    );
-    if (dates is List<DateTime>) {
-      return dates;
-    }
-    return null;
   }
 
   void closeErrorMessage() {

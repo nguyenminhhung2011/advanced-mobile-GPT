@@ -10,7 +10,6 @@ import 'package:injectable/injectable.dart';
 import 'application.dart';
 import 'core/components/configurations/configurations.dart';
 import 'core/dependency_injection/di.dart';
-// import 'data/datasource/local/preferences.dart';
 
 class Mutable<T> {
   Mutable(this.value);
@@ -30,7 +29,7 @@ class AppDelegate {
     return Application(
       navigationKey: GlobalKey<NavigatorState>(),
       providers: [],
-      initialRoute: Routes.dashboard,
+      initialRoute: Routes.conservation,
       savedThemeMode: savedThemeMode,
       isMobile: isMobile,
     );

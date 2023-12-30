@@ -89,11 +89,7 @@ class _ConversationViewState extends State<ConversationView> {
       appBar: AppBar(
         backgroundColor: _primaryColor,
         elevation: 0,
-        leading: (context.canPop)
-            ? IconButton(
-                onPressed: () => context.pop(),
-                icon: const Icon(Icons.arrow_back, color: Colors.white))
-            : null,
+        automaticallyImplyLeading: false,
         title: Text(
           "Conversation",
           style: context.titleMedium

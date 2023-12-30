@@ -3,7 +3,7 @@ import 'package:advanced_mobile_gpt/clean_architectures/data/model/conversation/
 import 'package:advanced_mobile_gpt/core/components/constant/hive_constant.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
-
+  
 const String _hiveCached = "hiveCached";
 
 @module

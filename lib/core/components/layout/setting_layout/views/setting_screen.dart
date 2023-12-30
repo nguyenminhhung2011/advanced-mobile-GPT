@@ -1,3 +1,4 @@
+import 'package:advanced_mobile_gpt/core/components/config/setting_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:collection/collection.dart';
@@ -5,9 +6,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:advanced_mobile_gpt/app_coordinator.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
-import 'package:advanced_mobile_gpt/core/components/widgets/avartat_custom.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/image_custom.dart';
-import 'package:advanced_mobile_gpt/core/components/config/setting_config.dart';
 import 'package:advanced_mobile_gpt/generated/l10n.dart';
 import 'package:advanced_mobile_gpt/routes/routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -264,20 +263,13 @@ class _SettingScreenState extends State<SettingScreen> {
             if (text.isEmpty) {
               return const SizedBox();
             }
-            final icon = index == 0
-                ? AvatarWidget(
-                    width: 40.0,
-                    height: 40.0,
-                    imageUrl:
-                        _currentUser?.photoUrl ?? ImageConst.baseImageView,
-                  )
-                : Icon(
-                    switch (index) {
-                      1 => Icons.email,
-                      2 => Icons.phone,
-                      _ => CupertinoIcons.creditcard_fill,
-                    },
-                    size: 24.0);
+            final icon = Icon(
+                switch (index) {
+                  1 => Icons.email,
+                  2 => Icons.phone,
+                  _ => CupertinoIcons.creditcard_fill,
+                },
+                size: 24.0);
             return Card(
               margin: EdgeInsets.symmetric(horizontal: _padding.horizontal / 2),
               color: Colors.transparent,

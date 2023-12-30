@@ -1,3 +1,5 @@
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_bloc.dart';
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/conversation_view.dart';
 import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/string_extensions.dart';
@@ -53,9 +55,11 @@ class _ApplicationState extends State<Application> with WidgetsBindingObserver {
         providers: [
           ...widget.providers,
           BlocProvider<SettingBloc>(create: (_) => injector.get<SettingBloc>()),
+          BlocProvider<ConversationBloc>(
+              create: (_) => injector.get<ConversationBloc>()),
         ],
         child: BuildMaterialApp(
-          widget: widget, 
+          widget: widget,
           light: theme,
           dark: darkTheme,
         ),
@@ -103,7 +107,7 @@ class _BuildMaterialAppState extends State<BuildMaterialApp> {
       listener: (_, __) {},
       builder: (context, state) {
         return MaterialApp(
-          title: 'Flight booking',
+          title: 'Chat bot app',
           navigatorKey: widget.widget.navigationKey,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: MainRoutes.getRoute,

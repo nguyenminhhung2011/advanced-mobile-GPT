@@ -6,14 +6,12 @@ import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bl
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_modal_state.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/string_extensions.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/loading_page.dart';
-import 'package:drag_ball/drag_ball.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/app_coordinator.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/image_const.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/context_extensions.dart';
 import 'package:advanced_mobile_gpt/core/components/widgets/image_custom.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/input_widget.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/message_item.dart';
 
@@ -24,14 +22,14 @@ class MessageReturn {
   MessageReturn({required this.title, required this.lastMessage});
 }
 
-class ChatBotView extends ConsumerStatefulWidget {
+class ChatBotView extends StatefulWidget {
   const ChatBotView({super.key});
 
   @override
-  ConsumerState<ChatBotView> createState() => _ChatBotViewState();
+  State<ChatBotView> createState() => _ChatBotViewState();
 }
 
-class _ChatBotViewState extends ConsumerState<ChatBotView> {
+class _ChatBotViewState extends State<ChatBotView> {
   ChatBloc get _bloc => context.read<ChatBloc>();
 
   ChatState get _state => _bloc.state;
@@ -120,48 +118,41 @@ class _ChatBotViewState extends ConsumerState<ChatBotView> {
     return BlocConsumer<ChatBloc, ChatState>(
         listener: _listenStateChange,
         builder: (context, state) {
-          return Dragball(
-            ball: _supportBall(context),
-            iconSize: 15.0,
-            onTap: () {},
-            initialPosition: const DragballPosition.defaultPosition(),
-            onPositionChanged: (_) {},
-            child: WillPopScope(
-              onWillPop: () async {
-                context.closeErrorMessage();
-                _pop();
-                return true;
-              },
-              child: Stack(
-                children: [
-                  Container(
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                  ),
-                  if (ImageConst.chatBackgroundImg.isNotEmpty)
-                    Positioned.fill(
-                      child: ImageCustom(
-                        imageUrl: ImageConst.chatBackgroundImg,
-                        fit: BoxFit.cover,
-                        color: _primaryColor.withOpacity(0.1),
-                        isNetworkImage: false,
-                      ),
-                    ),
+          return WillPopScope(
+            onWillPop: () async {
+              context.closeErrorMessage();
+              _pop();
+              return true;
+            },
+            child: Stack(
+              children: [
+                Container(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                ),
+                if (ImageConst.chatBackgroundImg.isNotEmpty)
                   Positioned.fill(
-                    child: Container(color: _primaryColor.withOpacity(0.1)),
+                    child: ImageCustom(
+                      imageUrl: ImageConst.chatBackgroundImg,
+                      fit: BoxFit.cover,
+                      color: _primaryColor.withOpacity(0.1),
+                      isNetworkImage: false,
+                    ),
                   ),
-                  _body(context),
-                  if (state.loading)
-                    Container(
-                      color: Colors.black45,
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      child: Center(
-                        child: StyleLoadingWidget.foldingCube.renderWidget(
-                            size: 40.0, color: Theme.of(context).primaryColor),
-                      ),
-                    )
-                ],
-              ),
+                Positioned.fill(
+                  child: Container(color: _primaryColor.withOpacity(0.1)),
+                ),
+                _body(context),
+                if (state.loading)
+                  Container(
+                    color: Colors.black45,
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    child: Center(
+                      child: StyleLoadingWidget.foldingCube.renderWidget(
+                          size: 40.0, color: Theme.of(context).primaryColor),
+                    ),
+                  )
+              ],
             ),
           );
         });

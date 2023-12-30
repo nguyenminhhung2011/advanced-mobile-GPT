@@ -1,6 +1,5 @@
 import 'package:advanced_mobile_gpt/app_coordinator.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/domain/entities/conversation/conversation.dart';
-import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/chat_bot_view.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_modal_state.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/widgets/conversation_item_widget.dart';
@@ -30,38 +29,12 @@ class _ConversationViewState extends State<ConversationView> {
 
   @override
   void initState() {
-    _bloc.add(const ConversationEvent.getConversation());
     super.initState();
-  }
-
-  void _listenStateChange(_, ConversationState state) {
-    state.maybeWhen(
-      getConversationFailed: (_, error) =>
-          context.showSnackBar("🐛[Get conversation] $error"),
-      createConversationFailed: (_, error) =>
-          context.showSnackBar("🐛[Create conversation] $error"),
-      selectConversationFailed: (_) => context.apiKeyWarning(),
-      selectConversationSuccess: (_, id) async {
-        final open =
-            await context.openPageWithRouteAndParams(Routes.chatBot, id);
-        if (open is MessageReturn) {
-          _bloc.add(
-            ConversationEvent.updateConversation(
-              conversationId: id,
-              title: open.title,
-              lastMessage: open.lastMessage,
-            ),
-          );
-        }
-      },
-      orElse: () {},
-    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ConversationBloc, ConversationState>(
-      listener: _listenStateChange,
+    return BlocBuilder<ConversationBloc, ConversationState>(
       builder: (context, state) => Stack(
         children: [
           _body(context: context, state: state),
@@ -95,6 +68,12 @@ class _ConversationViewState extends State<ConversationView> {
           style: context.titleMedium
               .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(
+            onPressed: () => context.openListPageWithRoute(Routes.inputApi),
+            icon: const Icon(Icons.key, color: Colors.white),
+          )
+        ],
       ),
       body: ListView.separated(
           physics: const BouncingScrollPhysics(),

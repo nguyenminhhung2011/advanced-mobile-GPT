@@ -90,12 +90,7 @@ Future<_i1.GetIt> init(
       ));
   gh.factory<_i19.ConversationBloc>(
       () => _i19.ConversationBloc(gh<_i16.ConversationUserCase>()));
-  gh.factoryParam<_i20.ChatBloc, int, dynamic>((
-    conversationId,
-    _,
-  ) =>
-      _i20.ChatBloc(
-        conversationId,
+  gh.factory<_i20.ChatBloc>(() => _i20.ChatBloc(
         gh<_i18.ChatUseCase>(),
         gh<_i8.SpeechToTextService>(),
         gh<_i9.TextToSpeechService>(),

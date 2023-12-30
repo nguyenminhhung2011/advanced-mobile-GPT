@@ -74,7 +74,7 @@ class _InputWidgetState extends State<InputWidget> {
                 child: CircleAvatar(
                   backgroundColor: Theme.of(context).primaryColor,
                   child: IconButton(
-                    padding: const EdgeInsets.only(left: 0, right: 4),
+                    padding: const EdgeInsets.only(left: 0, right: 0),
                     icon: const Icon(Icons.send_rounded),
                     color: Colors.white,
                     onPressed: () {

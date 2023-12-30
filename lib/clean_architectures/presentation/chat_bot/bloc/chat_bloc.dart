@@ -23,14 +23,11 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
   final ChatUseCase _chatUseCase;
   final SpeechToTextService _speechToTextService;
   final TextToSpeechService _textToSpeechService;
-  final int _conversationId;
   ChatBloc(
-    @factoryParam int conversationId,
     this._chatUseCase,
     this._speechToTextService,
     this._textToSpeechService,
-  )   : _conversationId = conversationId,
-        super(
+  ) : super(
           _Initial(
               data: ChatModalState(chats: List<Chat>.empty(growable: true))),
         ) {
@@ -45,6 +42,9 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     on<_StartListenSpeech>(_onStartListenSpeech);
     on<_StopListenSpeech>(_onStopListenSpeech);
     on<_ListeningCompletedEvent>(_onListeningCompletedEvent);
+    on<_ChangeTextAnimation>(_onChangeTextAnimation);
+    on<_UpdateText>(_onUpdateText);
+    on<_ClearConversation>(_onClearConversation);
   }
   ChatModalState get data => state.data;
 
@@ -86,6 +86,13 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     if (event.previousMessageId != event.messageId) {
       event.functionCall.call();
     }
+  }
+
+  FutureOr<void> _onClearConversation(
+    _ClearConversation event,
+    Emitter<ChatState> emit,
+  ) {
+    emit(_ClearConversationSuccess(data: data.copyWith(conversation: null)));
   }
 
   FutureOr<void> _onStopSpeechText(
@@ -145,7 +152,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
       emit(_ListeningSpeech(data: data, textResponse: ''));
       _speechToTextService.startSpeak(
         (text) {
-          emit(_ListeningSpeech(data: data, textResponse: text));
+          add(_UpdateText(text));
         },
       );
     } catch (exception) {
@@ -153,13 +160,28 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     }
   }
 
+  FutureOr<void> _onUpdateText(_UpdateText event, Emitter<ChatState> emit) {
+    emit(_UpdateTextSuccess(data: data, textResponse: event.newText));
+  }
+
   ///[🎉Chat handler]
+
+  FutureOr<void> _onChangeTextAnimation(
+    _ChangeTextAnimation event,
+    Emitter<ChatState> emit,
+  ) {
+    emit(
+      _ChangeTextAnimationSuccess(
+          data: data.copyWith(textAnimation: event.animationPlay)),
+    );
+  }
+
   FutureOr<void> _onGetConversation(
     _GetConversation event,
     Emitter<ChatState> emit,
   ) async {
     emit(_Loading(data: data));
-    (await _chatUseCase.getConversationById(_conversationId)).fold(
+    (await _chatUseCase.getConversationById(event.conversationId)).fold(
       (left) => emit(_GetConversationFailed(data: data, message: left.message)),
       (right) => emit(
         _GetConversationSuccess(data: data.copyWith(conversation: right)),
@@ -171,8 +193,11 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     _GetChat event,
     Emitter<ChatState> emit,
   ) async {
+    if (data.conversation == null) {
+      return;
+    }
     emit(_Loading(data: data));
-    (await _chatUseCase.getChats(_conversationId)).fold(
+    (await _chatUseCase.getChats(data.conversation!.id)).fold(
       (left) => emit(_GetChatFailed(data: data, message: left.message)),
       (right) => emit(
         _GetChatSuccess(data: data.copyWith(chats: right.reversed.toList())),
@@ -184,10 +209,13 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     _SendChat event,
     Emitter<ChatState> emit,
   ) async {
+    if (data.conversation == null) {
+      return null;
+    }
     emit(_LoadingSend(data: data));
     final sendMessage = Chat(
       id: 0,
-      conversationId: _conversationId,
+      conversationId: data.conversation!.id,
       title: event.content,
       createdAt: DateTime.now(),
       chatStatus: ChatStatus.success,
@@ -195,7 +223,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     );
 
     final saveSendMessage =
-        await _chatUseCase.saveChat(_conversationId, sendMessage);
+        await _chatUseCase.saveChat(data.conversation!.id, sendMessage);
     if (saveSendMessage.isLeft) {
       return emit(_SendChatFailed(
           data: data, message: "Save message ${saveSendMessage.left.message}"));
@@ -203,7 +231,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
 
     final loadingMessage = Chat(
       id: 0,
-      conversationId: _conversationId,
+      conversationId: data.conversation!.id,
       title: "",
       createdAt: DateTime.now(),
       chatStatus: ChatStatus.loading,
@@ -219,7 +247,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
         ]),
       ),
     );
-    return (await _chatUseCase.sendChat(_conversationId)).fold(
+    return (await _chatUseCase.sendChat(data.conversation!.id)).fold(
       (left) => emit(_SendChatFailed(
           data: data.copyWith(
               chats: data.chats.sublist(1).mapIndexed((index, e) {

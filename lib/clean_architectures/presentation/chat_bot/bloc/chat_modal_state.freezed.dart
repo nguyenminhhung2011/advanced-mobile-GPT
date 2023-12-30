@@ -20,6 +20,7 @@ mixin _$ChatModalState {
   Conversation? get conversation => throw _privateConstructorUsedError;
   int? get messageId => throw _privateConstructorUsedError;
   bool get micAvailable => throw _privateConstructorUsedError;
+  bool get textAnimation => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatModalStateCopyWith<ChatModalState> get copyWith =>
@@ -36,7 +37,8 @@ abstract class $ChatModalStateCopyWith<$Res> {
       {List<Chat> chats,
       Conversation? conversation,
       int? messageId,
-      bool micAvailable});
+      bool micAvailable,
+      bool textAnimation});
 
   $ConversationCopyWith<$Res>? get conversation;
 }
@@ -58,6 +60,7 @@ class _$ChatModalStateCopyWithImpl<$Res, $Val extends ChatModalState>
     Object? conversation = freezed,
     Object? messageId = freezed,
     Object? micAvailable = null,
+    Object? textAnimation = null,
   }) {
     return _then(_value.copyWith(
       chats: null == chats
@@ -75,6 +78,10 @@ class _$ChatModalStateCopyWithImpl<$Res, $Val extends ChatModalState>
       micAvailable: null == micAvailable
           ? _value.micAvailable
           : micAvailable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      textAnimation: null == textAnimation
+          ? _value.textAnimation
+          : textAnimation // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -104,7 +111,8 @@ abstract class _$$_ChatModalStateCopyWith<$Res>
       {List<Chat> chats,
       Conversation? conversation,
       int? messageId,
-      bool micAvailable});
+      bool micAvailable,
+      bool textAnimation});
 
   @override
   $ConversationCopyWith<$Res>? get conversation;
@@ -125,6 +133,7 @@ class __$$_ChatModalStateCopyWithImpl<$Res>
     Object? conversation = freezed,
     Object? messageId = freezed,
     Object? micAvailable = null,
+    Object? textAnimation = null,
   }) {
     return _then(_$_ChatModalState(
       chats: null == chats
@@ -143,6 +152,10 @@ class __$$_ChatModalStateCopyWithImpl<$Res>
           ? _value.micAvailable
           : micAvailable // ignore: cast_nullable_to_non_nullable
               as bool,
+      textAnimation: null == textAnimation
+          ? _value.textAnimation
+          : textAnimation // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -154,7 +167,8 @@ class _$_ChatModalState implements _ChatModalState {
       {required final List<Chat> chats,
       this.conversation,
       this.messageId,
-      this.micAvailable = false})
+      this.micAvailable = false,
+      this.textAnimation = false})
       : _chats = chats;
 
   final List<Chat> _chats;
@@ -172,10 +186,13 @@ class _$_ChatModalState implements _ChatModalState {
   @override
   @JsonKey()
   final bool micAvailable;
+  @override
+  @JsonKey()
+  final bool textAnimation;
 
   @override
   String toString() {
-    return 'ChatModalState(chats: $chats, conversation: $conversation, messageId: $messageId, micAvailable: $micAvailable)';
+    return 'ChatModalState(chats: $chats, conversation: $conversation, messageId: $messageId, micAvailable: $micAvailable, textAnimation: $textAnimation)';
   }
 
   @override
@@ -189,7 +206,9 @@ class _$_ChatModalState implements _ChatModalState {
             (identical(other.messageId, messageId) ||
                 other.messageId == messageId) &&
             (identical(other.micAvailable, micAvailable) ||
-                other.micAvailable == micAvailable));
+                other.micAvailable == micAvailable) &&
+            (identical(other.textAnimation, textAnimation) ||
+                other.textAnimation == textAnimation));
   }
 
   @override
@@ -198,7 +217,8 @@ class _$_ChatModalState implements _ChatModalState {
       const DeepCollectionEquality().hash(_chats),
       conversation,
       messageId,
-      micAvailable);
+      micAvailable,
+      textAnimation);
 
   @JsonKey(ignore: true)
   @override
@@ -212,7 +232,8 @@ abstract class _ChatModalState implements ChatModalState {
       {required final List<Chat> chats,
       final Conversation? conversation,
       final int? messageId,
-      final bool micAvailable}) = _$_ChatModalState;
+      final bool micAvailable,
+      final bool textAnimation}) = _$_ChatModalState;
 
   @override
   List<Chat> get chats;
@@ -222,6 +243,8 @@ abstract class _ChatModalState implements ChatModalState {
   int? get messageId;
   @override
   bool get micAvailable;
+  @override
+  bool get textAnimation;
   @override
   @JsonKey(ignore: true)
   _$$_ChatModalStateCopyWith<_$_ChatModalState> get copyWith =>

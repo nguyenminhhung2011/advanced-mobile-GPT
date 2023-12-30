@@ -11,5 +11,6 @@ class ChatModalState with _$ChatModalState {
     Conversation? conversation,
     int? messageId,
     @Default(false) bool micAvailable,
+    @Default(false) bool textAnimation,
   }) = _ChatModalState;
 }

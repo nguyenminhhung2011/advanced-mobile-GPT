@@ -15,6 +15,7 @@ class MessageItem extends StatefulWidget {
   final bool isSpeechText;
   final Function() longPressText;
   final Function() speechOnPress;
+  final Function() textAnimationCompleted;
   final bool isAnimatedText;
   const MessageItem({
     super.key,
@@ -27,6 +28,7 @@ class MessageItem extends StatefulWidget {
     required this.loading,
     required this.speechOnPress,
     required this.longPressText,
+    required this.textAnimationCompleted,
   });
 
   @override
@@ -96,6 +98,7 @@ class _MessageItemState extends State<MessageItem> {
                             pause: const Duration(milliseconds: 60),
                             displayFullTextOnTap: true,
                             stopPauseOnTap: true,
+                            onFinished: widget.textAnimationCompleted,
                           )
                         : Text(widget.content, style: style),
               ),

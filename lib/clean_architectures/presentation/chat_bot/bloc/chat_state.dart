@@ -54,6 +54,16 @@ class ChatState with _$ChatState {
   const factory ChatState.initSpeechToTextSuccess(
       {required ChatModalState data}) = _InitialSpeechToTextSuccess;
 
+  const factory ChatState.changeTextAnimationSuccess(
+      {required ChatModalState data}) = _ChangeTextAnimationSuccess;
+  const factory ChatState.clearConversationSuccess(
+      {required ChatModalState data}) = _ClearConversationSuccess;
+
+  const factory ChatState.updateTextSuccess({
+    required ChatModalState data,
+    required String textResponse,
+  }) = _UpdateTextSuccess;
+
   bool get loading => this is _Loading;
 
   bool get loadingSend => this is _LoadingSend;
@@ -61,5 +71,7 @@ class ChatState with _$ChatState {
   bool isSpeechText(int messageSpeech) => maybeWhen(
       orElse: () => false,
       startSpeechTextSuccess: (data) => messageSpeech == data.messageId);
-  bool get listenSpeech => this is _ListeningSpeech;
+
+  bool get listenSpeech =>
+      this is _ListeningSpeech || this is _UpdateTextSuccess;
 }

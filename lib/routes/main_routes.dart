@@ -1,4 +1,3 @@
-import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/conversation_view.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/input_api/cubit/input_api_cubit.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/input_api/views/input_api_view.dart';
@@ -15,14 +14,7 @@ class MainRoutes {
         return MaterialPageRoute(
             settings: settings,
             builder: (_) {
-              if (settings.arguments is int) {
-                return BlocProvider<ChatBloc>(
-                  create: (_) =>
-                      injector.get<ChatBloc>(param1: settings.arguments),
-                  child: const ChatBotView(),
-                );
-              }
-              return const SizedBox();
+              return const ChatBotView();
             });
       case Routes.inputApi:
         return MaterialPageRoute(

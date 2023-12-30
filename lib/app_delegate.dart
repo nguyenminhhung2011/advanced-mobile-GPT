@@ -29,7 +29,7 @@ class AppDelegate {
     return Application(
       navigationKey: GlobalKey<NavigatorState>(),
       providers: [],
-      initialRoute: Routes.conservation,
+      initialRoute: Routes.chatBot,
       savedThemeMode: savedThemeMode,
       isMobile: isMobile,
     );

@@ -2,7 +2,6 @@ import 'package:advanced_mobile_gpt/core/components/extensions/context_extension
 import 'package:advanced_mobile_gpt/core/components/widgets/advanced_mobile_gpt/bottom_api_warning.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/core/components/constant/constant.dart';
-import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/views/widgets/bottom_selected_prompt.dart';
 
 import 'core/components/layout/setting_layout/views/language_choose.dart';
 
@@ -89,24 +88,6 @@ extension AppCoordinator<T> on BuildContext {
         firstDate: DateTime(1900),
         lastDate: DateTime(2100),
       );
-
-  Future<String> selectedPrompt() async {
-    final data = await showModalBottomSheet(
-      context: this,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(14)),
-      ),
-      backgroundColor: Theme.of(this).scaffoldBackgroundColor,
-      builder: (context) {
-        return const BottomSelectedPrompt();
-      },
-    );
-    if (data is String) {
-      return data;
-    }
-    return '';
-  }
 
   Future<void> apiKeyWarning() async {
     await showModalBottomSheet(

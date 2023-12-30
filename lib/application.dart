@@ -1,5 +1,5 @@
+import 'package:advanced_mobile_gpt/clean_architectures/presentation/chat_bot/bloc/chat_bloc.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/bloc/conversation_bloc.dart';
-import 'package:advanced_mobile_gpt/clean_architectures/presentation/conversation/views/conversation_view.dart';
 import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:advanced_mobile_gpt/core/components/extensions/string_extensions.dart';
@@ -57,6 +57,7 @@ class _ApplicationState extends State<Application> with WidgetsBindingObserver {
           BlocProvider<SettingBloc>(create: (_) => injector.get<SettingBloc>()),
           BlocProvider<ConversationBloc>(
               create: (_) => injector.get<ConversationBloc>()),
+          BlocProvider<ChatBloc>(create: (_) => injector.get<ChatBloc>()),
         ],
         child: BuildMaterialApp(
           widget: widget,

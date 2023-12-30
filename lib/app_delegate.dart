@@ -2,6 +2,7 @@ import 'dart:async';
 // import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:advanced_mobile_gpt/core/components/constant/gpt_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_mobile_gpt/clean_architectures/data/data_source/local/preferences.dart';
 import 'package:advanced_mobile_gpt/routes/routes.dart';
@@ -38,6 +39,7 @@ class AppDelegate {
   Future<void> run(Map<String, dynamic> environment) async {
     final app = await build(environment);
     await Preferences.ensureInitedPreferences();
+    CommonAppSettingPref.setAccessToken(GptConstant.api);
     WidgetsFlutterBinding.ensureInitialized();
     runApp(app);
   }
